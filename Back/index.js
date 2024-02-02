@@ -21,6 +21,20 @@ mongoose.connect('mongodb://mongo:27017/songs_database', {
   console.error('Error connecting to MongoDB:', error);
 });
 
+// create a song
+
+app.post('/api/songs', async (req, res) => {
+    try {
+      const { title, artist, album, genre } = req.body;
+      const song = new Song({ title, artist, album, genre });
+      await song.save();
+      res.status(201).json(song);
+    } catch (error) {
+      console.error('Error creating song:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  //
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
