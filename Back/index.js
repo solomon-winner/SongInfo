@@ -57,7 +57,19 @@ app.post('/api/songs', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   });
-  
+  // Delete Songs
+
+  app.delete('/api/songs/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      await Song.findByIdAndDelete(id);
+      res.json({ message: 'Song deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting song:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
