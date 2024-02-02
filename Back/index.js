@@ -73,7 +73,23 @@ app.post('/api/songs', async (req, res) => {
   //Generate Statistics
 
   app.get('/api/statistics', async (req,res) => {
-    
+    try {
+        const totalSongs = await Song.countDocuments();
+        const artists = await Song.distinct('artist');
+        const albums = await Song.distinct('album');
+        const genres = await Song.distinct('genre');
+        const genreCounts = await Song.aggregate([{ $group: { _id: '$genre', count: { $sum: 1 } } }]);
+        const artistAlbumCounts = await Song.aggregate([{ $group: { _id: { artist: '$artist', album: '$album' }, count: { $sum: 1 } } }]);
+
+        res.json({
+            totalSongs,
+            artists: artists.length,
+            albums: albums.length,
+            genres: genres.length,
+            genreCounts,
+            artistAlbumCounts
+          });
+        }
   })
 
 app.listen(PORT, () => {
