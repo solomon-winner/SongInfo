@@ -44,6 +44,20 @@ app.post('/api/songs', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   });
+
+  //Update Songs
+  app.put('/api/songs/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { title, artist, album, genre } = req.body;
+      const updatedSong = await Song.findByIdAndUpdate(id, { title, artist, album, genre }, { new: true });
+      res.json(updatedSong);
+    } catch (error) {
+      console.error('Error updating song:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
