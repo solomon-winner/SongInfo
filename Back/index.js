@@ -74,7 +74,7 @@ app.post('/api/songs', async (req, res) => {
 
   app.get('/api/statistics', async (req,res) => {
     try {
-        const totalSongs = await Song.countDocuments();
+        const total = await Song.countDocuments();
         const artists = await Song.distinct('artist');
         const albums = await Song.distinct('album');
         const genres = await Song.distinct('genre');
@@ -82,13 +82,16 @@ app.post('/api/songs', async (req, res) => {
         const artistAlbumCounts = await Song.aggregate([{ $group: { _id: { artist: '$artist', album: '$album' }, count: { $sum: 1 } } }]);
 
         res.json({
-            totalSongs,
+            total,
             artists: artists.length,
             albums: albums.length,
             genres: genres.length,
             genreCounts,
             artistAlbumCounts
           });
+        } catch (error) {
+            console.error("Error", error);
+            res.status(500).json({'Internal Server Error'})
         }
   })
 
