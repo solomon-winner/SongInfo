@@ -34,7 +34,16 @@ app.post('/api/songs', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   });
-  //
+  // List all Songs
+  app.get('/api/songs', async (req, res) => {
+    try {
+      const songs = await Song.find();
+      res.json(songs);
+    } catch (error) {
+      console.error('Error listing songs:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
