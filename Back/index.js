@@ -70,6 +70,12 @@ app.post('/api/songs', async (req, res) => {
     }
   });
 
+  //Generate Statistics
+
+  app.get('/api/statistics', async (req,res) => {
+    
+  })
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
