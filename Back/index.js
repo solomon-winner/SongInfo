@@ -1,25 +1,32 @@
-// backend/server.js
+import {PORT, mongoDBURL} from './connect.js'
 const express = require('express');
 const mongoose = require('mongoose');
 const Song = require('./model/song');
 
 const app = express();
-const PORT = process.env.PORT || 8800;
 
 app.use(express.json());
 
 // Connect to MongoDB
-
-mongoose.connect('mongodb://mongo:27017/songs_database', {
+app.use (
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  })
+)
+mongoose.connect(mongoDBURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => {
   console.log('Connected to MongoDB');
+  
 })
 .catch((error) => {
   console.error('Error connecting to MongoDB:', error);
 });
 
-// create a song
+app.listen(PORT, () => {
+  console.log('I am Listening at ', PORT);
+})
 
