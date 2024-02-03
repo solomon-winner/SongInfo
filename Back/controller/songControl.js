@@ -48,4 +48,17 @@ export const updateSong = async (req,res) => {
         res.status(500).send({error: "Internal Server Error"});
     }
 }
-export const deleteSong = (req,res) => {}
+export const deleteSong = async (req,res) => {
+    try {
+        const {id} = req.params;
+        await Song.findByIdAndDelete(id);
+        res.json({message: 'Song deleted Successfully'});
+    } catch (error) {
+        console.error('Error: ', error);
+        res.status(500).json('Error: ', 'Internal Server Error')
+    }
+}
+
+export const getStat = async(req, res) => {
+    
+}
