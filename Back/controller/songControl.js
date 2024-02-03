@@ -8,7 +8,7 @@ try {
         !req.body.genre)
         {
             return res.status(400).send({
-                message: 'Enter all requires fields!'
+                message: 'Enter all required fields!'
             })
         }
         const NewSong = {
@@ -25,7 +25,15 @@ try {
     req.status(500).send({message: error.message})
 }
 }
-export const getAll = (req,res) => {}
+export const getAll = async (req,res) => {
+    try {
+        const songs = await Song.find({});
+        return res.status(200).json(songs)
+    }catch(error){
+        console.error('Error: ', error);
+        res.status(500).json({error: 'Internal server error'});
+    }
+}
 export const getOne = (req,res) => {}
 export const updateSong = (req,res) => {}
 export const deleteSong = (req,res) => {}
