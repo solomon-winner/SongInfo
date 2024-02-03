@@ -9,6 +9,12 @@ try {
                 message: 'Enter all requires fields!'
             })
         }
+        const Song = {
+            tittle: req.body.tittle,
+            artist: req.body.artist,
+            album: req.body.album,
+            genre: req.body.genre
+        }
 } catch (error) {
 
 }
