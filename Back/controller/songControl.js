@@ -60,5 +60,15 @@ export const deleteSong = async (req,res) => {
 }
 
 export const getStat = async(req, res) => {
-    
+    try {
+        const totalSongs = await Song.countDocuments();
+        const artists = await Song.distinct('artist');
+        const albums = await Song.distinct('album');
+        const genres = await Song.distinct('genre');
+        const genreCounts = await Song.aggregate([{$group: {_id: '$genre', count: { $sum: 1}}}]);
+        const artistAlbumCounts = await Song.aggregate([{ $group: {_id: {artist:'$artist', album: '$album'}, count: {$sum: 1}}}]);
+
+
+        
+    }
 }
