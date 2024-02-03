@@ -77,5 +77,8 @@ export const getStat = async(req, res) => {
             genreCounts,
             artistAlbumCounts
         });
+    } catch (error) {
+        console.error("Error: ", error);
+        res.status(500).json({error: 'Internal Server Error!'})
     }
 }
