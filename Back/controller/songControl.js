@@ -19,8 +19,10 @@ try {
         }
 
         const Song = await Song.create(NewSong);
+        return res.status(201).send(Song);
 } catch (error) {
-
+    console.log(error.message);
+    req.status(500).send({message: error.message})
 }
 }
 export const getAll = (req,res) => {}
