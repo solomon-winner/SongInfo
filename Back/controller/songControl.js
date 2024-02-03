@@ -69,6 +69,13 @@ export const getStat = async(req, res) => {
         const artistAlbumCounts = await Song.aggregate([{ $group: {_id: {artist:'$artist', album: '$album'}, count: {$sum: 1}}}]);
 
 
-        
+        res.json({
+            totalSongs,
+            artists: artists.length,
+            albums: albums.length,
+            genres: genres.length,
+            genreCounts,
+            artistAlbumCounts
+        });
     }
 }
