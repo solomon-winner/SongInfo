@@ -1,5 +1,4 @@
 import express from 'express'
-import {song} from "../model/song.js"
 import { saveSong, getAll, getOne, updateSong, deleteSong } from '../controller/songControl.js';
 
 const router = express.Router();

@@ -1,3 +1,5 @@
+import Song from "../model/song.js"
+
 export const saveSong = async (req,res) => {
 try {
     if (!req.body.tittle,
@@ -9,12 +11,14 @@ try {
                 message: 'Enter all requires fields!'
             })
         }
-        const Song = {
+        const NewSong = {
             tittle: req.body.tittle,
             artist: req.body.artist,
             album: req.body.album,
             genre: req.body.genre
         }
+
+        const Song = await Song.create(NewSong);
 } catch (error) {
 
 }
