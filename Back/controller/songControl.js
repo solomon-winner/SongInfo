@@ -32,8 +32,20 @@ export const getAll = async (req,res) => {
     }catch(error){
         console.error('Error: ', error);
         res.status(500).json({error: 'Internal server error'});
+
     }
 }
-export const getOne = (req,res) => {}
-export const updateSong = (req,res) => {}
+export const updateSong = async (req,res) => {
+    try {
+        const {id} = req.params;
+        const {tittle, artist, album, genre } = req.body;
+
+        const update = await Song.findByIdAndUpdate(id, {tittle, artist, album, genre}, {new: true});
+        res.json(update);
+        return res.status(200).send({message: 'Song Updated Successfully!'}) 
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send({error: "Internal Server Error"});
+    }
+}
 export const deleteSong = (req,res) => {}
