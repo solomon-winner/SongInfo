@@ -1,7 +1,8 @@
 import {PORT, mongoDBURL} from './connect.js'
+import cors from "cors";
+import SongRoutes from "./routes/SongRoute.js"
 const express = require('express');
 const mongoose = require('mongoose');
-const Song = require('./model/song');
 
 const app = express();
 
@@ -26,6 +27,7 @@ mongoose.connect(mongoDBURL, {
   console.error('Error connecting to MongoDB:', error);
 });
 
+app.use ("Back/Song",SongRoutes)
 app.listen(PORT, () => {
   console.log('I am Listening at ', PORT);
 })
