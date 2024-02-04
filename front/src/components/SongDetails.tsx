@@ -2,7 +2,9 @@ import React from 'react';
 
 const SongDetails:React.FC = () => {
     return(
-        <div className=""></div>
+        <div className="">
+        <h1>Song Details</h1>
+        </div>
     )
 }
 

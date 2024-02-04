@@ -10,10 +10,10 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path='/' element = {<SongList/>}/>
-        <Route path = '/details/id' element = {<SongDetails/>}/>
+        <Route path = '/details/:id' element = {<SongDetails/>}/>
         <Route path = '/add' element = {<AddForm/>}/>
         <Route path = '/update/:id' element = {<UpdateForm/>}/>
-        
+
       </Routes>
     </Router>
   );
