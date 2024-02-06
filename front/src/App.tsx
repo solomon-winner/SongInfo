@@ -4,12 +4,13 @@ import SongList from './components/SongList';
 import SongDetails from './components/SongDetails';
 import AddForm from './components/AddForm';
 import UpdateForm from './components/UpdateForm';
+import Home from './page/Home';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element = {<SongList/>}/>
+        <Route path='/' element = {<Home/>}/>
         <Route path='/list' element = {<SongList/>}/>
         <Route path = '/details/:id' element = {<SongDetails/>}/>
         <Route path = '/add' element = {<AddForm/>}/>
