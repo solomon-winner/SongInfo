@@ -35,3 +35,4 @@ const Style:React.FC <StyleProps>= ({children}) => {
         <div css = {styles.container}>{children}</div>
     )
 }
+export default Style;
