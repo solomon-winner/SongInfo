@@ -13,16 +13,16 @@ export const SongSlice = createSlice({
     name: 'songs',
     initialState,
     reducers: {
-        setSongs(state, action){
+        setSongs(state, action: PayloadAction<Song[]>){
             return action.payload;
         },
-        addSong(state, action) {
+        addSong(state, action: PayloadAction<Song>) {
             state.push(action.payload);
         },
-        updateSong(state, action) {
+        updateSong(state, action: PayloadAction<Song>) {
 
                 },
-        deleteSong(state, action) {
+        deleteSong(state, action: PayloadAction<Song>) {
 
         }
     }
