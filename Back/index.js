@@ -27,7 +27,7 @@ mongoose.connect(mongoDBURL, {
   console.error('Error connecting to MongoDB:', error);
 });
 
-app.use ("Back/Song",SongRoutes)
+app.use ("/Back/Song",SongRoutes)
 app.listen(PORT, () => {
   console.log('I am Listening at ', PORT);
 })
