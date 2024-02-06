@@ -6,7 +6,7 @@ interface stat {
         albums: 0,
         genres: 0,
 }
-const initialState: stat [] =[]
+const initialState: stat [] = []
 export const statSlice = createSlice({
     name: 'stat',
     initialState,

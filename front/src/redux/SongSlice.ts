@@ -24,7 +24,8 @@ export const SongSlice = createSlice({
                 },
         deleteSong(state, action: PayloadAction<Song>) {
 
-        }
+        },
+        
     }
 })
  export const {setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
