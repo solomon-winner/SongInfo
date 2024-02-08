@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import NavStyle from '../style/nav'
 const Nav:React.FC =() =>{
     return (
-        <div className="nav">
+        <NavStyle>
             <div className ="left">
     <Link to="/">logo</Link></div>
     <div className ="right">
@@ -11,7 +11,7 @@ const Nav:React.FC =() =>{
         <Link to="/list">Song</Link>
         <Link to="/stat">Sttistics</Link>
     </div>
-        </div>
+        </NavStyle>
         
     )
 }
