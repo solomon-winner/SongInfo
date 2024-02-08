@@ -1,6 +1,8 @@
-import {PORT, mongoDBURL} from './connect.js'
-import cors from "cors";
-import SongRoutes from "./routes/SongRoute.js"
+// import {PORT, mongoDBURL} from './connect.js'
+const {PORT, mongoDBURL}= require('./connect.js')
+// import cors from "cors";
+const cors = require('cors')
+const SongRoutes = require("./routes/SongRoute.js") 
 const express = require('express');
 const mongoose = require('mongoose');
 

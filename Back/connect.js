@@ -1,2 +1,2 @@
-export const PORT = 8081;
-export const mongoDBURL = ''
+ const PORT = 8081;
+ const mongoDBURL = ''

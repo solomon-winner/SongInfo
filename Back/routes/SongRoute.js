@@ -1,5 +1,5 @@
 import express from 'express'
-import { saveSong, getAll, getStat, updateSong, deleteSong } from '../controller/songControl.js';
+import { saveSong, getAll, getStat, updateSong, deleteSong } from '../controller/songControl';
 
 const router = express.Router();
 
