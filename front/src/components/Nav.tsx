@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavLinks, NavLink, Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Footer } from '../style/nav';
+import { Nav, NavLinks, NavLink} from '../style/nav';
 
 const App = () => {
     return (

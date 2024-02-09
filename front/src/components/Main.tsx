@@ -1,5 +1,5 @@
 import React from 'react'
-import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper} from "../style/nav"
+import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper} from "../style/Main"
 const MainSect:React.FC = () => {
     return(
         <>
