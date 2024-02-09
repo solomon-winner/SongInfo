@@ -5,7 +5,7 @@ const App = () => {
     return (
         <>
             <Nav>
-                <div className="left"><a href="#">Begena</a></div>
+                <div className="left"><NavLink href="#">Begena</NavLink></div>
                 <NavLinks>
                     <NavLink href="#">Home</NavLink>
                     <NavLink href="#">Song</NavLink>
