@@ -26,5 +26,6 @@ export const NavLink = styled.a`
     font-size: medium;
     font-weight: bold;
 `;
-
-
+export const Left = styled.div `
+margin-left:50px;
+` 

@@ -12,7 +12,7 @@ export const Upper = styled.div`
     height: 90vh;
     border-radius: 0 0 60% 0;
     overflow: hidden;
-    background: url('../assets/cello.jpg')
+    background: url('../assets/cello.jpg');
 `;
 
 export const Moto = styled.div`
