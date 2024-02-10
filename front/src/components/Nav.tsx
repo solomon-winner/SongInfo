@@ -29,12 +29,12 @@ const NavBar:React.FC = () => {
     return (
         <>
             <Nav scrolled = {scrolled}>
-                <Left><NavLink href="#">Begena</NavLink></Left>
+                <Left><NavLink to = '/'>Begena</NavLink></Left>
                 <NavLinks>
-                    <Link to = '/'>Home</Link>
-                    <NavLink href="#">Song</NavLink>
-                    <NavLink href="#">Statistics</NavLink>
-                    <NavLink href="#">o</NavLink>
+                    <NavLink to = '/'>Home</NavLink>
+                    <NavLink to = '/list'>Song</NavLink>
+                    <NavLink to = '/stat'>Statistics</NavLink>
+                    <NavLink to = '/about'>about</NavLink>
                 </NavLinks>
             </Nav>
 

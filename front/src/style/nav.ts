@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 interface Props {
     scrolled: boolean;
 }
@@ -23,7 +23,7 @@ export const NavLinks = styled.div`
     justify-content: space-around;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
     text-decoration: none;
     color: rgb(255, 115, 0);
     font-size: medium;
