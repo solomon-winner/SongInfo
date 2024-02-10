@@ -5,10 +5,11 @@ import SongDetails from './components/SongDetails';
 import AddForm from './components/AddForm';
 import UpdateForm from './components/UpdateForm';
 import Home from './page/Home';
-import {Container} from './style/App'
+ import {Global} from './style/App'
 const App: React.FC = () => {
   return (
-    <Container>
+    <>
+    <Global/>
       <Router>
       <Routes>
         <Route path='/' element = {<Home/>}/>
@@ -19,7 +20,9 @@ const App: React.FC = () => {
 
       </Routes>
     </Router>
-    </Container>
+    </>
+    // 
+  
     
   );
 }
