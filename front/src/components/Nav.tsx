@@ -1,7 +1,9 @@
 import React from 'react';
 import { Nav, NavLinks, NavLink, Left} from '../style/nav';
+import { useSelector } from 'react-redux';
 
-const App = () => {
+const NavBar:React.FC = () => {
+    const scrolled = useSelector((state) => state.Display.navbar)
     return (
         <>
             <Nav>
@@ -18,4 +20,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default NavBar;

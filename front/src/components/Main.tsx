@@ -2,6 +2,7 @@ import React from 'react'
 import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Strong} from "../style/Main"
 import FooterSect from "../components/Footer";
 const MainSect:React.FC = () => {
+
     return(
         <>
         
