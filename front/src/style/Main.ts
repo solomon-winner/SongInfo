@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled';
 
 export const Main = styled.div`
     background: black;
@@ -11,8 +11,9 @@ export const Upper = styled.div`
     width: 100%;
     height: 90vh;
     border-radius: 0 0 60% 0;
+    border-bottom: 1px solid rgb(255,115,0);
     overflow: hidden;
-    background: url('../assets/cello.jpg');
+    background: url('./assets/cello.jpg');
 `;
 
 export const Moto = styled.div`
@@ -26,7 +27,8 @@ export const Moto = styled.div`
     flex-direction: column;
     gap: 5px;
 `;
-
+export const Strong = styled.strong`
+    color: rgb(255,115,0);`
 export const Button = styled.button`
     background-color: rgb(255, 115, 0);
     width: 150px;

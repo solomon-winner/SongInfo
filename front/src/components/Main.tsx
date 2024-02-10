@@ -1,13 +1,14 @@
 import React from 'react'
-import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper} from "../style/Main"
+import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Strong} from "../style/Main"
+import FooterSect from "../components/Footer";
 const MainSect:React.FC = () => {
     return(
         <>
         
-        <Main>
-        <Upper>
+        <Main >
+        <Upper >
             <Moto>
-                <h1>Feel <strong>Every Beat</strong></h1>
+                <h1>Feel <Strong>Every Beat</Strong></h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, facere ut possimus voluptas eum eos distinctio optio nulla velit debitis quasi doloremque nihil odio error! Quis recusandae eius deleniti at!</p>
                 <Button>Get Started</Button>
             </Moto>
@@ -31,6 +32,8 @@ const MainSect:React.FC = () => {
                 </Text>
             </Wrapper>
         </Lower>
+            <FooterSect/>
+
     </Main>
     </>
     )
