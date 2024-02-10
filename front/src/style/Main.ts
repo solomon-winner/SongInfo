@@ -11,9 +11,10 @@ export const Upper = styled.div`
     width: 100%;
     height: 90vh;
     border-radius: 0 0 60% 0;
-    border-bottom: 1px solid rgb(255,115,0);
+    border-bottom: 25px solid rgb(255,115,0);
     overflow: hidden;
     background: url('./assets/cello.jpg');
+    background-size: cover;
 `;
 
 export const Moto = styled.div`
@@ -67,6 +68,7 @@ export const Text = styled.div`
 `;
 
 export const Wrapper = styled.div`
+    margin-top: 50px;
     width: 70%;
     display: flex;
     justify-content: space-around;
