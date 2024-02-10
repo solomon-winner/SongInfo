@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Nav = styled.div`
+interface props {
+    scrolled: boolean;
+}
+export const Nav = styled.div<props>`
     padding: 18px 0;
     position: fixed;
     width: 100%;
@@ -10,6 +13,7 @@ export const Nav = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: ${props => props.scrolled ? 'black': 'transparent'};
 `;
 
 export const NavLinks = styled.div`
