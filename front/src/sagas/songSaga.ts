@@ -1,5 +1,5 @@
 import { takeLatest, call, put, take } from "redux-saga/effects";
-import {setSongs, addSong, updateSong, deleteSong} from "../redux/SongSlice";
+import {setSongs, addSong, updateSong, deleteSong} from "../Store/SongSlice";
 // import {} from '../Back/index.js
 
 // wather for fetching the song list
