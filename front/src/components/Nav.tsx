@@ -3,7 +3,6 @@ import { Nav, NavLinks, NavLink, Left} from '../style/nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/store';
 import { setDisplay } from '../Store/DisplaySlice';
-import { Link } from 'react-router-dom';
 
 const NavBar:React.FC = () => {
     
