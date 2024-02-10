@@ -3,6 +3,8 @@ import { Nav, NavLinks, NavLink, Left} from '../style/nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/store';
 import { setDisplay } from '../Store/DisplaySlice';
+import { Link } from 'react-router-dom';
+
 const NavBar:React.FC = () => {
     
     const dispather = useDispatch();
@@ -11,6 +13,8 @@ const NavBar:React.FC = () => {
     const scroll = () => {
         if (window.scrollY > 0) {
             dispather(setDisplay(true))
+            console.log(scrolled);
+
         } else {
             dispather(setDisplay(false))
         }
@@ -27,7 +31,7 @@ const NavBar:React.FC = () => {
             <Nav scrolled = {scrolled}>
                 <Left><NavLink href="#">Begena</NavLink></Left>
                 <NavLinks>
-                    <NavLink href="#">Home</NavLink>
+                    <Link to = '/'>Home</Link>
                     <NavLink href="#">Song</NavLink>
                     <NavLink href="#">Statistics</NavLink>
                     <NavLink href="#">o</NavLink>

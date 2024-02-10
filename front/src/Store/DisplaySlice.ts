@@ -12,7 +12,7 @@ const initialState: Display = {
     initialState,
     reducers: {
         setDisplay(state,action: PayloadAction<boolean>) {
-
+            state.navbar = action.payload;
         }
     }
 })

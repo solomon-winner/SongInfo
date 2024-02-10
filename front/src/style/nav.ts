@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-interface props {
+interface Props {
     scrolled: boolean;
 }
-export const Nav = styled.div<props>`
+export const Nav = styled.div<Props>`
     padding: 18px 0;
     position: fixed;
     width: 100%;
@@ -29,6 +29,7 @@ export const NavLink = styled.a`
     font-size: medium;
     font-weight: bold;
 `;
+
 export const Left = styled.div `
 margin-left:50px;
 ` 
