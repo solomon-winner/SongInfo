@@ -5,6 +5,7 @@ import { DisplayType } from '../Store/store';
 
 const NavBar:React.FC = () => {
     const scrolled = useSelector((state: DisplayType) => state.display.navbar)
+    console.log(scrolled);
     return (
         <>
             <Nav>
