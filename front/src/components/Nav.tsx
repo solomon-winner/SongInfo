@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, NavLinks, NavLink, Left} from '../style/nav';
 import { useDispatch, useSelector } from 'react-redux';
-import { DisplayType } from '../Store/store';
+import { DisplayType } from '../Store/Types';
 import { setDisplay } from '../Store/DisplaySlice';
 
 const NavBar:React.FC = () => {
