@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
-    background: url(./assets/mixer-1284507_1280.jpg) no-repeat;
+    background: url(../assets/mixer-1284507_1280.jpg) no-repeat;
     background-size: cover;
     position: fixed; 
     overflow: hidden; 
