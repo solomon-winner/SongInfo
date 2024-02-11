@@ -34,6 +34,10 @@ overflow-y: auto;
 min-height: 680px;
 border: 1px solid rgb(255, 115, 0);
 
+>:last-child {
+    align-self: flex-end;
+}
+
 `
 export const Search = styled.div`
 display: flex;
