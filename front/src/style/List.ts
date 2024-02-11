@@ -31,12 +31,6 @@ top: 8px;
 left:0;
 background-color: transparent;
 overflow-y: auto;
-min-height: 680px;
-border: 1px solid rgb(255, 115, 0);
-
->:last-child {
-    align-self: flex-end;
-}
 
 `
 export const Search = styled.div`
@@ -104,6 +98,7 @@ export const Rest = styled.div`
     gap: 5%;
     flex-wrap: wrap;
     background-color: transparent;
+    min-height: 443px;
 
 `
 export const Song = styled.div`
