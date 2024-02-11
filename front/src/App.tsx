@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import SongList from './components/SongList';
+import SongList from './page/SongList';
 import SongDetails from './components/SongDetails';
 import AddForm from './components/AddForm';
 import UpdateForm from './components/UpdateForm';
