@@ -32,9 +32,19 @@ export const SongDetail = styled.div`
     z-index: 100;  
 `
 export const Row = styled.div`
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 5px solid rgb(255, 115, 0);
+    height: 8vh;
 `
-export const Label = styled.span``
+export const Label = styled.span`
+    width: fit-content;
+    border-bottom: 1px solid rgb(255, 115, 0);
+    font-size: 25px;
+    color: white;
+`
 export const Value = styled.span``
 export const Buttons = styled.div``
 export const Button = styled.button``
