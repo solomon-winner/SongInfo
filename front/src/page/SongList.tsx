@@ -3,11 +3,15 @@ import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
 import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName, Form, Input, Button, Add, Container} from '../style/List';
 import FooterSect from '../components/Footer';
+import SongDetails from '../components/SongDetails';
 const  SongList: React.FC = () => {
 return (
     <>
     <Nav/>
-    <Wrapper/>
+    <Wrapper>
+    </Wrapper>
+    <SongDetails/>        
+
     <Main>
            <Container><StatDisplay/><Add> Add Song</Add> </Container> 
             <Search>

@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
     background-size: cover;
     position: fixed; 
     overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:after {
         content: '';
         width: 100%;
@@ -25,7 +28,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin-top: 80px;
-z-index: 900;
+z-index: 100;
 position: absolute;
 top: 8px;
 left:0;

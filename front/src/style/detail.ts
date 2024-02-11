@@ -10,8 +10,11 @@ export const Detail = styled.div`
     display:flex;
     flex-direction: column;
     gap: 5%;
+    z-index:9000;
     border: 3px solid rgb(255, 115, 0);
-    position: relative;
+    position: absolute;
+    top: 30%;
+    left: 30%;
     &:after {
         content: '';
         background: rgba(0, 0, 0, 0.692);
