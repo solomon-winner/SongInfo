@@ -41,8 +41,30 @@ width: 100%;
 height: 12vh;
 z-index: 900;
 `
-export const form  = styled.form``
-export const Input =styled.input``
-export const Button = styled.button``
+export const form  = styled.form`
+    display: flex;
+    width: 50%;
+`
+export const Input =styled.input`
+    width: calc(100% - 100px);
+    height: 7vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 7px 0 0 7px;
+    color: white;
+`
+export const Button = styled.button`
+width: 100px;
+background: rgb(255, 115, 0);
+color: white;
+font-family: Georgia;
+font-weight: bold;
+border: none;
+cursor: pointer;
+border-radius: 0 7px 7px 0;
+&:hover {
+    background-color: black;
+}
+`
 export const Rest = styled.div``
 export const Song = styled.div``
