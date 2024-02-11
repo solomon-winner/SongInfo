@@ -1,7 +1,11 @@
 import React from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
-import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName, Form, Input, Button, Add, Container} from '../style/List';
+import { Wrapper, 
+    Main, Search, Rest, 
+    Song, Img, Desc, Title, 
+    ArtistName, Form, Input, 
+    Button, Add, Container} from '../style/List';
 import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +14,7 @@ import { showDetail } from '../Store/DisplaySlice';
 
 const  SongList: React.FC = () => {
 
-const popUp = useSelector((state: DisplayType) => state.display.Detail)
+const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const dispatch = useDispatch();
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -21,7 +25,7 @@ return (
     <>
     <Nav/>
     <Wrapper/>
-   {popUp && <SongDetails/> }       
+   {ShwDetail && <SongDetails/> }       
 
     <Main>
            <Container><StatDisplay/><Add> Add Song</Add> </Container> 
