@@ -17,8 +17,9 @@ const MainSect:React.FC = () => {
         </Upper>
 
         <Lower>
+                <StatDisplay/>    
             <Wrapper>
-                <StatDisplay/>
+
                 <Text>
                     <Title>Song Information</Title>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates et dicta voluptas, voluptatum quibusdam, non odit laborum veritatis odio beatae obcaecati nihil asperiores, exercitationem officia vitae velit dolorum! Delectus, debitis!</p>

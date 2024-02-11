@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stat, Info, Number, Para } from '../style/Stat';
 const StatDisplay: React.FC = () => {
+    
     return (
         <Stat className="stat">
         <Info><Number>0 </Number><Para>Albums</Para></Info>

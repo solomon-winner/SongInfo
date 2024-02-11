@@ -49,6 +49,8 @@ export const Title = styled.div`
 
 export const Lower = styled.div`
     display: flex;
+    margin-top: 50px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: black;
