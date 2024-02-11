@@ -22,7 +22,7 @@ const SongDetails:React.FC = () => {
             <Another>Songs By This Artist</Another>
             <Delete>Delete</Delete>
         </Buttons>
-        <Cross></Cross>
+        <Cross><img src="../assets/xmark-solid.svg" alt="" /></Cross>
        </Detail>
        </>
     )
