@@ -85,5 +85,12 @@ padding: 0;
 background-color: black;
 box-shadow: 2px 2px 4px 2px rgba(255, 115, 0, 0.63);
   
- 
+`
+
+export const Img = styled.img`
+width: 100%;
+height: 25vh;
+object-fit: cover;
+overflow: hidden;
+box-sizing: border-box;
 `
