@@ -1,5 +1,6 @@
 import React from 'react'
-import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Strong} from "../style/Main"
+import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Strong} from "../style/Main";
+import StatDisplay from './StatDisplay';
 import FooterSect from "../components/Footer";
 const MainSect:React.FC = () => {
 
@@ -17,6 +18,7 @@ const MainSect:React.FC = () => {
 
         <Lower>
             <Wrapper>
+                <StatDisplay/>
                 <Text>
                     <Title>Song Information</Title>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates et dicta voluptas, voluptatum quibusdam, non odit laborum veritatis odio beatae obcaecati nihil asperiores, exercitationem officia vitae velit dolorum! Delectus, debitis!</p>
