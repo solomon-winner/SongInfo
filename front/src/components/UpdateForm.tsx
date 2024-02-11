@@ -1,14 +1,14 @@
 import React from 'react'
 import { AddSong, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
 import { useDispatch } from 'react-redux';
-import { showAdd } from '../Store/DisplaySlice';
+import { showUpdate } from '../Store/DisplaySlice';
 import { Edit } from '../style/detail';
 
 const UpdateForm:React.FC = () => {
 const dispatch = useDispatch()
-const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
-    dispatch(showAdd(false))
+    dispatch(showUpdate(false))
 }
   
     return (
@@ -26,7 +26,7 @@ const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
                     </Buttons>
                 
             </Form>
-            <Cross onClick={DontShowAdd}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
+            <Cross onClick={DontShowUpdate}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
         </AddSong>
         </>
     )

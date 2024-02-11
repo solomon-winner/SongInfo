@@ -2,13 +2,18 @@ import React from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { showDetail } from '../Store/DisplaySlice';
+import { showDetail, showUpdate } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showDetail(false))
+}
+
+const ShowUpdate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    dispatch(showUpdate(true))
 }
     return(
        <>
@@ -27,7 +32,7 @@ const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         <Value>Aster Abebe</Value>
         </Row>
         <Buttons>
-            <Edit>Edit</Edit>
+            <Edit onClick={ShowUpdate}>Edit</Edit>
             <Another>Songs By This Artist</Another>
             <Delete>Delete</Delete>
         </Buttons>
