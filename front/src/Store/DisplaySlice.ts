@@ -26,18 +26,33 @@ const initialState: Display = {
         },
         showDetail(state,action:PayloadAction<boolean>) {
             state.Detail = action.payload
+            state.Another = false;
+            state.Update = false;
+            state.Add = false;
         },
         showUpdate(state,action:PayloadAction<boolean>) {
-
+            state.Update = action.payload
+            state.Another = false;
+            state.Detail = false;
+            state.Add = false;
         },
         showAdd(state,action:PayloadAction<boolean>) {
-
+            state.Add = action.payload
+            state.Another = false;
+            state.Detail = false;
+            state.Update = false;
         },
         showDelete(state,action:PayloadAction<boolean>) {
-
+            state.Delete = action.payload
+            state.Another = false;
+            state.Add = false;
+            state.Update= false;
         },
         showAnother(state,action:PayloadAction<boolean>) {
-
+            state.Another = action.payload
+            state.Update = false;
+            state.Detail = false;
+            state.Add = false;
         }
     }
 })
