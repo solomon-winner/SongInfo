@@ -5,18 +5,17 @@ const AddForm:React.FC = () => {
     return (
         <>
         <AddSong>
-            <Title> Add New Song</Title>
+        <Title> Add New Song</Title>
             <Form>
-                <Row>
-                    <Label>Artist: </Label> <Input/>
-                    <Label>Album: </Label> <Input/>
-                    <Label>Genre: </Label> <Input/>
-                    <Label>Title: </Label> <Input/>
+                    <Row><Label>Artist: </Label> <Input/></Row>    
+                     <Row> <Label>Album: </Label> <Input/></Row>
+                    <Row><Label>Genre: </Label> <Input/></Row>
+                    <Row><Label>Title: </Label> <Input/></Row>
 
                     <Buttons>
                         <Button>Add To The List</Button>
                     </Buttons>
-                </Row>
+                
             </Form>
         </AddSong>
         </>

@@ -35,6 +35,9 @@ margin-left: 50px;
 z-index: 100;
 `
 export const Form = styled.form`
+width: 100%;
+display:flex;
+    flex-direction: column;
     z-index: 1000;
 `
 export const Row =styled.div`

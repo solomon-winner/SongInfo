@@ -11,6 +11,7 @@ import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
 import { showDetail } from '../Store/DisplaySlice';
+import AddForm from '../components/AddForm';
 
 const  SongList: React.FC = () => {
 
@@ -26,7 +27,7 @@ return (
     <Nav/>
     <Wrapper/>
    {ShwDetail && <SongDetails/> }       
-
+   <AddForm/>
     <Main>
            <Container><StatDisplay/><Add> Add Song</Add> </Container> 
             <Search>
