@@ -41,7 +41,7 @@ width: 100%;
 height: 12vh;
 z-index: 900;
 `
-export const form  = styled.form`
+export const Form  = styled.form`
     display: flex;
     width: 50%;
 `

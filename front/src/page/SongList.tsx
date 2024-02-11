@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
-import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName} from '../style/List';
+import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName, Form, Input, Button} from '../style/List';
 const  SongList: React.FC = () => {
 return (
     <>
@@ -9,7 +9,14 @@ return (
     <Wrapper/>
     <Main>
             <StatDisplay/>
-            <Search/>
+            <Search>
+                <Form>
+                    <Input/>
+                    <Button>
+                        Search
+                    </Button>
+                </Form>
+            </Search>
             <Rest>
                 <Song>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
