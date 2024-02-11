@@ -13,7 +13,7 @@ import { DisplayType } from '../Store/Types';
 import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
-
+import DeleteConfirm from '../components/DeleteConfirm'
 const  SongList: React.FC = () => {
 
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
@@ -38,6 +38,7 @@ return (
    {ShwDetail && <SongDetails/> }       
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
+   <DeleteConfirm/>
     <Main>
            <Container><StatDisplay/><Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search>

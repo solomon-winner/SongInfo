@@ -14,3 +14,5 @@ const DeleteConfirm:React.FC = () => {
         </>
     )
 }
+
+export default DeleteConfirm;
