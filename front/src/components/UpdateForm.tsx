@@ -2,7 +2,7 @@ import React from 'react'
 import { AddSong, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
 import { useDispatch } from 'react-redux';
 import { showUpdate } from '../Store/DisplaySlice';
-import { Edit } from '../style/detail';
+import { Edit } from '../style/Update';
 
 const UpdateForm:React.FC = () => {
 const dispatch = useDispatch()
