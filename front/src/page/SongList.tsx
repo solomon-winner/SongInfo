@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
-import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName, Form, Input, Button, Add} from '../style/List';
+import { Wrapper, Main, Search, Rest, Song, Img, Desc, Title, ArtistName, Form, Input, Button, Add, Container} from '../style/List';
 import FooterSect from '../components/Footer';
 const  SongList: React.FC = () => {
 return (
@@ -9,10 +9,10 @@ return (
     <Nav/>
     <Wrapper/>
     <Main>
-            <StatDisplay/>
+           <Container><StatDisplay/><Add> Add Song</Add> </Container> 
             <Search>
-                <Add>+</Add>
                 <Form>
+                
                     <Input/>
                     <Button>
                         Search
@@ -28,8 +28,9 @@ return (
                     </Desc>
                 </Song>
             </Rest>
-            <FooterSect/>
         </Main>
+              <FooterSect/>
+
     </>
 )
 }

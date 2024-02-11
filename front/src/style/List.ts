@@ -41,15 +41,27 @@ width: 100%;
 height: 12vh;
 z-index: 900;
 `
-export const Add = styled.button`
-    display: flex;
-    align-items: center;
+export const Container = styled.div`
+display: flex;
+align-items: baseline;
+`
+export const Add = styled.div`
+width: 100px;
+color: rgb(255, 115, 0);
+font-family: Georgia;
+font-weight: bold;
+font-size: 20px;
+border: none;
+display: flex;
+justify-content: center;
+cursor: pointer;
+margin: 20px;
+height: fit-content;
+&:hover {
     color: white;
-    justify-content: center;
-    font-size: large;
-    font-family: 'Franklin Gothic';
-    font-weight: bold;
-    padding-left: 50px;
+    border: 1px solid rgb(255,115,0);
+}
+
 `
 export const Form  = styled.form`
     display: flex;
@@ -60,7 +72,6 @@ export const Input =styled.input`
     height: 7vh;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(255, 115, 0);
-    border-radius: 7px 0 0 7px;
     color: white;
     &:focus {
         outline:none;
