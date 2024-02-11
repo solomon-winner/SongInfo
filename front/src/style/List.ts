@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const wrapper = styled.div`
+export const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
     background: url(./assets/mixer-1284507_1280.jpg) no-repeat;
@@ -32,7 +32,15 @@ left:0;
 background-color: transparent;
 overflow-y: auto;
 `
-export const Search = styled.div``
+export const Search = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 12px;
+width: 100%;
+height: 12vh;
+z-index: 900;
+`
 export const form  = styled.form``
 export const Input =styled.input``
 export const Button = styled.button``
