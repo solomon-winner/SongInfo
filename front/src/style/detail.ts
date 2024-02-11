@@ -45,7 +45,67 @@ export const Label = styled.span`
     font-size: 25px;
     color: white;
 `
-export const Value = styled.span``
-export const Buttons = styled.div``
-export const Button = styled.button``
-export const Cross = styled.div``
+export const Value = styled.span`
+    width: 70%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+`
+export const Buttons = styled.div`
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    gap: 10px;
+`
+export const Edit = styled.button`
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Georgia;
+    width: 60px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+`
+export const Another = styled.button`
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Georgia;
+    background: rgb(255, 115, 0);
+    padding: 5px;
+    color: white;
+`
+export const Delete = styled.button`
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Georgia;
+    width: 60px;
+    padding: 5px;
+    background-color: red;
+    color: white;
+`
+export const Cross = styled.div`
+    padding: 5px;
+    background-color: black;
+    color:aliceblue;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 89%;
+    border: 1px solid red;
+`
