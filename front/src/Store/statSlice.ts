@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface stat {
-        Songs: number,
+        songs: number,
         artists: number,
         albums: number,
         genres: number,
 }
 const initialState: stat = {
-        Songs: 23,
+        songs: 23,
         artists: 45,
         albums: 55,
         genres: 12,
