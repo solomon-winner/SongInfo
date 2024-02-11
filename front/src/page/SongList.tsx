@@ -11,7 +11,6 @@ import { setPopUp } from '../Store/DisplaySlice';
 const  SongList: React.FC = () => {
 
 const popUp = useSelector((state: DisplayType) => state.display.popUp)
-console.log("this is the popUp state: " + popUp);
 const dispatch = useDispatch();
 
 const showDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

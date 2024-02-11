@@ -123,6 +123,7 @@ export const Cross = styled.div`
     top: 0;
     left: 89%;
     border: 1px solid red;
+    cursor: pointer;
     &:hover {
         background: rgb(160, 80, 80);
     }
