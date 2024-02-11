@@ -14,7 +14,7 @@ export const Detail = styled.div`
     border: 3px solid rgb(255, 115, 0);
     position: absolute;
     top: 30%;
-    left: 30%;
+    left: 40%;
     &:after {
         content: '';
         background: rgba(0, 0, 0, 0.692);
@@ -72,6 +72,10 @@ export const Edit = styled.button`
     padding: 5px;
     background-color: green;
     color: white;
+    &:hover {
+        background: black;
+        color: green;
+    }
 `
 export const Another = styled.button`
     border: none;
@@ -83,6 +87,10 @@ export const Another = styled.button`
     background: rgb(255, 115, 0);
     padding: 5px;
     color: white;
+    &:hover {
+        background: black;
+        color: rgb(255, 115, 0);
+    }
 `
 export const Delete = styled.button`
     border: none;
@@ -95,6 +103,10 @@ export const Delete = styled.button`
     padding: 5px;
     background-color: red;
     color: white;
+    &:hover {
+        background: black;
+        color: red;
+    }
 `
 export const Cross = styled.div`
     padding: 5px;
@@ -111,4 +123,7 @@ export const Cross = styled.div`
     top: 0;
     left: 89%;
     border: 1px solid red;
+    &:hover {
+        background: rgb(160, 80, 80);
+    }
 `

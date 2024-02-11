@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, NavLinks, NavLink, Left} from '../style/nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { setDisplay } from '../Store/DisplaySlice';
+import { setScrolled } from '../Store/DisplaySlice';
 
 const NavBar:React.FC = () => {
     
@@ -11,11 +11,11 @@ const NavBar:React.FC = () => {
     console.log(scrolled);
     const scroll = () => {
         if (window.scrollY > 0) {
-            dispather(setDisplay(true))
+            dispather(setScrolled(true))
             console.log(scrolled);
 
         } else {
-            dispather(setDisplay(false))
+            dispather(setScrolled(false))
         }
     }
 

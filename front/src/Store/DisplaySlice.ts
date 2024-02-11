@@ -2,21 +2,26 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface Display {
     navbar: boolean;
+    popUp: boolean;
 }
 const initialState: Display = {
-    navbar: false
+    navbar: false,
+    popUp: false,
 };
 
  const DisplaySlice = createSlice ({
     name: 'display',
     initialState,
     reducers: {
-        setDisplay(state,action: PayloadAction<boolean>) {
+        setScrolled(state,action: PayloadAction<boolean>) {
             state.navbar = action.payload;
+        },
+        setPopUp(state,action:PayloadAction<boolean>) {
+            
         }
     }
 })
 
-export const {setDisplay} = DisplaySlice.actions;
+export const {setScrolled} = DisplaySlice.actions;
 
 export default DisplaySlice;
