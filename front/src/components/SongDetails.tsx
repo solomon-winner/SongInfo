@@ -2,7 +2,7 @@ import React from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { showDetail, showUpdate } from '../Store/DisplaySlice';
+import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
@@ -14,6 +14,11 @@ const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 const ShowUpdate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showUpdate(true))
+}
+
+const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
+    e.preventDefault();
+    dispatch(showDelete(true))
 }
     return(
        <>
@@ -34,7 +39,7 @@ const ShowUpdate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         <Buttons>
             <Edit onClick={ShowUpdate}>Edit</Edit>
             <Another>Songs By This Artist</Another>
-            <Delete>Delete</Delete>
+            <Delete onClick={ShowDelete}>Delete</Delete>
         </Buttons>
         <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
        </Detail>

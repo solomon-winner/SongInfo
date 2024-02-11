@@ -5,7 +5,7 @@ export const Delete = styled.div`
     background-size: cover;
     color: rgb(255, 115, 0);
     width: 30%;
-    min-height: 50vh;
+    min-height: 13vh;
     display:flex;
     flex-direction: column;
     gap: 5%;
@@ -27,7 +27,7 @@ export const Delete = styled.div`
 `
 
 export const Question = styled.div`
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Franklin';
     font-weight: bold;
     color: white;
@@ -35,7 +35,8 @@ export const Question = styled.div`
     z-index: 100; 
 `
 export const Buttons = styled.div`
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
