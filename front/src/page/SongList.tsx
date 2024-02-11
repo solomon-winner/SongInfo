@@ -12,10 +12,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
 import { showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
+import UpdateForm from '../components/UpdateForm';
 
 const  SongList: React.FC = () => {
 
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
+const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
+const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
+const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
+
 const dispatch = useDispatch();
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -27,7 +32,8 @@ return (
     <Nav/>
     <Wrapper/>
    {ShwDetail && <SongDetails/> }       
-   <AddForm/>
+   {ShwAdd && <AddForm/>}
+   {ShwUpdate && <UpdateForm/>}
     <Main>
            <Container><StatDisplay/><Add> Add Song</Add> </Container> 
             <Search>

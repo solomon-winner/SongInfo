@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
 import { showDetail } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
-    const popUp = useSelector((state: DisplayType) => state.display.Detail)
 const dispatch = useDispatch()
 
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
