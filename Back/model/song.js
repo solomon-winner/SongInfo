@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-// Define the schema for the Song model
 const songSchema = new mongoose.Schema({
     title: {
         type: String,

@@ -1,5 +1,5 @@
-import express from 'express'
-import { saveSong, getAll, getStat, updateSong, deleteSong } from '../controller/songControl';
+import express from 'express';
+import { saveSong, getAll, getStat, updateSong, deleteSong } from '../controller/songControl.js';
 
 const router = express.Router();
 
@@ -9,4 +9,4 @@ router.put("/:id",updateSong);
 router.delete("/:id",deleteSong);
 router.get("/",getStat);
 
-export default router;
+export default router

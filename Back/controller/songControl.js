@@ -1,4 +1,4 @@
-import Song from "../model/song.js"
+import {Song} from "../model/song.js"
 
 export const saveSong = async (req,res) => {
 try {
