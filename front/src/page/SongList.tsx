@@ -19,7 +19,7 @@ const  SongList: React.FC = () => {
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
-//const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
+const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 
 const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ return (
    {ShwDetail && <SongDetails/> }       
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
-   <DeleteConfirm/>
+   {ShwDelete && <DeleteConfirm/>}
     <Main>
            <Container><StatDisplay/><Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search>
