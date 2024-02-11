@@ -32,7 +32,6 @@ const NavBar:React.FC = () => {
                 <NavLinks>
                     <NavLink to = '/'>Home</NavLink>
                     <NavLink to = '/list'>Song</NavLink>
-                    <NavLink to = '/stat'>Statistics</NavLink>
                     <NavLink to = '/about'>about</NavLink>
                 </NavLinks>
             </Nav>
