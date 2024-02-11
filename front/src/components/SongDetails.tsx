@@ -1,6 +1,17 @@
 import React from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
+import { useDispatch, useSelector } from 'react-redux';
+import { DisplayType } from '../Store/Types';
+import { setPopUp } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
+    const popUp = useSelector((state: DisplayType) => state.display.popUp)
+console.log("this is the popUp state: " + popUp);
+const dispatch = useDispatch()
+
+const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    dispatch(setPopUp(false))
+}
     return(
        <>
        <Detail>
@@ -22,7 +33,7 @@ const SongDetails:React.FC = () => {
             <Another>Songs By This Artist</Another>
             <Delete>Delete</Delete>
         </Buttons>
-        <Cross><img src="../assets/xmark-solid.svg" alt="" /></Cross>
+        <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
        </Detail>
        </>
     )
