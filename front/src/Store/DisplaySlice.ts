@@ -17,11 +17,11 @@ const initialState: Display = {
             state.navbar = action.payload;
         },
         setPopUp(state,action:PayloadAction<boolean>) {
-            
+            state.popUp = action.payload
         }
     }
 })
 
-export const {setScrolled} = DisplaySlice.actions;
+export const {setScrolled, setPopUp} = DisplaySlice.actions;
 
 export default DisplaySlice;

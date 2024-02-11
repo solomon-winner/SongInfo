@@ -7,9 +7,6 @@ import { statSlice } from "./statSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
-export interface DisplayType {
-    display: ReturnType<typeof DisplaySlice.reducer>
-} 
 const store = configureStore({
     reducer: {
         songs: SongSlice.reducer,
