@@ -1,14 +1,14 @@
 import React from 'react';
-
+import { Stat, Info, Number, Para } from '../style/Stat';
 const StatDisplay: React.FC = () => {
     return (
-        <div className="stat">
-        <span><span>0 </span><p>Albums</p></span>
-        <span><span>0</span><p>Artists</p></span>
-        <span><span>0</span><p>Songs</p></span>
-        <span><span>0</span><p>Genres</p></span>
+        <Stat className="stat">
+        <Info><Number>0 </Number><Para>Albums</Para></Info>
+        <Info><Number>0</Number><Para>Artists</Para></Info>
+        <Info><Number>0</Number><Para>Songs</Para></Info>
+        <Info><Number>0</Number><Para>Genres</Para></Info>
 
-    </div>
+    </Stat>
     )
 }
 
