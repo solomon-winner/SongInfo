@@ -41,6 +41,16 @@ width: 100%;
 height: 12vh;
 z-index: 900;
 `
+export const Add = styled.button`
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: large;
+    font-family: 'Franklin Gothic';
+    font-weight: bold;
+    padding-left: 50px;
+`
 export const Form  = styled.form`
     display: flex;
     width: 50%;
@@ -52,6 +62,10 @@ export const Input =styled.input`
     border: 1px solid rgb(255, 115, 0);
     border-radius: 7px 0 0 7px;
     color: white;
+    &:focus {
+        outline:none;
+        border: none;
+    }
 `
 export const Button = styled.button`
 width: 100px;
@@ -83,7 +97,7 @@ background-size: cover;
 cursor: pointer;
 padding: 0;
 background-color: black;
-box-shadow: 2px 2px 4px 2px rgba(255, 115, 0, 0.63);
+box-shadow: 2px 2px 4px 2px rgba(255, 115, 0, 0.3);
   
 `
 
@@ -99,6 +113,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 background-color: black;
+align-items: center;
 `
 export const ArtistName = styled.span`
 color:rgb(255, 115, 0);
@@ -106,6 +121,8 @@ width: 100%;
 font-size: large;
 font-family: 'Franklin Gothic';
 font-weight: bold;
+padding-left: 50px;
+
 `
 export const Title = styled.span`
 color:rgb(255, 115, 0);
@@ -114,4 +131,6 @@ width: 100%;
 font-size: large;
 font-family: 'Franklin Gothic';
 font-weight: bold;
+padding-left: 50px;
+
 `
