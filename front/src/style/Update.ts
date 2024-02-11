@@ -9,6 +9,7 @@ import styled from "@emotion/styled";
  padding: 5px;
  background-color: green;
  color: white;
+ cursor:pointer;
  &:hover {
      background: black;
      color: green;

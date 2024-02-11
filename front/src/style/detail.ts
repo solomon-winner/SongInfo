@@ -72,6 +72,7 @@ export const Edit = styled.button`
     padding: 5px;
     background-color: green;
     color: white;
+    cursor:pointer;
     &:hover {
         background: black;
         color: green;
@@ -87,6 +88,7 @@ export const Another = styled.button`
     background: rgb(255, 115, 0);
     padding: 5px;
     color: white;
+    cursor:pointer;
     &:hover {
         background: black;
         color: rgb(255, 115, 0);
@@ -103,6 +105,7 @@ export const Delete = styled.button`
     padding: 5px;
     background-color: red;
     color: white;
+    cursor:pointer;
     &:hover {
         background: black;
         color: red;
