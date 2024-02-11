@@ -5,4 +5,6 @@ export const Footer = styled.div`
     color: white;
     display: flex;
     justify-content: center;
+    align-self: end;
+    justify-self: end;
 `;

@@ -31,6 +31,9 @@ top: 8px;
 left:0;
 background-color: transparent;
 overflow-y: auto;
+min-height: 680px;
+border: 1px solid rgb(255, 115, 0);
+
 `
 export const Search = styled.div`
 display: flex;
@@ -59,7 +62,6 @@ margin: 20px;
 height: fit-content;
 &:hover {
     color: white;
-    border: 1px solid rgb(255,115,0);
 }
 
 `
