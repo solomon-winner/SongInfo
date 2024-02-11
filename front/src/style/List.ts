@@ -94,3 +94,24 @@ object-fit: cover;
 overflow: hidden;
 box-sizing: border-box;
 `
+export const Desc = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+background-color: black;
+`
+export const ArtistName = styled.span`
+color:rgb(255, 115, 0);
+width: 100%;
+font-size: large;
+font-family: 'Franklin Gothic';
+font-weight: bold;
+`
+export const Title = styled.span`
+color:rgb(255, 115, 0);
+border-bottom: 2px solid rgb(255, 115, 0);
+width: 100%;
+font-size: large;
+font-family: 'Franklin Gothic';
+font-weight: bold;
+`
