@@ -49,7 +49,7 @@ export const Input =styled.input`
     width: calc(100% - 100px);
     height: 7vh;
     background-color: rgba(0, 0, 0, 0.7);
-    border: none;
+    border: 1px solid rgb(255, 115, 0);
     border-radius: 7px 0 0 7px;
     color: white;
 `
@@ -66,5 +66,24 @@ border-radius: 0 7px 7px 0;
     background-color: black;
 }
 `
-export const Rest = styled.div``
-export const Song = styled.div``
+export const Rest = styled.div`
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    gap: 5%;
+    flex-wrap: wrap;
+    background-color: transparent;
+
+`
+export const Song = styled.div`
+width: 20rem;
+height: 34vh;
+margin: 10px;
+background-size: cover;
+cursor: pointer;
+padding: 0;
+background-color: black;
+box-shadow: 2px 2px 4px 2px rgba(255, 115, 0, 0.63);
+  
+ 
+`
