@@ -10,7 +10,7 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { showDetail } from '../Store/DisplaySlice';
+import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 
@@ -19,13 +19,17 @@ const  SongList: React.FC = () => {
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
-const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
+//const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 
 const dispatch = useDispatch();
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showDetail(true))
+}
+const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    dispatch(showAdd(true))
 }
 return (
     <>
@@ -35,7 +39,7 @@ return (
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
     <Main>
-           <Container><StatDisplay/><Add> Add Song</Add> </Container> 
+           <Container><StatDisplay/><Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search>
                 <Form>
                 
