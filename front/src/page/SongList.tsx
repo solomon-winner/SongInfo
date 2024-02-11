@@ -6,16 +6,16 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { setPopUp } from '../Store/DisplaySlice';
+import { showDetail } from '../Store/DisplaySlice';
 
 const  SongList: React.FC = () => {
 
-const popUp = useSelector((state: DisplayType) => state.display.popUp)
+const popUp = useSelector((state: DisplayType) => state.display.Detail)
 const dispatch = useDispatch();
 
-const showDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
-    dispatch(setPopUp(true))
+    dispatch(showDetail(true))
 }
 return (
     <>
@@ -35,7 +35,7 @@ return (
                 </Form>
             </Search>
             <Rest>
-                <Song onClick={showDetail}>
+                <Song onClick={ShowDetail}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>Kedmom Kibir</Title>

@@ -2,14 +2,14 @@ import React from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType } from '../Store/Types';
-import { setPopUp } from '../Store/DisplaySlice';
+import { showDetail } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
-    const popUp = useSelector((state: DisplayType) => state.display.popUp)
+    const popUp = useSelector((state: DisplayType) => state.display.Detail)
 const dispatch = useDispatch()
 
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
-    dispatch(setPopUp(false))
+    dispatch(showDetail(false))
 }
     return(
        <>

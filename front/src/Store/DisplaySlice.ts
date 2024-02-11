@@ -2,11 +2,19 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface Display {
     navbar: boolean;
-    popUp: boolean;
+    Detail: boolean;
+    Update: boolean;
+    Add: boolean;
+    Delete: boolean;
+    Another: boolean
 }
 const initialState: Display = {
     navbar: false,
-    popUp: false,
+    Detail: false,
+    Update: false,
+    Add: false,
+    Delete: false,
+    Another: false
 };
 
  const DisplaySlice = createSlice ({
@@ -16,12 +24,24 @@ const initialState: Display = {
         setScrolled(state,action: PayloadAction<boolean>) {
             state.navbar = action.payload;
         },
-        setPopUp(state,action:PayloadAction<boolean>) {
-            state.popUp = action.payload
+        showDetail(state,action:PayloadAction<boolean>) {
+            state.Detail = action.payload
+        },
+        showUpdate(state,action:PayloadAction<boolean>) {
+
+        },
+        showAdd(state,action:PayloadAction<boolean>) {
+
+        },
+        showDelete(state,action:PayloadAction<boolean>) {
+
+        },
+        showAnother(state,action:PayloadAction<boolean>) {
+
         }
     }
 })
 
-export const {setScrolled, setPopUp} = DisplaySlice.actions;
+export const {setScrolled, showDetail} = DisplaySlice.actions;
 
 export default DisplaySlice;
