@@ -1,8 +1,11 @@
 import React from 'react'
+import Nav  from '../components/Nav';
 const  SongList: React.FC = () => {
 return (
-    <div className="">
-    </div>
+    <>
+    <Nav/>
+    
+    </>
 )
 }
 export default SongList;
