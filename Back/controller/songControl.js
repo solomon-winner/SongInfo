@@ -8,7 +8,7 @@ try {
         !req.body.genre)
         {
             return res.status(400).send({
-                message: 'Enter all required fields!'
+                message: 'Enter all required fields!...'
             })
         }
         const NewSong = {
@@ -18,11 +18,11 @@ try {
             genre: req.body.genre
         }
 
-        const Song = await Song.create(NewSong);
-        return res.status(201).send(Song);
+        const song = await Song.create(NewSong);
+        return res.status(201).send(song);
 } catch (error) {
     console.log(error.message);
-    req.status(500).send({message: error.message})
+    res.status(500).send({message: error.message})
 }
 }
 export const getAll = async (req,res) => {
@@ -42,7 +42,6 @@ export const updateSong = async (req,res) => {
 
         const update = await Song.findByIdAndUpdate(id, {tittle, artist, album, genre}, {new: true});
         res.json(update);
-        return res.status(200).send({message: 'Song Updated Successfully!'}) 
     } catch (error) {
         console.log(error.message);
         res.status(500).send({error: "Internal Server Error"});
@@ -50,6 +49,7 @@ export const updateSong = async (req,res) => {
 }
 export const deleteSong = async (req,res) => {
     try {
+        
         const {id} = req.params;
         await Song.findByIdAndDelete(id);
         res.json({message: 'Song deleted Successfully'});
