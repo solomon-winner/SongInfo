@@ -6,10 +6,20 @@ interface Data {
     tittle: string,
     artist: string,
     album: string;
-
+    genre: string;
+}
+interface ErrorResponse {
+    message: string;
 }
 const handleError = (error: AxiosError, defaultMessage: string ) : void => {
-
+if(axios.isAxiosError(error)) {
+    const axiosError = error as AxiosError;
+    const errorMessage = (axiosError.response?.data as ErrorResponse)?.message || defaultMessage;
+    throw new Error(errorMessage);
+}
+else {
+    throw new Error(defaultMessage);
+}
 }
 export const Fetch = async(): Promise<Data[]> => {
     try {
