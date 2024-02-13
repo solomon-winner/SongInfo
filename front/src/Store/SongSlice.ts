@@ -13,7 +13,6 @@ const initialState: Song[] = [];
     initialState,
     reducers: {
         setSongs(state, action: PayloadAction<Song[]>){
-            state =action.payload;
             console.log("the saga works successfully  "+state);
             return action.payload;
         },
