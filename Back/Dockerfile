@@ -1,6 +1,6 @@
 FROM node:21.1.0
 
-WORKDIR /usr/src/app
+WORKDIR ./index
 
 COPY package*.json ./
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8800
+EXPOSE 8080
 
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
