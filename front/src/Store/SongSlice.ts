@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import { Fetch } from "../sagas/axios";
  export interface Song {
     tittle: string;
     artist: string;
@@ -16,6 +15,7 @@ const initialState: Song[] = [];
         setSongs(state, action: PayloadAction<Song[]>){
             state =action.payload;
             console.log("the saga works successfully  "+state);
+            return action.payload;
         },
         addSong(state, action: PayloadAction<Song>) {
             state.push(action.payload);

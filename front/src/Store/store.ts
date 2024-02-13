@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from 'redux-saga'
-import  SongSlice, { setSongs }  from "./SongSlice";
+import  SongSlice  from "./SongSlice";
 import rootSaga from '../sagas/rootSaga';
 import  DisplaySlice from "./DisplaySlice";
 import { statSlice } from "./statSlice";
-import { useEffect } from "react";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,9 +17,7 @@ const store = configureStore({
 });
 sagaMiddleware.run(rootSaga);
 
-useEffect(() => {
-    store.dispatch(setSongs([]))
-})
+
 
 // useEffect(() =>{
 //     dispatch(setSongs([]))

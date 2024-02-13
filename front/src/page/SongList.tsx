@@ -17,7 +17,9 @@ import DeleteConfirm from '../components/DeleteConfirm'
 import { setSongs } from '../Store/SongSlice';
 const  SongList: React.FC = () => {
     const dispatch = useDispatch();
-
+useEffect(()=>{
+    dispatch(setSongs([]))
+},[dispatch]);
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
