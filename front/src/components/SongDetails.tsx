@@ -1,7 +1,6 @@
 import React from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
-import { useDispatch, useSelector } from 'react-redux';
-import { DisplayType } from '../Store/Types';
+import { useDispatch } from 'react-redux';
 import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
