@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-interface Song {
+ export interface Song {
     tittle: string;
     artist: string;
     album: string;
@@ -9,7 +9,7 @@ interface Song {
 
 const initialState: Song[] = [];
 
-export const SongSlice = createSlice({
+ const SongSlice = createSlice({
     name: 'songs',
     initialState,
     reducers: {
@@ -29,3 +29,5 @@ export const SongSlice = createSlice({
     }
 })
  export const {setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
+
+ export default SongSlice;

@@ -1,13 +1,9 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
+import { FetchType } from "../Store/Types";
 
 const BaseURL = "http://localhost:8080"
 
-interface Data {
-    tittle: string,
-    artist: string,
-    album: string;
-    genre: string;
-}
+
 interface ErrorResponse {
     message: string;
 }
@@ -23,24 +19,24 @@ else {
 }
 export const Fetch = async()=> {
     try {
-        const response: AxiosResponse<Data> = await axios.get(`${BaseURL}/Back/Song`);
+        const response: AxiosResponse<FetchType> = await axios.get(`${BaseURL}/Back/Song`);
         return response.data;
     } catch (error) {
         handleError(error, 'Failed to Fetch Songs')
     }
 }
 
-export const Add = async(song:Data) => {
+export const Add = async(song:FetchType) => {
     try {
-        const reponse: AxiosResponse<Data> =await axios.post(`${BaseURL}/Back/Song`,song)
+        const reponse: AxiosResponse<FetchType> =await axios.post(`${BaseURL}/Back/Song`,song)
         return reponse.data;
     } catch (error) {
         handleError(error, 'Failed to add Song')
     }
 }
-export const Update = async(id: string,updatedSong: Data) => {
+export const Update = async(id: string,updatedSong: FetchType) => {
     try {
-        const response: AxiosResponse <Data> = await axios.put(`${BaseURL}/Back/Song/${id}`,updatedSong)
+        const response: AxiosResponse <FetchType> = await axios.put(`${BaseURL}/Back/Song/${id}`,updatedSong)
         return response.data
     } catch (error) {
         handleError(error, 'Failed to Update the Song')

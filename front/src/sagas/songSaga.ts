@@ -1,15 +1,15 @@
 import { takeLatest, call, put, take } from "redux-saga/effects";
 import {setSongs, addSong, updateSong, deleteSong} from "../Store/SongSlice";
 import * as Request from './axios';
+import { Song } from "../Store/SongSlice";
 
-
-// wather for fetching the song list
+// watcher for fetching the song list
 function* fetchSongs() {
     try {
-        const songs = yield call(Request.Fetch)
-        yield put(setSongs());
+        const songs: Song[] = yield call(Request.Fetch)
+        yield put(setSongs(songs));
     } catch (error) {
-       yield put(setError(error.message));
+        console.log(error)
     }
 }
 
@@ -17,7 +17,7 @@ export function* watchFetch() {
     yield takeLatest(setSongs.type, fetchSongs);
 }
 
-//wather for adding the song 
+//watcher for adding the song 
 
 function* AddSong() {
 
