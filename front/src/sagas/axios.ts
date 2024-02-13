@@ -46,8 +46,11 @@ export const Update = async(id: string,updatedSong: Data) => {
         handleError(error, 'Failed to Update the Song')
     }
 }
-export const Delete = async() => {
-    try {} catch (error) {}
+export const Delete = async(id: string) => {
+    try {
+const response = await axios.delete(`${BaseURL}/Back/Song/${id}`)
+return response.data;
+    } catch (error) {}
 }
 export const Stat = async() => {
     try {} catch (error) {}
