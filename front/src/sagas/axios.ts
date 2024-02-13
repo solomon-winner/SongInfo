@@ -19,7 +19,7 @@ else {
 }
 export const Fetch = async()=> {
     try {
-        const response: AxiosResponse<FetchType> = await axios.get(`${BaseURL}/Back/Song`);
+        const response: AxiosResponse<FetchType[]> = await axios.get(`${BaseURL}/Back/Song`);
         return response.data;
     } catch (error) {
         handleError(error, 'Failed to Fetch Songs')
