@@ -26,14 +26,25 @@ export const Fetch = async()=> {
         const response = await axios.get(`${BaseURL}/Back/Song`);
         return response.data;
     } catch (error) {
-        handleError(error, 'failed to Fetch Songs')
+        handleError(error, 'Failed to Fetch Songs')
     }
 }
-export const Add = async() => {
-    try {} catch (error) {}
+
+export const Add = async(song:Data) => {
+    try {
+        const reponse =await axios.post(`${BaseURL}/Back/Song`,song)
+        return reponse.data;
+    } catch (error) {
+        handleError(error, 'Failed to add Song')
+    }
 }
-export const Update = async() => {
-    try {} catch (error) {}
+export const Update = async(id: string,updatedSong: Data) => {
+    try {
+        const response = await axios.put(`${BaseURL}/Back/Song/${id}`,updatedSong)
+        return response.data
+    } catch (error) {
+        handleError(error, 'Failed to Update the Song')
+    }
 }
 export const Delete = async() => {
     try {} catch (error) {}
