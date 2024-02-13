@@ -14,12 +14,13 @@ import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
-import { setSongs } from '../Store/SongSlice';
+import { setSongs, Song as SongType} from '../Store/SongSlice';
 const  SongList: React.FC = () => {
-    
+
     const dispatch = useDispatch();
 useEffect(()=>{
-    dispatch(setSongs([]))
+    const initialSongs: SongType[] = [];
+    dispatch(setSongs(initialSongs))
 },[dispatch]);
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
