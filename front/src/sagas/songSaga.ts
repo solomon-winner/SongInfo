@@ -1,14 +1,15 @@
 import { takeLatest, call, put, take } from "redux-saga/effects";
 import {setSongs, addSong, updateSong, deleteSong} from "../Store/SongSlice";
-// import {} from '../Back/index.js
+import * as Request from './axios';
+
 
 // wather for fetching the song list
 function* fetchSongs() {
     try {
-        //const songs = yield call()
-        //yield put(setSongs());
+        const songs = yield call(Request.Fetch)
+        yield put(setSongs());
     } catch (error) {
-       // yield put(setError(error.message));
+       yield put(setError(error.message));
     }
 }
 
