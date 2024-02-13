@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 const BaseURL = "http://localhost:8080"
 
@@ -23,7 +23,7 @@ else {
 }
 export const Fetch = async()=> {
     try {
-        const response = await axios.get(`${BaseURL}/Back/Song`);
+        const response: AxiosResponse<Data> = await axios.get(`${BaseURL}/Back/Song`);
         return response.data;
     } catch (error) {
         handleError(error, 'Failed to Fetch Songs')
@@ -32,7 +32,7 @@ export const Fetch = async()=> {
 
 export const Add = async(song:Data) => {
     try {
-        const reponse =await axios.post(`${BaseURL}/Back/Song`,song)
+        const reponse: AxiosResponse<Data> =await axios.post(`${BaseURL}/Back/Song`,song)
         return reponse.data;
     } catch (error) {
         handleError(error, 'Failed to add Song')
@@ -40,7 +40,7 @@ export const Add = async(song:Data) => {
 }
 export const Update = async(id: string,updatedSong: Data) => {
     try {
-        const response = await axios.put(`${BaseURL}/Back/Song/${id}`,updatedSong)
+        const response: AxiosResponse <Data> = await axios.put(`${BaseURL}/Back/Song/${id}`,updatedSong)
         return response.data
     } catch (error) {
         handleError(error, 'Failed to Update the Song')
@@ -48,10 +48,16 @@ export const Update = async(id: string,updatedSong: Data) => {
 }
 export const Delete = async(id: string) => {
     try {
-const response = await axios.delete(`${BaseURL}/Back/Song/${id}`)
-return response.data;
-    } catch (error) {}
+     await axios.delete(`${BaseURL}/Back/Song/${id}`)
+    } catch (error) {
+        handleError(error, 'Failed to Delete The Song');
+    }
 }
 export const Stat = async() => {
-    try {} catch (error) {}
+    try {
+        const response = await axios.get(`${BaseURL}/Back/Song/`)
+        return response.data;
+    } catch (error) {
+        handleError(error, 'Failed to fetch the Statistics')
+    }
 }
