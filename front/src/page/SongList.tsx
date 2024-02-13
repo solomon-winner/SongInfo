@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
 import { Wrapper, 
@@ -17,7 +17,7 @@ import DeleteConfirm from '../components/DeleteConfirm'
 import { setSongs } from '../Store/SongSlice';
 const  SongList: React.FC = () => {
     const dispatch = useDispatch();
-    dispatch(setSongs([]))
+
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
