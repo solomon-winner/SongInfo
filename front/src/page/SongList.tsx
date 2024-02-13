@@ -14,8 +14,10 @@ import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
+import { setSongs } from '../Store/SongSlice';
 const  SongList: React.FC = () => {
-
+    const dispatch = useDispatch();
+    dispatch(setSongs([]))
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
@@ -23,7 +25,6 @@ const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
 const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 
-const dispatch = useDispatch();
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();

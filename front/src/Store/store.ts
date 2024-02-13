@@ -16,5 +16,5 @@ const store = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 });
 sagaMiddleware.run(rootSaga);
-store.dispatch(setSongs([]))
+
 export default store;

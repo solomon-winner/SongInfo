@@ -16,7 +16,6 @@ const initialState: Song[] = [];
         setSongs(state, action: PayloadAction<Song[]>){
             state =action.payload;
             console.log("the saga works successfully  "+state);
-            return action.payload;
         },
         addSong(state, action: PayloadAction<Song>) {
             state.push(action.payload);
