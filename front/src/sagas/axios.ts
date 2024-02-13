@@ -11,7 +11,7 @@ interface Data {
 interface ErrorResponse {
     message: string;
 }
-const handleError = (error: AxiosError, defaultMessage: string ) : void => {
+const handleError = (error: any, defaultMessage: string ) : void => {
 if(axios.isAxiosError(error)) {
     const axiosError = error as AxiosError;
     const errorMessage = (axiosError.response?.data as ErrorResponse)?.message || defaultMessage;
@@ -21,12 +21,12 @@ else {
     throw new Error(defaultMessage);
 }
 }
-export const Fetch = async(): Promise<Data[]> => {
+export const Fetch = async()=> {
     try {
         const response = await axios.get(`${BaseURL}/Back/Song`);
         return response.data;
     } catch (error) {
-        // throw new Error(error.response.data.message)
+        handleError(error, 'failed to Fetch Songs')
     }
 }
 export const Add = async() => {
