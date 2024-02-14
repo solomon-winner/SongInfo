@@ -4,19 +4,19 @@ import * as Request from './axios';
 import { Song } from "../Store/SongSlice";
 
 // watcher for fetching the song list
-function* fetchSongs() {
-    try {
-        const songs: Song[] = yield call(Request.Fetch)
-        console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> "+songs)
-        yield put(setSongs(songs));
-    } catch (error) {
-        console.log(error)
-    }
-}
+// function* fetchSongs() {
+//     try {
+//         const songs: Song []= yield call(Request.Fetch)
+//         console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> "+songs)
+//         yield put(setSongs(songs));
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
-export function* watchFetch() {
-    yield takeLatest(setSongs.type, fetchSongs);
-}
+// export function* watchFetch() {
+//     yield takeLatest(setSongs.type, fetchSongs);
+// }
 
 //watcher for adding the song 
 

@@ -1,5 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { FetchType } from "../Store/Types";
+import { Song } from "../Store/SongSlice";
 
 const BaseURL = "http://localhost:8080"
 
@@ -19,8 +20,8 @@ else {
 }
 export const Fetch = async()=> {
     try {
-        const response: AxiosResponse<FetchType[]> = await axios.get(`${BaseURL}/Back/Song`);
-        console.log("this is the test from axios ... <-=-=-=-=-=-=-=> "+response)
+        const response: AxiosResponse<Song[]> = await axios.get(`${BaseURL}/Back/Song`);
+        console.log("this is the test from axios ... <-=-=-=-=-=-=-=> "+response.data)
 
         return response.data;
     } catch (error) {

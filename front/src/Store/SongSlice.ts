@@ -14,7 +14,7 @@ const initialState: Song[] = [];
     initialState,
     reducers: {
         setSongs(state, action: PayloadAction<Song[]>){
-            console.log("the saga works successfully  "+state);
+            console.log("the saga works successfully  "+action.payload);
             return action.payload;
         },
         addSong(state, action: PayloadAction<Song>) {
