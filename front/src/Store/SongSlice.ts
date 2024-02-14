@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
- 
+import axios from "axios" 
+import { BaseURL } from "../sagas/axios";
 export interface Song {
     tittle: string;
     artist: string;
@@ -29,6 +30,8 @@ const initialState: Song[] = [];
         
     }
 })
+
+
  export const {setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
 
  export default SongSlice;

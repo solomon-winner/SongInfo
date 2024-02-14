@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { FetchType } from "../Store/Types";
 import { Song } from "../Store/SongSlice";
 
-const BaseURL = "http://localhost:8080"
+export const BaseURL = "http://localhost:8080"
 
 
 interface ErrorResponse {
