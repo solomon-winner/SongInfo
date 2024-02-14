@@ -8,8 +8,8 @@ function* fetchSongs() {
     try {       
         const fetchedData = [] 
         const songs: Song = yield call(Request.Fetch)
+        //  console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> " + typeof(songs))
         fetchedData.push(songs)
-        console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> ")
         yield put(setSongs(fetchedData));
     } catch (error) {
         console.log(error)
