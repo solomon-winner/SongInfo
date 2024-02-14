@@ -1,25 +1,36 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {ObjectId} from 'mongodb'
+import { Init } from "v8";
 export interface Song {
-    _id: string;
+    _id:  ObjectId;
     tittle: string;
     artist: string;
     album: string;
     genre: string;
 }
-
-const initialState: Song[] = [];
+interface InitialState {
+    songs:Song[];
+     loading: boolean;
+     error: string;
+     success: boolean;
+}
+const initialState: InitialState = {
+    songs:[],
+     loading: false,
+     error: "",
+     success: false
+};
 
  const SongSlice = createSlice({
     name: 'songs',
     initialState,
     reducers: {
         setSongs(state, action: PayloadAction<Song[]>){
-            console.log("the saga works successfully  "+action.payload);
-            return action.payload;
+            state.songs = action.payload;
         },
         addSong(state, action: PayloadAction<Song>) {
-            state.push(action.payload);
+
         },
         updateSong(state, action: PayloadAction<Song>) {
 

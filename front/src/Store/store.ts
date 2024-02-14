@@ -19,5 +19,8 @@ sagaMiddleware.run(rootSaga);
 
 
 
+// useEffect(() =>{
+//     dispatch(setSongs([]))
+// },[dispatch])
 
 export default store;

@@ -15,13 +15,11 @@ import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
 import { setSongs, Song as SongType} from '../Store/SongSlice';
+import { Fetch } from '../sagas/axios';
 const  SongList: React.FC = () => {
 
     const dispatch = useDispatch();
- useEffect(()=>{
-    dispatch(setSongs([]))
-},[dispatch]);
-
+    Fetch();
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);

@@ -1,5 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { FetchType } from "../Store/Types";
+import { useDispatch } from "react-redux";
+import { setSongs } from "../Store/SongSlice";
 // import { Song } from "../Store/SongSlice";
 
 export const BaseURL = "http://localhost:8080"
@@ -18,11 +20,13 @@ else {
     throw new Error(defaultMessage);
 }
 }
-export const Fetch = async()=> {
+export const Fetch = async() => {
+            const dispatch = useDispatch()
+
     try {
         const response = await axios.get(`${BaseURL}/Back/Song`);
-        console.log("this is the test from axios ... <-=-=-=-=-=-=-=> "+response.data)
-
+        console.log("this is the test from axios ... <-=-=-=-=-=-=-=> "+ response.data)
+        dispatch(setSongs(response.data));
         return response.data;
     } catch (error) {
         handleError(error, 'Failed to Fetch Songs')

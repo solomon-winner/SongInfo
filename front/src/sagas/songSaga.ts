@@ -5,12 +5,10 @@ import { Song } from "../Store/SongSlice";
 
 // watcher for fetching the song list
 function* fetchSongs() {
-    try {       
-        const fetchedData = [] 
+    try {
         const songs: Song = yield call(Request.Fetch)
-        //  console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> " + typeof(songs))
-        fetchedData.push(songs)
-        yield put(setSongs(fetchedData));
+        console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> "+JSON.stringify(songs))
+        yield put(setSongs([songs]));
     } catch (error) {
         console.log(error)
     }
