@@ -19,8 +19,7 @@ const  SongList: React.FC = () => {
 
     const dispatch = useDispatch();
 useEffect(()=>{
-    const initialSongs: SongType[] = [];
-    dispatch(setSongs(initialSongs))
+    dispatch(setSongs([]))
 },[dispatch]);
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
