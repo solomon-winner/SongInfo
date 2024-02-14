@@ -18,9 +18,10 @@ import { setSongs, Song as SongType} from '../Store/SongSlice';
 const  SongList: React.FC = () => {
 
     const dispatch = useDispatch();
-useEffect(()=>{
+const test = useEffect(()=>{
     dispatch(setSongs([]))
 },[dispatch]);
+console.log("trying to test in the new way ????==> "+test)
 const List = useSelector((state:FetchType) => state.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);

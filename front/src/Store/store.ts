@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from 'redux-saga'
 import  SongSlice  from "./SongSlice";
 import rootSaga from '../sagas/rootSaga';
-import { watchFetch, watchAdd, watchDetail, watchUpdate,watchStat } from '../sagas/songSaga';
 import  DisplaySlice from "./DisplaySlice";
 import { statSlice } from "./statSlice";
 
@@ -16,17 +15,9 @@ const store = configureStore({
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 });
-sagaMiddleware.run(watchFetch);
-sagaMiddleware.run(watchAdd);
-sagaMiddleware.run(watchDetail);
-sagaMiddleware.run(watchUpdate);
-sagaMiddleware.run(watchStat);
+sagaMiddleware.run(rootSaga);
 
 
 
-
-// useEffect(() =>{
-//     dispatch(setSongs([]))
-// },[dispatch])
 
 export default store;

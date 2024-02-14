@@ -7,6 +7,7 @@ import { Song } from "../Store/SongSlice";
 function* fetchSongs() {
     try {
         const songs: Song[] = yield call(Request.Fetch)
+        console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> "+songs)
         yield put(setSongs(songs));
     } catch (error) {
         console.log(error)
