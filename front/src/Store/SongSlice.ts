@@ -1,7 +1,7 @@
+
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import axios from "axios" 
-import { BaseURL } from "../sagas/axios";
 export interface Song {
+    _id: string;
     tittle: string;
     artist: string;
     album: string;

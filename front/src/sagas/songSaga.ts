@@ -2,18 +2,28 @@ import { takeLatest, call, put, take } from "redux-saga/effects";
 import {setSongs, addSong, updateSong, deleteSong} from "../Store/SongSlice";
 import * as Request from './axios';
 import { Song } from "../Store/SongSlice";
-import { BaseURL } from "./axios";
-import axios from "axios";
-//watcher for fetching the song list
-function* fetchSongs(): Generator<any, void, any> {
-    try {
-        const songs = yield call(() => axios.get(`${BaseURL}/Back/Song`));
-        yield put(setSongs(songs));
+
+// watcher for fetching the song list
+function* fetchSongs() {
+    try {       
+        const fetchedData = [] 
+        const songs: Song = yield call(Request.Fetch)
+        fetchedData.push(songs)
+        console.log("this is the test from songSaga ... <-=-=-=-=-=-=-=> ")
+        yield put(setSongs(fetchedData));
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 
+// function* fetchSongs(): Generator<any, void, any> {
+//     try {
+//         const songs = yield call(() => axios.get(`${BaseURL}/Back/Song`));
+//         yield put(setSongs(songs));
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 export function* watchFetch() {
     yield takeLatest(setSongs.type, fetchSongs);
 }
