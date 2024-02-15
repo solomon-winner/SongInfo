@@ -14,6 +14,9 @@ const selectedSlice = createSlice({
     reducers: {
         setSelected (state, action: PayloadAction<Song>) {
 
+        },
+        removeSelected (state) {
+            
         }
     }
 })
