@@ -12,14 +12,26 @@ export interface Song {
 interface InitialState {
     songs:Song[];
      Fetch_loading: boolean;
+     Add_loading: boolean;
+     Add_Success:boolean;
+     Update_loading:boolean;
+     Update_Success:boolean;
+     Delete_loading:boolean;
+     Delete_Success:boolean;
      error: string;
-     success: boolean;
+     Fetch_Success: boolean;
 }
 const initialState: InitialState = {
     songs:[],
      Fetch_loading: false,
+     Add_loading: false,
+     Add_Success:false,
+     Update_loading:false,
+     Update_Success: false,
+     Delete_loading: false,
+     Delete_Success: false,
      error: "",
-     success: false
+     Fetch_Success: false
 };
 
  const SongSlice = createSlice({
@@ -32,7 +44,7 @@ const initialState: InitialState = {
         setSongs(state, action: PayloadAction<any>){
             state.songs = action.payload;
             state.Fetch_loading = false;
-            state.success = true;
+            state.Fetch_Success = true;
         },
         songFetchError: (state, action) => {
             state.error = action.payload
