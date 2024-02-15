@@ -18,13 +18,12 @@ import { songLoading} from '../Store/SongSlice';
 
 const  SongList: React.FC = () => {
 
-    const dispatch = useDispatch();
+const dispatch = useDispatch();
 useEffect(() => {
     dispatch(songLoading())
 },[dispatch])
 
 const List = useSelector((state:FetchType) => state.songs.songs)
-console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
@@ -73,5 +72,6 @@ return (
 
     </>
 )
+
 }
 export default SongList;
