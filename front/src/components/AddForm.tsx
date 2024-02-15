@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { showAdd } from '../Store/DisplaySlice';
 
 const AddForm:React.FC = () => {
+    const handleChange = () => {
+        
+    }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
