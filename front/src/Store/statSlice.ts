@@ -1,19 +1,29 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface stat {
-        songs: number,
-        artists: number,
-        albums: number,
-        genres: number,
+    totalSongs: number;
+    artists: number;
+    albums: number;
+    genres: number
 }
-interface Interface {
+interface InitialState {
     statisctics:stat;
     loading: boolean;
     error: boolean;
 }
-const initialState: Interface = {
+interface Genere {
+    _id: string;
+    count: number
+}
+interface ArtistAlbum {
+    _id: string;
+    artist: string;
+    album: string;
+    count: number;
+}
+const initialState: InitialState = {
     statisctics: {
-        songs: 0,
+        totalSongs: 0,
         artists: 0,
         albums: 0,
         genres: 0,
@@ -26,7 +36,7 @@ export const statSlice = createSlice({
     initialState,
     reducers : {
         statLoading(state) {
-
+            state.loading = true
         },
         setStat (state, action: PayloadAction<Partial<stat>>) {
             return {...state, ...action.payload};
