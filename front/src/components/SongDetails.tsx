@@ -10,7 +10,7 @@ const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
 const {_id} = useParams<{_id:string}>()
-console.log(_id);
+console.log("this is id of useParams "+_id);
 const detail = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === _id));
 console.log(detail);
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
