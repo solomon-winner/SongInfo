@@ -28,7 +28,7 @@ const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
 const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
-const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
+const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();

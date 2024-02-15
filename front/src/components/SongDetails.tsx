@@ -5,7 +5,6 @@ import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { useParams } from 'react-router-dom';
 import { FetchType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
-
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
@@ -30,6 +29,7 @@ const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
        <>
        <Detail>
         <SongDetail> Song Detail</SongDetail>
+       {detail && <>
         <Row> <Label>Artist: </Label> 
         <Value>Aster Abebe</Value>
         </Row>
@@ -42,6 +42,8 @@ const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
         <Row> <Label>Title: </Label> 
         <Value>Aster Abebe</Value>
         </Row>
+        </>
+        }
         <Buttons>
             <Edit onClick={ShowUpdate}>Edit</Edit>
             <Another>Songs By This Artist</Another>
