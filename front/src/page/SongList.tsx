@@ -19,9 +19,6 @@ import { songLoading} from '../Store/SongSlice';
 const  SongList: React.FC = () => {
 
 const dispatch = useDispatch();
-useEffect(() => {
-    dispatch(songLoading())
-},[dispatch])
 
 const List = useSelector((state:FetchType) => state.songs.songs)
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
