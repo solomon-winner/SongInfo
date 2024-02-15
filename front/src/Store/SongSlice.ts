@@ -50,16 +50,18 @@ const initialState: InitialState = {
             state.error = action.payload
         },
         addLoading (state) {
-
+            state.Add_loading = true
         },
         addSong(state, action: PayloadAction<Song>) {
-
+            state.songs.push(action.payload);
+            state.Add_loading = false;
+            state.Add_Success = true;
         },
         addError(state,action) {
 
         },
         updateLoading (state,action) {
-
+            state.Update_loading = true
         },
         updateError (state,action) {
 
@@ -68,7 +70,7 @@ const initialState: InitialState = {
 
         },
         deleteLoading(state) {
-
+            state.Delete_loading = true
         },
         deleteSong(state, action: PayloadAction<Song>) {
 
@@ -81,6 +83,9 @@ const initialState: InitialState = {
 })
 
 
- export const {songLoading, songFetchError, setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
+ export const {songLoading, songFetchError, setSongs,
+                addLoading,addSong, addError,
+                updateLoading,updateSong, updateError,
+                deleteLoading, deleteSong , deleteError} = SongSlice.actions
 
  export default SongSlice;
