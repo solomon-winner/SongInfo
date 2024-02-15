@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { FetchType } from '../Store/Types';
 const MainSect:React.FC = () => {
 
-    const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
+    const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
     return(
         <>
         
