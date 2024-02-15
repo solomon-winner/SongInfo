@@ -2,8 +2,11 @@ import React from 'react'
 import { Main, Upper, Moto, Button, Lower, Text, Title, Wrapper, Strong} from "../style/Main";
 import StatDisplay from './StatDisplay';
 import FooterSect from "../components/Footer";
+import { useSelector } from 'react-redux';
+import { FetchType } from '../Store/Types';
 const MainSect:React.FC = () => {
 
+    const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
     return(
         <>
         
@@ -17,7 +20,7 @@ const MainSect:React.FC = () => {
         </Upper>
 
         <Lower>
-                <StatDisplay/>    
+                {FetchSuccess &&<StatDisplay/>}    
             <Wrapper>
 
                 <Text>

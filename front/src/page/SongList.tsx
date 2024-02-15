@@ -28,7 +28,7 @@ const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
 const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
 const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
-
+const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
 
 const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ return (
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
     <Main>
-           <Container><StatDisplay/><Add onClick={ShowAdd}> Add Song</Add> </Container> 
+           <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search>
                 <Form>
                 

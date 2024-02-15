@@ -20,8 +20,7 @@ const Genres = new Set (songs.map(song => song.genre)).size
 // const Songs =useSelector((state:StatType) => state.stat.statisctics.totalSongs);
     // const Genres =useSelector((state:StatType) => state.stat.statisctics.genres);
 
-    const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
-   FetchSuccess && useEffect(() => {
+    useEffect(() => {
         countUp(Albums, setAlbumsCount);
         countUp(Artists, setArtistsCount);
         countUp(totalSongs, setSongsCount);
