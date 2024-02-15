@@ -11,13 +11,13 @@ export interface Song {
 
 interface InitialState {
     songs:Song[];
-     loading: boolean;
+     Fetch_loading: boolean;
      error: string;
      success: boolean;
 }
 const initialState: InitialState = {
     songs:[],
-     loading: false,
+     Fetch_loading: false,
      error: "",
      success: false
 };
@@ -27,11 +27,11 @@ const initialState: InitialState = {
     initialState,
     reducers: {
         songLoading(state) {
-            state.loading = true;
+            state.Fetch_loading = true;
         },
         setSongs(state, action: PayloadAction<any>){
             state.songs = action.payload;
-            state.loading = false;
+            state.Fetch_loading = false;
             state.success = true;
         },
         songFetchError: (state, action) => {
