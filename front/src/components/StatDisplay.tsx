@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Stat, Info, Number, Para } from '../style/Stat';
-import { FetchType, StatType } from '../Store/Types';
+import { FetchType } from '../Store/Types';
 import { useSelector } from 'react-redux';
 const StatDisplay: React.FC = () => {
 
@@ -20,8 +20,8 @@ const Genres = new Set (songs.map(song => song.genre)).size
 // const Songs =useSelector((state:StatType) => state.stat.statisctics.totalSongs);
     // const Genres =useSelector((state:StatType) => state.stat.statisctics.genres);
 
-    const Songs = 
-    useEffect(() => {
+    const FetchSuccess = useSelector((state:FetchType) => state.songs.success)
+   FetchSuccess && useEffect(() => {
         countUp(Albums, setAlbumsCount);
         countUp(Artists, setArtistsCount);
         countUp(totalSongs, setSongsCount);

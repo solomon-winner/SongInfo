@@ -32,6 +32,7 @@ const initialState: InitialState = {
         setSongs(state, action: PayloadAction<any>){
             state.songs = action.payload;
             state.loading = false;
+            state.success = true;
         },
         songFetchError: (state, action) => {
             state.error = action.payload
