@@ -58,13 +58,13 @@ const initialState: InitialState = {
             state.Add_Success = true;
         },
         addError(state,action) {
-
+            state.error = action.payload
         },
         updateLoading (state,action) {
             state.Update_loading = true
         },
         updateError (state,action) {
-
+            state.error = action.payload
         },
         updateSong(state, action: PayloadAction<Song>) {
 
@@ -76,7 +76,7 @@ const initialState: InitialState = {
 
         },
         deleteError(state, action) {
-
+            state.error = action.payload
         }
         
     }
