@@ -1,4 +1,5 @@
 import DisplaySlice from "./DisplaySlice"
+import selectedSlice from "./SelectedSongSlice"
 import  SongSlice from "./SongSlice"
 import { statSlice } from "./statSlice"
 
@@ -10,4 +11,7 @@ export interface StatType {
 }
 export interface FetchType {
     songs: ReturnType<typeof SongSlice.reducer>
+}
+export interface SelectType {
+    selected: ReturnType<typeof selectedSlice.reducer>
 }

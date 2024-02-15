@@ -9,12 +9,12 @@ import { Wrapper,
 import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
-import { DisplayType , FetchType} from '../Store/Types';
+import { DisplayType , FetchType, SelectType} from '../Store/Types';
 import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
-import { songLoading} from '../Store/SongSlice';
+import { setSelected } from '../Store/SelectedSongSlice';
 
 const  SongList: React.FC = () => {
 
@@ -35,7 +35,12 @@ const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showAdd(true))
 }
+const SongClick = (id: string) => {
+    console.log( ".................")
+ dispatch(setSelected(id))
+ dispatch(showDetail(true))
 
+}
 return (
     <>
     <Nav/>
@@ -56,7 +61,7 @@ return (
                 </Form>
             </Search>
             <Rest>
-                {List.map(song => <Song key = {song._id} onClick={ShowDetail}>
+                {List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>{song.tittle}</Title>

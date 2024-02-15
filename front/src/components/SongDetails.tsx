@@ -3,16 +3,15 @@ import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, 
 import { useDispatch, useSelector } from 'react-redux';
 import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { useParams } from 'react-router-dom';
-import { FetchType } from '../Store/Types';
+import { FetchType, SelectType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
 
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
-const {_id} = useParams<{_id:string}>()
-console.log("this is id of useParams "+_id);
-const detail = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === _id));
-console.log(detail);
+//const detail = useSelector((state:SelectType) => state.selected)
+const ID = useSelector((state:SelectType) => state.selected._id)
+const detail = useSelector((state: FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showDetail(false))
