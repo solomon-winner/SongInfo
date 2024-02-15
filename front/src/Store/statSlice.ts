@@ -6,16 +6,28 @@ interface stat {
         albums: number,
         genres: number,
 }
-const initialState: stat = {
-        songs: 23,
-        artists: 45,
-        albums: 55,
-        genres: 12,
+interface Interface {
+    statisctics:stat;
+    loading: boolean;
+    error: boolean;
+}
+const initialState: Interface = {
+    statisctics: {
+        songs: 0,
+        artists: 0,
+        albums: 0,
+        genres: 0,
+    },
+    loading: false,
+    error: false
 }
 export const statSlice = createSlice({
     name: 'stat',
     initialState,
     reducers : {
+        statLoading(state) {
+
+        },
         setStat (state, action: PayloadAction<Partial<stat>>) {
             return {...state, ...action.payload};
         }

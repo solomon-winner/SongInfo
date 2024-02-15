@@ -10,10 +10,10 @@ const StatDisplay: React.FC = () => {
     const [genresCount, setGenresCount] = useState(0);
 
 
-    const Albums =useSelector((state:StatType) => state.stat.albums);
-    const Artists =useSelector((state:StatType) => state.stat.artists);
-    const Songs =useSelector((state:StatType) => state.stat.songs);
-    const Genres =useSelector((state:StatType) => state.stat.genres);
+    const Albums =useSelector((state:StatType) => state.stat.statisctics.albums);
+    const Artists =useSelector((state:StatType) => state.stat.statisctics.artists);
+    const Songs =useSelector((state:StatType) => state.stat.statisctics.songs);
+    const Genres =useSelector((state:StatType) => state.stat.statisctics.genres);
 
     useEffect(() => {
         countUp(Albums, setAlbumsCount);
