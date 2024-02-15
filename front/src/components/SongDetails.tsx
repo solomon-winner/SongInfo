@@ -5,6 +5,7 @@ import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { useParams } from 'react-router-dom';
 import { FetchType, SelectType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
+import { removeSelected } from '../Store/SelectedSongSlice';
 
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const detail = useSelector((state: FetchType) => state.songs.songs.find((song:So
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showDetail(false))
+    dispatch(removeSelected());
 }
 
 const ShowUpdate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

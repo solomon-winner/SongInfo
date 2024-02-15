@@ -19,7 +19,7 @@ const selectedSlice = createSlice({
             state._id = action.payload
         },
         removeSelected (state) {
-            
+            state._id = '';
         }
     }
 })
