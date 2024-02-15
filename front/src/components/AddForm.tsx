@@ -7,6 +7,10 @@ const AddForm:React.FC = () => {
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const Data = new FormData(e.target as HTMLFormElement);
+
+        const New = {
+            artist: Data.get('artist') as string,
+        }
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -19,10 +23,10 @@ const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         <AddSong>
         <Title> Add New Song</Title>
             <Form>
-                    <Row><Label>Artist: </Label><Input/></Row>    
-                    <Row><Label>Album: </Label><Input/></Row>
-                    <Row><Label>Genre: </Label><Input/></Row>
-                    <Row><Label>Title: </Label><Input/></Row>
+                    <Row><Label>Artist: </Label><Input name = "artist" required/></Row>    
+                    <Row><Label>Album: </Label><Input name = "album" required/></Row>
+                    <Row><Label>Genre: </Label><Input name = "genre" required/></Row>
+                    <Row><Label>Title: </Label><Input name = "title" required/></Row>
 
                     <Buttons>
                         <Button>Add To The List</Button>
