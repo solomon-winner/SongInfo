@@ -10,6 +10,9 @@ const AddForm:React.FC = () => {
 
         const New = {
             artist: Data.get('artist') as string,
+            album: Data.get('album') as string,
+            genre: Data.get('genre') as string,
+            tittle: Data.get('title') as string
         }
     }
 const dispatch = useDispatch()
