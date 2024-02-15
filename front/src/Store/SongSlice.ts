@@ -1,14 +1,14 @@
-
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ObjectId} from 'mongodb'
-import { Init } from "v8";
+
 export interface Song {
-    _id:  ObjectId;
+    _id:  string;
     tittle: string;
     artist: string;
     album: string;
     genre: string;
+
 }
+
 interface InitialState {
     songs:Song[];
      loading: boolean;
@@ -26,8 +26,15 @@ const initialState: InitialState = {
     name: 'songs',
     initialState,
     reducers: {
-        setSongs(state, action: PayloadAction<Song[]>){
+        songLoading(state) {
+            state.loading = true;
+        },
+        setSongs(state, action: PayloadAction<any>){
             state.songs = action.payload;
+            state.loading = false;
+        },
+        songFetchError: (state, action) => {
+            state.error = action.payload
         },
         addSong(state, action: PayloadAction<Song>) {
 
@@ -43,6 +50,6 @@ const initialState: InitialState = {
 })
 
 
- export const {setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
+ export const {songLoading, songFetchError, setSongs, addSong, updateSong, deleteSong} = SongSlice.actions
 
  export default SongSlice;

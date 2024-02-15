@@ -21,12 +21,10 @@ else {
 }
 }
 export const Fetch = async() => {
-            const dispatch = useDispatch()
 
     try {
         const response = await axios.get(`${BaseURL}/Back/Song`);
-        console.log("this is the test from axios ... <-=-=-=-=-=-=-=> "+ response.data)
-        dispatch(setSongs(response.data));
+        
         return response.data;
     } catch (error) {
         handleError(error, 'Failed to Fetch Songs')

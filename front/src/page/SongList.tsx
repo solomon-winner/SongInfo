@@ -14,13 +14,16 @@ import { showAdd, showDetail } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
-import { setSongs, Song as SongType} from '../Store/SongSlice';
-import { Fetch } from '../sagas/axios';
+import { songLoading} from '../Store/SongSlice';
+
 const  SongList: React.FC = () => {
 
     const dispatch = useDispatch();
-    Fetch();
-const List = useSelector((state:FetchType) => state.songs)
+useEffect(() => {
+    dispatch(songLoading())
+},[dispatch])
+
+const List = useSelector((state:FetchType) => state.songs.songs)
 console.log(List);
 const ShwDetail = useSelector((state: DisplayType) => state.display.Detail);
 const ShwAdd = useSelector((state: DisplayType) => state.display.Add);
@@ -56,13 +59,14 @@ return (
                 </Form>
             </Search>
             <Rest>
-                <Song onClick={ShowDetail}>
+                {List.map(song => <Song key = {song._id} onClick={ShowDetail}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
-                        <Title>Kedmom Kibir</Title>
-                        <ArtistName>Aster Abebe</ArtistName>
+                        <Title>{song.tittle}</Title>
+                        <ArtistName>{song.artist}</ArtistName>
                     </Desc>
-                </Song>
+                </Song>)
+                }
             </Rest>
               <FooterSect/>
         </Main>
