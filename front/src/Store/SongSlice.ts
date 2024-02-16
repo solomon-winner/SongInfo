@@ -49,7 +49,7 @@ const initialState: InitialState = {
         songFetchError: (state, action) => {
             state.error = action.payload
         },
-        addLoading (state) {
+        addLoading (state,action) {
             state.Add_loading = true
         },
         addSong(state, action: PayloadAction<Song>) {

@@ -16,8 +16,9 @@ const AddForm:React.FC = () => {
             genre: Data.get('genre') as string,
             tittle: Data.get('title') as string
         }
-        dispatch(addLoading())
-        dispatch(addSong(New))
+        dispatch(addLoading(New))
+        dispatch(showAdd(false))
+
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
