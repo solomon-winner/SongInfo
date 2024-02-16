@@ -23,8 +23,8 @@ function* AddSong(action:any){
     try {
         const NewSong: Song =yield call(Request.Add,action.payload)
       yield put (addSong(NewSong));
-    } catch {
-
+    } catch(error) {
+console.log(error)
     }
 }
  export function* watchAdd() {
@@ -33,12 +33,15 @@ function* AddSong(action:any){
 
  // watcher for updating songs
 
- function* UpdateSong () {
-
+ function* UpdateSong (action:any) {
+    try{
+        const updatedSong: Song = yield call(Request.Update, action.payload._id,action.payload)
+        yield put(updateSong(updatedSong))
+    }catch(error){}
  }
 
  export function* watchUpdate () {
-
+yield takeLatest('songs/updateLoading',UpdateSong)
  }
 
  //wather for delete song
