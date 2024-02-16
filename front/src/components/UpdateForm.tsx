@@ -1,10 +1,12 @@
 import React from 'react'
 import { AddSong, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { showUpdate } from '../Store/DisplaySlice';
 import { Edit } from '../style/Update';
+import { SelectType } from '../Store/Types';
 
 const UpdateForm:React.FC = () => {
+    const selected = useSelector((state:SelectType) => {state.selected})
 const dispatch = useDispatch()
 const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
