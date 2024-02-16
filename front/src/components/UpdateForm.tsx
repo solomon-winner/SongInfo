@@ -25,8 +25,8 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
     e.preventDefault()
   }
-  const handleSubmit = () => {
-
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
   }
     return (
         <>
@@ -34,9 +34,9 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         <Title> Add New Song</Title>
             <Form>
                     <Row><Label>Artist: </Label><Input onChange={handleChange} value={selected?.artist}/></Row>    
-                    <Row><Label>Album: </Label><Input onChange={handleChange} value={selected?.artist}/></Row>
-                    <Row><Label>Genre: </Label><Input onChange={handleChange} value={selected?.artist}/></Row>
-                    <Row><Label>Title: </Label><Input onChange={handleChange} value={selected?.artist}/></Row>
+                    <Row><Label>Album: </Label><Input onChange={handleChange} value={selected?.album}/></Row>
+                    <Row><Label>Genre: </Label><Input onChange={handleChange} value={selected?.genre}/></Row>
+                    <Row><Label>Title: </Label><Input onChange={handleChange} value={selected?.tittle}/></Row>
 
                     <Buttons>
                         <Edit>Update the Song</Edit>
