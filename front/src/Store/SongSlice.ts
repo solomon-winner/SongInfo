@@ -69,7 +69,7 @@ const initialState: InitialState = {
         updateSong(state, action: PayloadAction<Song>) {
             const index = state.songs.findIndex(song => song._id ===action.payload._id);
             if(index !== -1)
-            state.songs[index] = action.payload;
+                state.songs[index] = action.payload;
 
             state.Update_loading = false;
             state.Update_Success = true;
