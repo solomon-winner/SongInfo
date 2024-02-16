@@ -2,20 +2,22 @@ import React from 'react'
 import { AddSong, Button, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
 import { useDispatch } from 'react-redux';
 import { showAdd } from '../Store/DisplaySlice';
-import { addLoading } from '../Store/SongSlice';
+import { Song, addLoading, addSong } from '../Store/SongSlice';
 
 const AddForm:React.FC = () => {
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const Data = new FormData(e.target as HTMLFormElement);
 
-        const New = {
+        const New:Song = {
+            _id: "",
             artist: Data.get('artist') as string,
             album: Data.get('album') as string,
             genre: Data.get('genre') as string,
             tittle: Data.get('title') as string
         }
-        dispatch(addLoading(New))
+        dispatch(addLoading())
+        dispatch(addSong(New))
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
