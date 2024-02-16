@@ -12,11 +12,11 @@ const UpdateForm:React.FC = () => {
     const ID = useSelector((state:SelectType) => state.selected._id)
     const selected= useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
 const [update,setUpdate] = useState({
-    _id:ID,
-    tittle:'',
-    artist:'',
-    album:'',
-    genre:''
+    _id:ID||'',
+    tittle:selected?.tittle||'',
+    artist:selected?.artist||'',
+    album:selected?.album||'',
+    genre:selected?.genre||''
 });
 const dispatch = useDispatch()
 const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -40,10 +40,10 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         <AddSong>
         <Title> Add New Song</Title>
             <Form onSubmit={handleSubmit}>
-                    <Row><Label>Artist: </Label><Input name = 'artist' onChange={handleChange} value={selected?.artist}/></Row>    
-                    <Row><Label>Album: </Label><Input name = 'album' onChange={handleChange} value={selected?.album}/></Row>
-                    <Row><Label>Genre: </Label><Input name = 'genre' onChange={handleChange} value={selected?.genre}/></Row>
-                    <Row><Label>Title: </Label><Input name = 'tittle' onChange={handleChange} value={selected?.tittle}/></Row>
+                    <Row><Label>Artist: </Label><Input name = 'artist' onChange={handleChange} value={update.artist}/></Row>    
+                    <Row><Label>Album: </Label><Input name = 'album' onChange={handleChange} value={update.album}/></Row>
+                    <Row><Label>Genre: </Label><Input name = 'genre' onChange={handleChange} value={update.genre}/></Row>
+                    <Row><Label>Title: </Label><Input name = 'tittle' onChange={handleChange} value={update.tittle}/></Row>
 
                     <Buttons>
                         <Edit type = 'submit'>Update the Song</Edit>

@@ -37,7 +37,9 @@ console.log(error)
     try{
         const updatedSong: Song = yield call(Request.Update, action.payload._id,action.payload)
         yield put(updateSong(updatedSong))
-    }catch(error){}
+    }catch(error){
+        console.log(error)
+    }
  }
 
  export function* watchUpdate () {
