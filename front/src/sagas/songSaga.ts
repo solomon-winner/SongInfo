@@ -1,4 +1,4 @@
-import { takeLatest, call, put, take, takeEvery } from "redux-saga/effects";
+import { takeLatest, call, put, take, takeEvery, takeLeading } from "redux-saga/effects";
 import {setSongs, addLoading,addSong, updateSong, deleteSong} from "../Store/SongSlice";
 import * as Request from './axios';
 import { Song } from "../Store/SongSlice";
@@ -48,12 +48,17 @@ yield takeLatest('songs/updateLoading',UpdateSong)
 
  //wather for delete song
 
- function* DeleteSong () {
-
+ function* DeleteSong (action:any) {
+    try{
+         yield call(Request.Delete,action.payload);
+         yield put (deleteSong(action.payload));
+    }catch(error){
+        console.log(error)
+    }
  }
 
  export function* watchDelete () {
-
+yield takeLeading('songs/deleteLoading',DeleteSong)
  }
 
  
