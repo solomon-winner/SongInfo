@@ -74,11 +74,11 @@ const initialState: InitialState = {
             state.Update_loading = false;
             state.Update_Success = true;
         },
-        deleteLoading(state) {
+        deleteLoading(state, action) {
             state.Delete_loading = true
         },
-        deleteSong(state, action: PayloadAction<Song>) {
-            state.songs = state.songs.filter((song) => song._id === action.payload._id);
+        deleteSong(state, action: PayloadAction<string>) {
+            state.songs = state.songs.filter((song) => song._id === action.payload);
             state.Delete_loading = false;
             state.Delete_Success = true;
         },
