@@ -78,7 +78,9 @@ const initialState: InitialState = {
             state.Delete_loading = true
         },
         deleteSong(state, action: PayloadAction<Song>) {
-
+            state.songs = state.songs.filter((song) => song._id === action.payload._id);
+            state.Delete_loading = false;
+            state.Delete_Success = true;
         },
         deleteError(state, action) {
             state.error = action.payload
