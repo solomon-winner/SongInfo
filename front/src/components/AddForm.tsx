@@ -2,6 +2,7 @@ import React from 'react'
 import { AddSong, Button, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
 import { useDispatch } from 'react-redux';
 import { showAdd } from '../Store/DisplaySlice';
+import { addLoading } from '../Store/SongSlice';
 
 const AddForm:React.FC = () => {
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,6 +15,7 @@ const AddForm:React.FC = () => {
             genre: Data.get('genre') as string,
             tittle: Data.get('title') as string
         }
+        dispatch(addLoading(New))
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

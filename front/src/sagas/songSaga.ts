@@ -18,12 +18,15 @@ export function* watchFetch() {
 
 //watcher for adding the song 
 
-function* AddSong() {
+function* AddSong(action: Song) {
+    try {
+    } catch {
 
+    }
 }
- export function* watchAdd() {
-
- }
+//  export function* watchAdd() {
+//     yield takeLatest('songs/addLoading',AddSong)
+//  }
 
  // watcher for updating songs
 
@@ -45,20 +48,4 @@ function* AddSong() {
 
  }
 
- //wather for details
-
- function* Detail () {
-
- }
- export function* watchDetail () {
-
- }
-
- //watcher for the statistics
-
- function* stat () {
-
- }
- export function* watchStat () {
-
- }
+ 
