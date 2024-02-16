@@ -5,6 +5,7 @@ import { showUpdate } from '../Store/DisplaySlice';
 import { Edit } from '../style/Update';
 import { FetchType, SelectType } from '../Store/Types';
 import { Song } from '../Store/SongSlice';
+import { updateLoading } from '../Store/SongSlice';
 
 const UpdateForm:React.FC = () => {
     
@@ -30,19 +31,22 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
   }
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    dispatch(updateLoading(update));
+    dispatch(showUpdate(false));
+
   }
     return (
         <>
         <AddSong>
         <Title> Add New Song</Title>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                     <Row><Label>Artist: </Label><Input name = 'artist' onChange={handleChange} value={selected?.artist}/></Row>    
                     <Row><Label>Album: </Label><Input name = 'album' onChange={handleChange} value={selected?.album}/></Row>
                     <Row><Label>Genre: </Label><Input name = 'genre' onChange={handleChange} value={selected?.genre}/></Row>
                     <Row><Label>Title: </Label><Input name = 'tittle' onChange={handleChange} value={selected?.tittle}/></Row>
 
                     <Buttons>
-                        <Edit>Update the Song</Edit>
+                        <Edit type = 'submit'>Update the Song</Edit>
                     </Buttons>
                 
             </Form>
