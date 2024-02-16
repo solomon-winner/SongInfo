@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AddSong, Buttons, Cross, Form, Input, Label, Row, Title } from '../style/Add';
 import { useDispatch, useSelector } from 'react-redux';
 import { showUpdate } from '../Store/DisplaySlice';
@@ -7,9 +7,16 @@ import { FetchType, SelectType } from '../Store/Types';
 import { Song } from '../Store/SongSlice';
 
 const UpdateForm:React.FC = () => {
+    
     const ID = useSelector((state:SelectType) => state.selected._id)
     const selected= useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
-
+const [update,setUpdate] = useState({
+    _id:ID,
+    tittle:'',
+    artist:'',
+    album:'',
+    genre:''
+});
 const dispatch = useDispatch()
 const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -17,6 +24,9 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 }
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
     e.preventDefault()
+  }
+  const handleSubmit = () => {
+
   }
     return (
         <>
