@@ -24,6 +24,9 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 }
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
     e.preventDefault();
+    setUpdate({
+        ...update, [e.target.name]:e.target.value
+    })
   }
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
