@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
 import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
-import { useParams } from 'react-router-dom';
 import { FetchType, SelectType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
 import { removeSelected } from '../Store/SelectedSongSlice';

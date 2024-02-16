@@ -3,10 +3,13 @@ import { AddSong, Buttons, Cross, Form, Input, Label, Row, Title } from '../styl
 import { useDispatch, useSelector } from 'react-redux';
 import { showUpdate } from '../Store/DisplaySlice';
 import { Edit } from '../style/Update';
-import { SelectType } from '../Store/Types';
+import { FetchType, SelectType } from '../Store/Types';
+import { Song } from '../Store/SongSlice';
 
 const UpdateForm:React.FC = () => {
-    const selected = useSelector((state:SelectType) => {state.selected})
+    const ID = useSelector((state:SelectType) => state.selected._id)
+    const selected= useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
+
 const dispatch = useDispatch()
 const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
