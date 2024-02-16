@@ -1,11 +1,10 @@
 import {all} from 'redux-saga/effects';
-import { watchFetch, watchAdd, watchDetail, watchUpdate,watchStat } from './songSaga';
+import { watchFetch, watchAdd, watchUpdate,watchDelete } from './songSaga';
 export default function* rootSaga() {
     yield all([
         watchFetch(),
         watchAdd(),
-        watchDetail(),
         watchUpdate(),
-        watchStat()
+        watchDelete()
     ])
 }

@@ -16,6 +16,7 @@ const AddForm:React.FC = () => {
             genre: Data.get('genre') as string,
             tittle: Data.get('title') as string
         }
+        console.log(New);
         dispatch(addLoading(New))
         dispatch(showAdd(false))
 
@@ -30,14 +31,14 @@ const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         <>
         <AddSong>
         <Title> Add New Song</Title>
-            <Form>
+            <Form onSubmit={handleChange}>
                     <Row><Label>Artist: </Label><Input name = "artist" required/></Row>    
                     <Row><Label>Album: </Label><Input name = "album" required/></Row>
                     <Row><Label>Genre: </Label><Input name = "genre" required/></Row>
                     <Row><Label>Title: </Label><Input name = "title" required/></Row>
 
                     <Buttons>
-                        <Button>Add To The List</Button>
+                        <Button type = "submit">Add To The List</Button>
                     </Buttons>
                 
             </Form>
