@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Stat, Info, Number, Para } from '../style/Stat';
-import { FetchType } from '../Store/Types';
+import { FetchType, SelectType } from '../Store/Types';
 import { useSelector } from 'react-redux';
+import { Song } from '../Store/SongSlice';
 const StatDisplay: React.FC = () => {
 
     const [albumsCount, setAlbumsCount] = useState(0);
@@ -9,6 +10,11 @@ const StatDisplay: React.FC = () => {
     const [songsCount, setSongsCount] = useState(0);
     const [genresCount, setGenresCount] = useState(0);
 
+const Another = useSelector((state:SelectType) => state.selected.another);
+const ID = useSelector((state:SelectType) => state.selected._id)
+const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
+const SelectedArtist = selected?.artist;
+const 
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;
 const Artists = new Set(songs.map(song => song.artist)).size
@@ -33,11 +39,13 @@ const Genres = new Set (songs.map(song => song.genre)).size
     }
     return (
         <Stat className="stat">
-        <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
+            <>
+            <Info><Number>{Another?albumsCount} </Number><Para>Albums</Para></Info>
         <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
         <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
         <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
-
+            </>
+        
     </Stat>
     )
 }

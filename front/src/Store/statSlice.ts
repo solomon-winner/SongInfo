@@ -1,48 +1,27 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface stat {
-    totalSongs: number;
-    artists: number;
-    albums: number;
-    genres: number
+interface songs {
+    id: string
+    tittle: string;
+    album: string;
+    genre: string;
 }
 interface InitialState {
-    statisctics:stat;
-    loading: boolean;
-    error: boolean;
+    selectedSong: songs[]
 }
-interface Genere {
-    _id: string;
-    count: number
-}
-interface ArtistAlbum {
-    _id: string;
-    artist: string;
-    album: string;
-    count: number;
-}
+
 const initialState: InitialState = {
-    statisctics: {
-        totalSongs: 0,
-        artists: 0,
-        albums: 0,
-        genres: 0,
-    },
-    loading: false,
-    error: false
+    selectedSong: []
 }
 export const statSlice = createSlice({
     name: 'stat',
     initialState,
     reducers : {
-        statLoading(state) {
-            state.loading = true
-        },
-        setStat (state, action: PayloadAction<Partial<stat>>) {
-            return {...state, ...action.payload};
+        CualculateStat(state,action) {
+            state.selectedSong.push(action.payload);
         }
     }
 
 }) 
 
-export const {setStat} = statSlice.actions;
+export const {CualculateStat} = statSlice.actions;
