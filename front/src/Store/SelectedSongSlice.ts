@@ -4,12 +4,12 @@ import { Song } from "./SongSlice";
 interface select {
     
         _id: string;
-        
+        another: boolean
     }
 
 const initialState: select= {
     _id: '',
-
+    another: false,
 }
 const selectedSlice = createSlice({
     name: 'selected',
