@@ -16,3 +16,7 @@ border: 4px solid rgb(255, 115, 0);
 overflow-y: scroll;
 position: relative;
 `
+export const Top = styled.div`
+display: flex;
+width: 100%;
+`
