@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Stat, Info, Number, Para } from '../style/Stat';
-import { FetchType, SelectType } from '../Store/Types';
+import { FetchType, SelectType, StatType } from '../Store/Types';
 import { useSelector } from 'react-redux';
 import { Song } from '../Store/SongSlice';
 const StatDisplay: React.FC = () => {
@@ -16,8 +16,9 @@ const Another = useSelector((state:SelectType) => state.selected.another);
  const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
 const SelectedArtist = selected?.artist;
  const CualculateStat = useSelector((state:FetchType) => state.songs.songs.filter((song:Song) => song.artist === SelectedArtist));
-console.log("the display stat ../.../.../././==>>> "+JSON.stringify(CualculateStat))
- // setResume(CualculateStat);
+ const Data = useSelector((state:StatType) => state.stat);
+ console.log("*************************"+Data)
+ console.log("*************************"+JSON.stringify(Data))// setResume(CualculateStat);
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;
 const Artists = new Set(songs.map(song => song.artist)).size
