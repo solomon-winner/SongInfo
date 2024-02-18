@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FetchType ,SelectType} from '../Store/Types';
 import { showDetail, showAnother} from '../Store/DisplaySlice';
 import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
+import SelectedStat from './SelectedStat';
 
 const AnotherSong:React.FC = () => {
 
@@ -38,7 +39,7 @@ const AnotherSong:React.FC = () => {
                     </Cross>
                     </Top>
                     <Stat>
-                    <StatDisplay/>
+                    {anotherSongs && <SelectedStat/>}
                     </Stat>
 
                     <Songs>
