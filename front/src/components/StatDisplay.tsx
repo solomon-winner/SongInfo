@@ -68,10 +68,9 @@ if(anotherSongs) {
             </>}
 
             {anotherSongs && <>
-            <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
-            <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
-            <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
-            <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
+            <Info><Number>{Selected_songsCount} </Number><Para>Songs</Para></Info>
+            <Info><Number>{Selected_albumsCount}</Number><Para>Albums</Para></Info>
+            <Info><Number>{Selected_genresCount}</Number><Para>Genres</Para></Info>
             </>}
         
     </Stat>
