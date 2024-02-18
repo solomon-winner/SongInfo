@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
-import { showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
+import { showAnother, showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { FetchType, SelectType, StatType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
 import { removeSelected } from '../Store/SelectedSongSlice';
@@ -53,7 +53,7 @@ const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
         }
         <Buttons>
             <Edit onClick={ShowUpdate}>Edit</Edit>
-            <Another>Songs By This Artist</Another>
+            <Another onClick={() => dispatch(showAnother(true))}>Songs By This Artist</Another>
             <Delete onClick={ShowDelete}>Delete</Delete>
         </Buttons>
         <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
