@@ -93,4 +93,10 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 font-size:medium;
 border-radius: 5px;
 cursor: pointer;
+&:hover {
+    background-color: rgb(1, 10, 31);
+}
 `
+export const Left = styled.div``
+export const Icon = styled.div``
+
