@@ -34,13 +34,11 @@ const SelectedtotalSongs = Selected_songs.length;
 const SelectedAlbums = new Set (Selected_songs.map(song => song.album)).size
 const SelectedGenres = new Set (Selected_songs.map(song => song.genre)).size
 
-if(anotherSongs) {
     useEffect(() => {
-        countUp(SelectedAlbums, setAlbumsCount);
-        countUp(SelectedtotalSongs, setSongsCount);
-        countUp(SelectedGenres, setGenresCount);
+        countUp(SelectedAlbums, setSelected_albumsCount);
+        countUp(SelectedtotalSongs, setSelected_songsCount);
+        countUp(SelectedGenres, setSelected_generesCount);
     }, [SelectedAlbums, SelectedtotalSongs, SelectedGenres])  
-}
 
 
     useEffect(() => {
