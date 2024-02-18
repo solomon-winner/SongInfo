@@ -45,7 +45,7 @@ const AnotherSong:React.FC = () => {
                     <Songs>
                         {Selected.map(song => <Song key = {song._id} >
                            <Left>
-                                <Icon></Icon>
+                                <Icon><img src="./assets/music-solid.svg" alt="" /></Icon>
                                 {song.tittle}
                             </Left>
                             <Button onClick={ShowDetail}> Detail Of The Song</Button> 
