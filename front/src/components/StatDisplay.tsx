@@ -9,12 +9,15 @@ const StatDisplay: React.FC = () => {
     const [artistsCount, setArtistsCount] = useState(0);
     const [songsCount, setSongsCount] = useState(0);
     const [genresCount, setGenresCount] = useState(0);
+ //   const [Resume, setResume] = useState([]);
 
 const Another = useSelector((state:SelectType) => state.selected.another);
-const ID = useSelector((state:SelectType) => state.selected._id)
-const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
+ const ID = useSelector((state:SelectType) => state.selected._id)
+ const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
 const SelectedArtist = selected?.artist;
-const 
+ const CualculateStat = useSelector((state:FetchType) => state.songs.songs.filter((song:Song) => song.artist === SelectedArtist));
+console.log("the display stat ../.../.../././==>>> "+JSON.stringify(CualculateStat))
+ // setResume(CualculateStat);
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;
 const Artists = new Set(songs.map(song => song.artist)).size
@@ -40,10 +43,10 @@ const Genres = new Set (songs.map(song => song.genre)).size
     return (
         <Stat className="stat">
             <>
-            <Info><Number>{Another?albumsCount} </Number><Para>Albums</Para></Info>
-        <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
-        <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
-        <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
+            <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
+            <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
+            <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
+            <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
             </>
         
     </Stat>

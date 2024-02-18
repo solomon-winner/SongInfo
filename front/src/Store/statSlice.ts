@@ -6,6 +6,7 @@ interface songs {
     album: string;
     genre: string;
 }
+
 interface InitialState {
     selectedSong: songs[]
 }
