@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showAnother, showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { FetchType, SelectType, StatType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
-import { removeSelected } from '../Store/SelectedSongSlice';
+import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
 import { Filter } from '../Store/SongSlice';
 
 const SongDetails:React.FC = () => {
@@ -36,7 +36,7 @@ const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
 const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(Filter(detail?.artist||""));
-    dispatch()
+    dispatch(Show_Another(true))
 }
     return(
        <>

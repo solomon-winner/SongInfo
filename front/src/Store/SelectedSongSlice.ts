@@ -21,10 +21,10 @@ const selectedSlice = createSlice({
         removeSelected (state) {
             state._id = '';
         },
-        Another(state,action: PayloadAction<boolean>) {
+        Show_Another(state,action: PayloadAction<boolean>) {
             state.another = action.payload
         }
     }
 })
-export const {setSelected, removeSelected} = selectedSlice.actions
+export const {setSelected, removeSelected, Show_Another} = selectedSlice.actions
 export default selectedSlice;

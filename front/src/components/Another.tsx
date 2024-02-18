@@ -4,7 +4,7 @@ import StatDisplay from './StatDisplay';
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchType } from '../Store/Types';
 import { showDetail, showAnother} from '../Store/DisplaySlice';
-import { removeSelected } from '../Store/SelectedSongSlice';
+import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
 
 const AnotherSong:React.FC = () => {
 
@@ -19,6 +19,7 @@ const AnotherSong:React.FC = () => {
         dispatch(showDetail(false));
         dispatch(showAnother(false));
         dispatch(removeSelected());
+        dispatch(Show_Another(false));
     }
 
 
