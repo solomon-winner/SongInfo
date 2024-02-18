@@ -51,8 +51,6 @@ const AnotherSong:React.FC = () => {
                         </Song>)}
 
                     </Songs>
-
-
             </Another>
         </Wrapper>
     )
