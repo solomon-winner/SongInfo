@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Stat, Info, Number, Para } from '../style/Stat';
-import { FetchType, SelectType, StatType } from '../Store/Types';
+import { FetchType, SelectType } from '../Store/Types';
 import { useSelector } from 'react-redux';
 import { Song } from '../Store/SongSlice';
 const StatDisplay: React.FC = () => {
@@ -57,19 +57,15 @@ const SelectedGenres = new Set (Selected_songs.map(song => song.genre)).size
         }, 50);
     }
     return (
-        <Stat className="stat">
-            {!anotherSongs && <>
+        <Stat>
+            
             <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
             <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
             <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
             <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
-            </>}
+            
 
-            {anotherSongs && <>
-            <Info><Number>{Selected_songsCount} </Number><Para>Songs</Para></Info>
-            <Info><Number>{Selected_albumsCount}</Number><Para>Albums</Para></Info>
-            <Info><Number>{Selected_genresCount}</Number><Para>Genres</Para></Info>
-            </>}
+            
         
     </Stat>
     )
