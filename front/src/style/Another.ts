@@ -20,3 +20,18 @@ export const Top = styled.div`
 display: flex;
 width: 100%;
 `
+export const Cross = styled.div`
+padding: 5px;
+background-color: black;
+color:aliceblue;
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+z-index: 1000;
+top: 0;
+left: 89%;
+border: 1px solid rgb(160, 80, 80);
+`
