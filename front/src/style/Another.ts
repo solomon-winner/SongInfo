@@ -10,7 +10,7 @@ background-color: rgba(0, 0, 0, 0.253);
 position:fixed;
 top: 0;
 left: 0;
-z-index: 90000;
+z-index: 9999;
 `
 export const Another = styled.div`
 width: 70%;
@@ -101,6 +101,11 @@ cursor: pointer;
     background-color: rgb(1, 10, 31);
 }
 `
-export const Left = styled.div``
-export const Icon = styled.div``
+export const Left = styled.div`
+display:flex;
+align-items:center;
+width: 50%;
+`
+export const Icon = styled.div`
+margin-right: 5%;`
 

@@ -37,6 +37,7 @@ const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (detail) {
       dispatch(Filter(detail.artist));
+      dispatch(showDetail(false));
     dispatch(Show_Another(true)) 
     }
    

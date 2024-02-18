@@ -10,7 +10,7 @@ export const Detail = styled.div`
     display:flex;
     flex-direction: column;
     gap: 5%;
-    z-index:9000;
+    z-index:10000;
     border: 3px solid rgb(255, 115, 0);
     position: absolute;
     top: 30%;

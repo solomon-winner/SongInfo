@@ -3,7 +3,7 @@ import { Wrapper, Another, Top, Cross, Name, Stat, Songs, Song, Button, Left, Ic
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchType ,SelectType} from '../Store/Types';
 import { showDetail, showAnother} from '../Store/DisplaySlice';
-import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
+import { Show_Another, removeSelected, setSelected } from '../Store/SelectedSongSlice';
 import SelectedStat from './SelectedStat';
 
 const AnotherSong:React.FC = () => {
@@ -12,8 +12,8 @@ const AnotherSong:React.FC = () => {
     const Selected = useSelector((state:FetchType) => state.songs.ArtistSongs);
     const anotherSongs = useSelector((state:SelectType) => state.selected.another)
 
-    const ShowDetail = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault();
+    const ShowDetail = (id:string) => {
+        dispatch(setSelected(id))
         dispatch(Show_Another(false))
         dispatch(showDetail(true))
     }
@@ -48,7 +48,7 @@ const AnotherSong:React.FC = () => {
                                 <Icon><img src="./assets/music-solid.svg" alt="" /></Icon>
                                 {song.tittle}
                             </Left>
-                            <Button onClick={ShowDetail}> Detail Of The Song</Button> 
+                            <Button onClick={()=>ShowDetail(song._id)}> Detail Of The Song</Button> 
                         </Song>)}
 
                     </Songs>
