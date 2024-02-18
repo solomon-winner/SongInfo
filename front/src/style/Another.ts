@@ -54,3 +54,11 @@ export const Count = styled.div`
 display: flex;
 align-items:baseline;
 `
+export const Number = styled.div`
+color: rgb(255, 115, 0);
+font-size:100px;
+font-weight: bolder;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+display: flex;
+align-items:baseline;
+`
