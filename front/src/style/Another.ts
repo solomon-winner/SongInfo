@@ -7,6 +7,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 background-color: rgba(0, 0, 0, 0.253);
+position:fixed;
+top: 0;
+left: 0;
+z-index: 90000;
 `
 export const Another = styled.div`
 width: 70%;

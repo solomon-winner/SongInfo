@@ -59,7 +59,7 @@ const AnotherSong:React.FC = () => {
                             </Left>
                             <Button> Detail Of The Song</Button>
                         </Song>
-                        
+
                     </Songs>
 
 
@@ -68,4 +68,4 @@ const AnotherSong:React.FC = () => {
     )
 }
 
-export default Another;
+export default AnotherSong;

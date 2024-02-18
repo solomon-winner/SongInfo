@@ -15,6 +15,8 @@ import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
 import { setSelected } from '../Store/SelectedSongSlice';
+import { Another } from '../style/Another';
+import AnotherSong from '../components/Another';
 
 const  SongList: React.FC = () => {
 
@@ -49,6 +51,7 @@ return (
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
+   <AnotherSong/>
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search>
