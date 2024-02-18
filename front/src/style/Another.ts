@@ -83,3 +83,14 @@ border-radius: 5px;
 background-color: rgb(180, 104, 42);
 border: 2px solid red;
 `
+export const Button = styled.button`
+background-color: green;
+padding:5px;
+border: none;
+border: 2px solid black;
+color: white;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size:medium;
+border-radius: 5px;
+cursor: pointer;
+`
