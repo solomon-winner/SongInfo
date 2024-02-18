@@ -11,12 +11,11 @@ const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
 
 //const detail = useSelector((state:SelectType) => state.selected)
-const ID = useSelector((state:SelectType) => state.selected._id)
-const detail = useSelector((state: FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
-const Resume = useSelector((state:FetchType) => state.songs.songs.filter((song:Song) => song.artist === detail?.artist));
-dispatch(CualculateStat(Resume));
-const Data = useSelector((state:StatType) => state.stat);
-console.log("*************************"+Data)
+ const ID = useSelector((state:SelectType) => state.selected._id)
+ const detail = useSelector((state: FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
+// const Resume = useSelector((state:FetchType) => state.songs.songs.filter((song:Song) => song.artist === detail?.artist));
+// dispatch(CualculateStat(Resume));
+
 const DontShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showDetail(false))

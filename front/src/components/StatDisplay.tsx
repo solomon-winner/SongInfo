@@ -11,14 +11,13 @@ const StatDisplay: React.FC = () => {
     const [genresCount, setGenresCount] = useState(0);
  //   const [Resume, setResume] = useState([]);
 
-const Another = useSelector((state:SelectType) => state.selected.another);
- const ID = useSelector((state:SelectType) => state.selected._id)
- const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
-const SelectedArtist = selected?.artist;
- const CualculateStat = useSelector((state:FetchType) => state.songs.songs.filter((song:Song) => song.artist === SelectedArtist));
- const Data = useSelector((state:StatType) => state.stat);
- console.log("*************************"+Data)
- console.log("*************************"+JSON.stringify(Data))// setResume(CualculateStat);
+//const Another = useSelector((state:SelectType) => state.selected.another);
+//  const ID = useSelector((state:SelectType) => state.selected._id)
+//  const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
+// const SelectedArtist = selected?.artist;
+//  const Data = useSelector((state:StatType) => state.stat);
+  console.log("*************************")
+//  console.log("*************************"+JSON.stringify(Data))// setResume(CualculateStat);
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;
 const Artists = new Set(songs.map(song => song.artist)).size
