@@ -62,3 +62,8 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 display: flex;
 align-items:baseline;
 `
+export const Span = styled.span`
+color: white;
+font-size: large;
+font-weight: bold;
+`
