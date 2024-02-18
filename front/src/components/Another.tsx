@@ -12,7 +12,8 @@ const AnotherSong:React.FC = () => {
     const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success);
     const DontShowAnother = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault();
-        dispatch(showDetail(false))
+        dispatch(showDetail(false));
+        dispatch(showAnother(false))
         dispatch(removeSelected());
     }
 
