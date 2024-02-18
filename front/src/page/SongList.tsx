@@ -15,7 +15,7 @@ import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
 import { setSelected } from '../Store/SelectedSongSlice';
-import { Another } from '../style/Another';
+import { Show_Another } from '../Store/SelectedSongSlice';
 import AnotherSong from '../components/Another';
 
 const  SongList: React.FC = () => {
@@ -30,10 +30,6 @@ const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 
-const ShowDetail = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-    dispatch(showDetail(true))
-}
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showAdd(true))
