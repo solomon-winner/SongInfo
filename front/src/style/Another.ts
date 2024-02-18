@@ -67,3 +67,10 @@ color: white;
 font-size: large;
 font-weight: bold;
 `
+export const Songs = styled.div`
+min-height: 45vh;
+padding: 20px;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+`
