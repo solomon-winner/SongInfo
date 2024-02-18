@@ -1,5 +1,6 @@
 import React from 'react'
 import { Wrapper, Another, Top, Cross, Name, Stat, Count, Number, Span, Songs, Song, Button, Left, Icon} from '../style/Another';
+import StatDisplay from './StatDisplay';
 const AnotherSong:React.FC = () => {
     return (
         <Wrapper>
@@ -13,10 +14,7 @@ const AnotherSong:React.FC = () => {
                     </Cross>
                     </Top>
                     <Stat>
-                        <Count><Number>68</Number><Span>Songs</Span></Count>
-                        <Count><Number>30</Number><Span>Album</Span></Count>
-                        <Count><Number>23</Number><Span>Genre</Span></Count>
-
+                        <StatDisplay/>
                     </Stat>
 
                     <Songs>
