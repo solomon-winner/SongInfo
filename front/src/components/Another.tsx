@@ -1,6 +1,5 @@
 import React from 'react'
 import { Wrapper, Another, Top, Cross, Name, Stat, Count, Number, Span, Songs, Song, Button, Left, Icon} from '../style/Another';
-import StatDisplay from './StatDisplay';
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchType ,SelectType} from '../Store/Types';
 import { showDetail, showAnother} from '../Store/DisplaySlice';
@@ -43,45 +42,13 @@ const AnotherSong:React.FC = () => {
                     </Stat>
 
                     <Songs>
-                        <Song>
-                            <Left>
+                        {Selected.map(song => <Song key = {song._id} >
+                           <Left>
                                 <Icon></Icon>
-                                Yeadebabay sew Honeh
+                                {song.tittle}
                             </Left>
-                            <Button> Detail Of The Song</Button>
-                        </Song>
-
-                        <Song>
-                            <Left>
-                                <Icon></Icon>
-                                Yeadebabay sew Honeh
-                            </Left>
-                            <Button> Detail Of The Song</Button>
-                        </Song>
-
-                        <Song>
-                            <Left>
-                                <Icon></Icon>
-                                Yeadebabay sew Honeh
-                            </Left>
-                            <Button> Detail Of The Song</Button>
-                        </Song>
-
-                        <Song>
-                            <Left>
-                                <Icon></Icon>
-                                Yeadebabay sew Honeh
-                            </Left>
-                            <Button> Detail Of The Song</Button>
-                        </Song>
-
-                        <Song>
-                            <Left>
-                                <Icon></Icon>
-                                Yeadebabay sew Honeh
-                            </Left>
-                            <Button> Detail Of The Song</Button>
-                        </Song>
+                            <Button> Detail Of The Song</Button> 
+                        </Song>)}
 
                     </Songs>
 
