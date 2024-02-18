@@ -9,20 +9,38 @@ const StatDisplay: React.FC = () => {
     const [artistsCount, setArtistsCount] = useState(0);
     const [songsCount, setSongsCount] = useState(0);
     const [genresCount, setGenresCount] = useState(0);
+
+    const [Selected_songsCount, setSelected_songsCount] = useState(0);
+    const [Selected_albumsCount, setSelected_albumsCount] = useState(0);
+    const [Selected_genresCount, setSelected_generesCount] = useState(0);
+
  //   const [Resume, setResume] = useState([]);
 
 //const Another = useSelector((state:SelectType) => state.selected.another);
-//  const ID = useSelector((state:SelectType) => state.selected._id)
 //  const selected = useSelector((state:FetchType) => state.songs.songs.find((song:Song) => song._id === ID))
 // const SelectedArtist = selected?.artist;
 //  const Data = useSelector((state:StatType) => state.stat);
   console.log("*************************")
 //  console.log("*************************"+JSON.stringify(Data))// setResume(CualculateStat);
+const anotherSongs = useSelector((state:SelectType) => state.selected.another)
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;
 const Artists = new Set(songs.map(song => song.artist)).size
 const Albums = new Set (songs.map(song => song.album)).size
 const Genres = new Set (songs.map(song => song.genre)).size
+
+const Selected_songs = useSelector((state:FetchType) => state.songs.ArtistSongs);
+const SelectedtotalSongs = Selected_songs.length;
+const SelectedAlbums = new Set (Selected_songs.map(song => song.album)).size
+const SelectedGenres = new Set (Selected_songs.map(song => song.genre)).size
+
+if(anotherSongs) {
+    useEffect(() => {
+        countUp(SelectedAlbums, setAlbumsCount);
+        countUp(SelectedtotalSongs, setSongsCount);
+        countUp(SelectedGenres, setGenresCount);
+    }, [SelectedAlbums, SelectedtotalSongs, SelectedGenres])  
+}
 
 
     useEffect(() => {
@@ -42,12 +60,19 @@ const Genres = new Set (songs.map(song => song.genre)).size
     }
     return (
         <Stat className="stat">
-            <>
+            {!anotherSongs && <>
             <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
             <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
             <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
             <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
-            </>
+            </>}
+
+            {anotherSongs && <>
+            <Info><Number>{albumsCount} </Number><Para>Albums</Para></Info>
+            <Info><Number>{artistsCount}</Number><Para>Artists</Para></Info>
+            <Info><Number>{songsCount}</Number><Para>Songs</Para></Info>
+            <Info><Number>{genresCount}</Number><Para>Genres</Para></Info>
+            </>}
         
     </Stat>
     )
