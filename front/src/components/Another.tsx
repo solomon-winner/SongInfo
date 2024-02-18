@@ -29,10 +29,10 @@ const AnotherSong:React.FC = () => {
 
     return (
         <Wrapper>
-            <Another>
-                <Top>
+          {Selected.map(song => <Another key = {song._id} >
+             <Top>
                     <Name>
-                        <h1>Tesfaye Gabiso</h1>
+                        <h1>{song.artist}</h1>
                     </Name>
                     <Cross onClick={DontShowAnother}>
                         <img src="./assets/xmark-solid.svg" alt="" />
@@ -43,16 +43,17 @@ const AnotherSong:React.FC = () => {
                     </Stat>
 
                     <Songs>
-                        {Selected.map(song => <Song key = {song._id} >
+                         <Song  >
                            <Left>
                                 <Icon><img src="./assets/music-solid.svg" alt="" /></Icon>
                                 {song.tittle}
                             </Left>
                             <Button onClick={()=>ShowDetail(song._id)}> Detail Of The Song</Button> 
-                        </Song>)}
+                        </Song>
 
                     </Songs>
             </Another>
+            )}
         </Wrapper>
     )
 }
