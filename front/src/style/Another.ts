@@ -35,3 +35,22 @@ top: 0;
 left: 89%;
 border: 1px solid rgb(160, 80, 80);
 `
+export const Name = styled.div`
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+color:white;
+}
+`
+export const stat = styled.div`
+    display: flex;
+    gap:100px;
+    flex-wrap: wrap;
+    border: 3px solid red;
+    justify-content: center;
+`
+export const Count = styled.div`
+display: flex;
+align-items:baseline;
+`
