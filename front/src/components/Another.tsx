@@ -10,7 +10,7 @@ const AnotherSong:React.FC = () => {
                         <h1>Tesfaye Gabiso</h1>
                     </Name>
                     <Cross>
-                        <img src="" alt="" />
+                        <img src="./assets/xmark-solid.svg" alt="" />
                     </Cross>
                     </Top>
                     <Stat>
