@@ -37,3 +37,5 @@ const SelectedGenres = new Set (Selected_songs.map(song => song.genre)).size
         </Stat>
     )
 } 
+
+export default SelectedStat;

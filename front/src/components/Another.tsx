@@ -2,7 +2,7 @@ import React from 'react'
 import { Wrapper, Another, Top, Cross, Name, Stat, Count, Number, Span, Songs, Song, Button, Left, Icon} from '../style/Another';
 import StatDisplay from './StatDisplay';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchType } from '../Store/Types';
+import { FetchType ,SelectType} from '../Store/Types';
 import { showDetail, showAnother} from '../Store/DisplaySlice';
 import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
 
@@ -10,6 +10,8 @@ const AnotherSong:React.FC = () => {
 
     const dispatch = useDispatch();
     const Selected = useSelector((state:FetchType) => state.songs.ArtistSongs);
+    const anotherSongs = useSelector((state:SelectType) => state.selected.another)
+
     console.log(Selected)
     console.log(Selected[0])
     console.log(Selected[0].album)
