@@ -36,6 +36,7 @@ const ShowDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>{
 const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(Filter(detail?.artist||""));
+    dispatch()
 }
     return(
        <>

@@ -9,13 +9,19 @@ import { removeSelected } from '../Store/SelectedSongSlice';
 const AnotherSong:React.FC = () => {
 
     const dispatch = useDispatch();
-    const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success);
+    const Selected = useSelector((state:FetchType) => state.songs.ArtistSongs);
+    console.log(Selected)
+    console.log(Selected[0])
+    console.log(Selected[0].album)
+
     const DontShowAnother = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault();
         dispatch(showDetail(false));
-        dispatch(showAnother(false))
+        dispatch(showAnother(false));
         dispatch(removeSelected());
     }
+
+
 
     return (
         <Wrapper>
@@ -29,7 +35,7 @@ const AnotherSong:React.FC = () => {
                     </Cross>
                     </Top>
                     <Stat>
-                    {FetchSuccess && <StatDisplay/>}
+                    <StatDisplay/>
                     </Stat>
 
                     <Songs>
