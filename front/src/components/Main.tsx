@@ -7,6 +7,7 @@ import { FetchType } from '../Store/Types';
 const MainSect:React.FC = () => {
 
     const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
+
     return(
         <>
         
@@ -20,6 +21,7 @@ const MainSect:React.FC = () => {
         </Upper>
 
         <Lower>
+
                 {FetchSuccess &&<StatDisplay/>}    
             <Wrapper>
 
@@ -29,7 +31,7 @@ const MainSect:React.FC = () => {
                 </Text>
 
                 <Text>
-                    <Title>Song Information</Title>
+                    <Title>Song Information</Title> 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates et dicta voluptas, voluptatum quibusdam, non odit laborum veritatis odio beatae obcaecati nihil asperiores, exercitationem officia vitae velit dolorum! Delectus, debitis!</p>
                 </Text>
 

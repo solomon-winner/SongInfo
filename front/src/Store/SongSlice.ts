@@ -11,6 +11,7 @@ export interface Song {
 
 interface InitialState {
     songs:Song[];
+    ArtistSongs: Song[],
      Fetch_loading: boolean;
      Add_loading: boolean;
      Add_Success:boolean;
@@ -23,6 +24,7 @@ interface InitialState {
 }
 const initialState: InitialState = {
     songs:[],
+    ArtistSongs: [],
      Fetch_loading: false,
      Add_loading: false,
      Add_Success:false,
@@ -84,6 +86,9 @@ const initialState: InitialState = {
         },
         deleteError(state, action) {
             state.error = action.payload
+        },
+        Filter(state,action:PayloadAction<string>) {
+            state.ArtistSongs = state.songs.filter((songs) =>songs.artist === action.payload);
         }
         
     }
