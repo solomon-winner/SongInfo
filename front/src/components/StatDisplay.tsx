@@ -10,9 +10,6 @@ const StatDisplay: React.FC = () => {
     const [songsCount, setSongsCount] = useState(0);
     const [genresCount, setGenresCount] = useState(0);
 
-    const [Selected_songsCount, setSelected_songsCount] = useState(0);
-    const [Selected_albumsCount, setSelected_albumsCount] = useState(0);
-    const [Selected_genresCount, setSelected_generesCount] = useState(0);
 
  //   const [Resume, setResume] = useState([]);
 
@@ -33,12 +30,6 @@ const Selected_songs = useSelector((state:FetchType) => state.songs.ArtistSongs)
 const SelectedtotalSongs = Selected_songs.length;
 const SelectedAlbums = new Set (Selected_songs.map(song => song.album)).size
 const SelectedGenres = new Set (Selected_songs.map(song => song.genre)).size
-
-    useEffect(() => {
-        countUp(SelectedAlbums, setSelected_albumsCount);
-        countUp(SelectedtotalSongs, setSelected_songsCount);
-        countUp(SelectedGenres, setSelected_generesCount);
-    }, [SelectedAlbums, SelectedtotalSongs, SelectedGenres])  
 
 
     useEffect(() => {
