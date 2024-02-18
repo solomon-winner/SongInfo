@@ -74,3 +74,12 @@ display: flex;
 flex-direction: column;
 gap: 1rem;
 `
+export const Song = styled.div`
+color: white;
+display: flex;
+justify-content: space-between;
+padding: 10px;
+border-radius: 5px;
+background-color: rgb(180, 104, 42);
+border: 2px solid red;
+`
