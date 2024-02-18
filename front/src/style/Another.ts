@@ -6,7 +6,7 @@ height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: black;
+background-color: rgba(0, 0, 0, 0.253);
 `
 export const Another = styled.div`
 width: 70%;
@@ -43,7 +43,7 @@ justify-content: center;
 color:white;
 }
 `
-export const stat = styled.div`
+export const Stat = styled.div`
     display: flex;
     gap:100px;
     flex-wrap: wrap;

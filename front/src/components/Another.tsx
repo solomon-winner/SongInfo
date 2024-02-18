@@ -1,10 +1,10 @@
 import React from 'react'
-
-const Another:React.FC = () => {
+import { Wrapper, Another, Top, Cross, Name, Stat, Count, Number, Span, Songs, Song, Button, Left, Icon} from '../style/Another';
+const AnotherSong:React.FC = () => {
     return (
-        <div className="">
-
-        </div>
+        <Wrapper>
+            
+        </Wrapper>
     )
 }
 
