@@ -101,7 +101,7 @@ export const Rest = styled.div`
     gap: 5%;
     flex-wrap: wrap;
     background-color: transparent;
-    min-height: 443px;
+    min-height: 460px;
 
 `
 export const Song = styled.div`
