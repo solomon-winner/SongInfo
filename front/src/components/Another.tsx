@@ -1,7 +1,10 @@
 import React from 'react'
 import { Wrapper, Another, Top, Cross, Name, Stat, Count, Number, Span, Songs, Song, Button, Left, Icon} from '../style/Another';
 import StatDisplay from './StatDisplay';
+import { useSelector } from 'react-redux';
+import { FetchType } from '../Store/Types';
 const AnotherSong:React.FC = () => {
+    const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success);
     return (
         <Wrapper>
             <Another>
@@ -14,7 +17,7 @@ const AnotherSong:React.FC = () => {
                     </Cross>
                     </Top>
                     <Stat>
-                        <StatDisplay/>
+                    {FetchSuccess && <StatDisplay/>}
                     </Stat>
 
                     <Songs>
