@@ -22,7 +22,15 @@ object-fit: cover;
 border-radius: 50%;
 border: 2px solid rgb(255, 115, 0);
 `
-export const Description = styled.div``
+export const Description = styled.div`
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: large;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: bold;
+`
 export const Name = styled.div``
 export const Contacts = styled.div``
 export const Phone = styled.div``
