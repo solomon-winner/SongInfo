@@ -49,16 +49,22 @@ const Show_Menu = (filterBy:string) => {
     {
         case "title":
             dispatch(titleInput(true));
+            break;
         case "artist":
             dispatch(artistInput(true))
+            break;
         case "album":
             dispatch(albumInput(true))
+            break;
          case "genre":
             dispatch(genreInput(true))
+            break;
+        default:
+            break;
      
      
     }
-dispatch(showMenu(true));
+dispatch(showMenu(false));
 
 }
 return (
