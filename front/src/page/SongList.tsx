@@ -10,12 +10,11 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType , FetchType, SelectType} from '../Store/Types';
-import { showAdd, showDetail } from '../Store/DisplaySlice';
+import { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
 import { setSelected } from '../Store/SelectedSongSlice';
-import { Show_Another } from '../Store/SelectedSongSlice';
 import AnotherSong from '../components/Another';
 
 const  SongList: React.FC = () => {
@@ -40,8 +39,8 @@ const SongClick = (id: string) => {
  dispatch(showDetail(true))
 
 }
-const ShowMenu = () {
-    
+const Show_Menu = () => {
+dispatch(showMenu(true));
 }
 return (
     <>
@@ -57,7 +56,7 @@ return (
             <Search>
                 <Form>
                 
-                    <Input onFocus={}/>
+                    <Input onFocus={Show_Menu}/>
                     <Button>
                         Search
                     </Button>

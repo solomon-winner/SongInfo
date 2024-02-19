@@ -62,6 +62,6 @@ const initialState: Display = {
     }
 })
 
-export const {setScrolled, showDetail, showAdd, showAnother, showDelete, showUpdate} = DisplaySlice.actions;
+export const {setScrolled, showDetail, showAdd, showAnother, showDelete, showUpdate, showMenu} = DisplaySlice.actions;
 
 export default DisplaySlice;
