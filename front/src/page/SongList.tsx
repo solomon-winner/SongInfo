@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
 import { Wrapper, 
-    Main, Search, Rest, 
+    Main, Rest, 
     Song, Img, Desc, Title, 
     ArtistName, Form, Input, 
     Button, Add, Container} from '../style/List';
@@ -16,7 +16,7 @@ import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
 import { setSelected } from '../Store/SelectedSongSlice';
 import AnotherSong from '../components/Another';
-
+import Search from "../components/Search"
 const  SongList: React.FC = () => {
 
 const dispatch = useDispatch();
@@ -56,15 +56,8 @@ return (
    {ShwAnother && <AnotherSong/>}
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
-            <Search>
-                <Form>
+            <Search/>
                 
-                    <Input onFocus={Show_Menu}/>
-                    <Button>
-                        Search
-                    </Button>
-                </Form>
-            </Search>
             <Rest>
                 {!Menu  && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
