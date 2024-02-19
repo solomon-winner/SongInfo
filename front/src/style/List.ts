@@ -78,18 +78,23 @@ export const Input =styled.input`
     color: white;
     &:focus {
         outline:none;
-        border: none;
+        border: 1px solid white;
+    }
+    &:placeholder {
+        font-size: medium;
+        font-weight: 700;
+        font- family: Georgia;
     }
 `
-export const Button = styled.button`
-width: 100px;
+export const Decor = styled.div`
+width: 70px;
 background: rgb(255, 115, 0);
 color: white;
 font-family: Georgia;
 font-weight: bold;
 border: none;
 cursor: pointer;
-border-radius: 0 7px 7px 0;
+border-radius:  50% 0 0 50%;
 &:hover {
     background-color: black;
 }
@@ -101,7 +106,7 @@ export const Rest = styled.div`
     gap: 5%;
     flex-wrap: wrap;
     background-color: transparent;
-    min-height: 460px;
+    min-height: 520px;
 
 `
 export const Song = styled.div`

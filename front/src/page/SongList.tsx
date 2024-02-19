@@ -4,8 +4,7 @@ import StatDisplay from '../components/StatDisplay';
 import { Wrapper, 
     Main, Rest, 
     Song, Img, Desc, Title, 
-    ArtistName, Form, Input, 
-    Button, Add, Container} from '../style/List';
+    ArtistName, Add, Container} from '../style/List';
 import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';

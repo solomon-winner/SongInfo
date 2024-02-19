@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Form, Input, Button} from "../style/List"
+import {Form, Input} from "../style/List"
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType, FilterType, FetchType} from '../Store/Types';
 import { showMenu } from '../Store/DisplaySlice';
@@ -40,15 +40,12 @@ const Search: React.FC = () => {
     return (
         <Form>
 
-                    {DefaultInput &&<Input onClick={Show_Menu} readOnly/>}
+                    {DefaultInput &&<Input onClick={Show_Menu} placeholder='Search' readOnly/>}
                     {TittleInput && <Input onChange={handleTitleChange} onBlur={() => dispatch(defaultInput(true))} autoFocus />}
                     {AlbumInput && <Input  onChange={handleAlbumChange} onBlur={() => dispatch(defaultInput(true))} autoFocus/>}
                     {ArtistInput && <Input onChange={handleArtistChange} onBlur={() => dispatch(defaultInput(true))} autoFocus/>}
                     {GenreInput && <Input onChange={handleGenreChange} onBlur={() => dispatch(defaultInput(true))} autoFocus/>}
 
-                    <Button>
-                        Search
-                    </Button>
                 </Form>
     )
 }

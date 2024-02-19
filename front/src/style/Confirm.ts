@@ -9,7 +9,7 @@ export const Delete = styled.div`
     display:flex;
     flex-direction: column;
     gap: 5%;
-    z-index:9000;
+    z-index:90000;
     border: 3px solid rgb(255, 115, 0);
     position: absolute;
     top: 30%;

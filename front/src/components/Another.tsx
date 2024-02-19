@@ -14,7 +14,6 @@ const AnotherSong:React.FC = () => {
 
     const ShowDetail = (id:string) => {
         dispatch(setSelected(id))
-        dispatch(Show_Another(false))
         dispatch(showDetail(true))
     }
     const DontShowAnother = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
