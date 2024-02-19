@@ -5,13 +5,15 @@ export interface FilterBy {
     album: boolean;
     artist: boolean;
     genre: boolean;
+    default: boolean,
 }
 
 const initialState: FilterBy = {
-    title: true,
+    title: false,
     album: false,
     artist: false,
-    genre: false
+    genre: false,
+    default: true,
 }
 
 const FilterSlice = createSlice ({
@@ -24,6 +26,8 @@ const FilterSlice = createSlice ({
             state.album = false
             state.artist = false
             state.genre = false
+            state.default = false
+
         },
         albumInput (state, action:PayloadAction<boolean>) {
             state.album = action.payload
@@ -32,6 +36,8 @@ const FilterSlice = createSlice ({
             state.title = false
             state.artist = false
             state.genre = false
+            state.default = false
+
         },
         artistInput (state, action:PayloadAction<boolean>) {
             state.artist = action.payload
@@ -40,6 +46,8 @@ const FilterSlice = createSlice ({
             state.album = false
             state.title = false
             state.genre = false
+            state.default = false
+
         },
         genreInput (state, action:PayloadAction<boolean>) {
             state.genre = action.payload
@@ -48,6 +56,10 @@ const FilterSlice = createSlice ({
             state.album = false
             state.artist = false
             state.title = false
+            state.default = false
+        },
+        defaultInput (state, action:PayloadAction<boolean>) {
+
         }
     }
 })

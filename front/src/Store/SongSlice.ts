@@ -12,6 +12,7 @@ export interface Song {
 interface InitialState {
     songs:Song[];
     ArtistSongs: Song[],
+    SearchedSongs: Song[],
      Fetch_loading: boolean;
      Add_loading: boolean;
      Add_Success:boolean;
@@ -25,6 +26,7 @@ interface InitialState {
 const initialState: InitialState = {
     songs:[],
     ArtistSongs: [],
+    SearchedSongs: [],
      Fetch_loading: false,
      Add_loading: false,
      Add_Success:false,
@@ -45,6 +47,7 @@ const initialState: InitialState = {
         },
         setSongs(state, action: PayloadAction<any>){
             state.songs = action.payload;
+            state.SearchedSongs = action.payload;
             state.Fetch_loading = false;
             state.Fetch_Success = true;
         },
@@ -89,6 +92,30 @@ const initialState: InitialState = {
         },
         Filter(state,action:PayloadAction<string>) {
             state.ArtistSongs = state.songs.filter((songs) =>songs.artist === action.payload);
+        },
+        searchByTitle (state, action:PayloadAction<string>) {
+            const query = action.payload.toLowerCase();
+            state.SearchedSongs = state.songs.filter(song => 
+               song.tittle.toLowerCase().includes(query) 
+                )
+        },
+        searchByArtist (state, action:PayloadAction<string>) {
+            const query = action.payload.toLowerCase();
+            state.SearchedSongs = state.songs.filter(song => 
+               song.tittle.toLowerCase().includes(query) 
+                ) 
+        },
+        searchByAlbum (state, action:PayloadAction<string>) {
+            const query = action.payload.toLowerCase();
+            state.SearchedSongs = state.songs.filter(song => 
+               song.tittle.toLowerCase().includes(query) 
+                )
+        },
+        searchByGenre (state, action:PayloadAction<string>) {
+            const query = action.payload.toLowerCase();
+            state.SearchedSongs = state.songs.filter(song => 
+               song.tittle.toLowerCase().includes(query) 
+                )
         }
         
     }
