@@ -1,11 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import SongList from './page/SongList';
-import SongDetails from './components/SongDetails';
-import AddForm from './components/AddForm';
-import UpdateForm from './components/UpdateForm';
 import Home from './page/Home';
  import {Global} from './style/App'
+import About from './page/About';
 const App: React.FC = () => {
   return (
     <>
@@ -14,10 +12,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path='/' element = {<Home/>}/>
         <Route path='/list' element = {<SongList/>}/>
-        <Route path = '/details/:id' element = {<SongDetails/>}/>
-        <Route path = '/add' element = {<AddForm/>}/>
-        <Route path = '/update/:id' element = {<UpdateForm/>}/>
-
+        <Route path = '/about' element = {<About/>}/>
       </Routes>
     </Router>
     </>
