@@ -59,10 +59,16 @@ const FilterSlice = createSlice ({
             state.default = false
         },
         defaultInput (state, action:PayloadAction<boolean>) {
+            state.default = action.payload
+            console.log(" this is from default input")
 
+            state.album = false
+            state.artist = false
+            state.title = false
+            state.default = false
         }
     }
 })
 
-export const {titleInput, albumInput, artistInput, genreInput} = FilterSlice.actions;
+export const {titleInput, albumInput, artistInput, genreInput, defaultInput} = FilterSlice.actions;
 export default FilterSlice;

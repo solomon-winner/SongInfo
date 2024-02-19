@@ -33,6 +33,8 @@ const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 const Menu = useSelector((state:DisplayType) => state.display.Menu);
 //const All = useSelector((state:DisplayType) => state.display.All);
+
+
 const REF = useRef<HTMLDivElement>(null);
 
 // useEffect(() => {
@@ -62,6 +64,13 @@ const SongClick = (id: string) => {
  dispatch(setSelected(id))
  dispatch(showDetail(true))
 
+}
+if (Menu) {
+    const Focused = document.activeElement as HTMLInputElement
+    if (Focused) {
+          dispatch(showMenu(false)) 
+    }
+    console.log("this is Focused element "+ Focused)
 }
 const Show_Menu = (filterBy:string) => {
     switch(filterBy)
