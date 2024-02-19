@@ -41,8 +41,12 @@ useEffect(() => {
             dispatch(showMenu(false));
         }
     }
-})
 
+   document.addEventListener('mousedown', HandleClick);
+   return () => {
+    document.addEventListener('mousedown', HandleClick)
+   }
+},[])
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
