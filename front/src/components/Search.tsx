@@ -11,8 +11,9 @@ const Search: React.FC = () => {
         artist: false,
         genre: false
     })
+
     const dispatch = useDispatch();
-    const Show_Menu = (fiterBy: string) => {
+    const Show_Menu = (filter_By: string) => {
         dispatch(showMenu(true));
         }
 
