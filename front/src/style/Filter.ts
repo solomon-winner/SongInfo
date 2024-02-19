@@ -6,6 +6,8 @@ width: 100%;
 z-index: 100000;
 display: flex;
 justify-content: center;
+position: absolute;
+top:20%;
 `
 export const Choose = styled.div`
 width: 50%;

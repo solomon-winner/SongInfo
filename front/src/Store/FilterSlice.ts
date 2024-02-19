@@ -61,11 +61,10 @@ const FilterSlice = createSlice ({
         defaultInput (state, action:PayloadAction<boolean>) {
             state.default = action.payload
             console.log(" this is from default input")
-
+            state.genre = false
             state.album = false
             state.artist = false
             state.title = false
-            state.default = false
         }
     }
 })

@@ -15,7 +15,7 @@ const Search: React.FC = () => {
 
     const dispatch = useDispatch();
     const Show_Menu = () => {
-        dispatch(showMenu(true));
+        dispatch(showMenu());
         }
 
     const Menu = useSelector((state:DisplayType) => state.display.Menu);
@@ -37,11 +37,10 @@ const Search: React.FC = () => {
         dispatch(searchByGenre(e.target.value))
     }
 
-  
     return (
         <Form>
 
-                    {DefaultInput &&<Input onClick={Show_Menu}/>}
+                    {DefaultInput &&<Input onClick={Show_Menu} readOnly/>}
                     {TittleInput && <Input onChange={handleTitleChange} onBlur={() => dispatch(defaultInput(true))} autoFocus />}
                     {AlbumInput && <Input  onChange={handleAlbumChange} onBlur={() => dispatch(defaultInput(true))} autoFocus/>}
                     {ArtistInput && <Input onChange={handleArtistChange} onBlur={() => dispatch(defaultInput(true))} autoFocus/>}

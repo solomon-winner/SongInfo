@@ -32,29 +32,6 @@ const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 const Menu = useSelector((state:DisplayType) => state.display.Menu);
-//const All = useSelector((state:DisplayType) => state.display.All);
-
-
-const REF = useRef<HTMLDivElement>(null);
-
-// useEffect(() => {
-//     const HandleClick = (e:MouseEvent) => {
-//         console.log('Clicked');
-//         console.log('Event target:', e.target);
-//         if (REF.current && !REF.current.contains(e.target as Node)) {
-//             console.log(
-//                 "mmmnkdfjvnkdsfhvb"
-//             )
-//             dispatch(showMenu(false));
-//         }
-//     }
-
-//    document.addEventListener('mousedown', HandleClick);
-//    return () => {
-//     document.removeEventListener('mousedown', HandleClick)
-//    }
-// },[dispatch])
-
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showAdd(true))
@@ -65,13 +42,7 @@ const SongClick = (id: string) => {
  dispatch(showDetail(true))
 
 }
-if (Menu) {
-    const Focused = document.activeElement as HTMLInputElement
-    if (Focused) {
-          dispatch(showMenu(false)) 
-    }
-    console.log("this is Focused element "+ Focused)
-}
+
 const Show_Menu = (filterBy:string) => {
     switch(filterBy)
     {
@@ -92,7 +63,7 @@ const Show_Menu = (filterBy:string) => {
      
      
     }
-dispatch(showMenu(false));
+dispatch(showMenu());
 
 }
 return (

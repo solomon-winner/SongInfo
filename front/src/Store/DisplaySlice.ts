@@ -57,8 +57,8 @@ const initialState: Display = {
             state.Detail = false;
             state.Add = false;
         },
-        showMenu(state, action:PayloadAction<boolean>) {
-            state.Menu = action.payload;
+        showMenu(state) {
+            state.Menu = !state.Menu;
         }
     }
 })
