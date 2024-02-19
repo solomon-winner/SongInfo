@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Main = styled.div`
     background: black;
@@ -30,8 +31,9 @@ export const Moto = styled.div`
 `;
 export const Strong = styled.strong`
     color: rgb(255,115,0);`
-export const Button = styled.button`
+export const Button = styled(Link)`
     background-color: rgb(255, 115, 0);
+    text-decoration:none;
     width: 150px;
     padding: 3%;
     border-radius: 5%;
@@ -68,7 +70,10 @@ export const Text = styled.div`
     padding: 10px;
     margin: 5px;
 `;
+export const P = styled.p`
+font-family: Georgia;
 
+`
 export const Wrapper = styled.div`
     margin-top: 50px;
     width: 70%;

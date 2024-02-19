@@ -19,6 +19,10 @@ background-color: rgb(1, 10, 31);
 border: 4px solid rgb(255, 115, 0);
 overflow-y: scroll;
 position: relative;
+&::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
 `
 export const Top = styled.div`
 display: flex;
