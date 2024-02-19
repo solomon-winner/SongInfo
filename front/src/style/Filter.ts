@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 
-export const Menu = styled.div`
+export const FilterMenu = styled.div`
 width: 100%;
 z-index: 100000;
 display: flex;

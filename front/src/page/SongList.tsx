@@ -17,6 +17,9 @@ import DeleteConfirm from '../components/DeleteConfirm'
 import { setSelected } from '../Store/SelectedSongSlice';
 import AnotherSong from '../components/Another';
 import Search from "../components/Search"
+import {FilterMenu, Choose, Choice} from '../style/Filter'
+import { titleInput, albumInput, artistInput, genreInput} from '../Store/FilterSlice';
+
 const  SongList: React.FC = () => {
 
 const dispatch = useDispatch();
@@ -41,7 +44,20 @@ const SongClick = (id: string) => {
  dispatch(showDetail(true))
 
 }
-const Show_Menu = () => {
+const Show_Menu = (filterBy:string) => {
+    switch(filterBy)
+    {
+        case "title":
+            dispatch(titleInput(true));
+        case "artist":
+            dispatch(artistInput(true))
+        case "album":
+            dispatch(albumInput(true))
+         case "genre":
+            dispatch(genreInput(true))
+     
+     
+    }
 dispatch(showMenu(true));
 
 }
@@ -57,7 +73,15 @@ return (
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search/>
-                
+               <FilterMenu>
+                <Choose>
+                    <Choice onClick={() => Show_Menu("title")}>Filter By song Title</Choice>
+                    <Choice onClick={() => Show_Menu("artist")}>Filter By Artist Name</Choice>
+                    <Choice onClick={() => Show_Menu("album")}>Filter By Album</Choice>
+                    <Choice onClick={() => Show_Menu("genre")}>Filter By Genre</Choice>
+
+                </Choose>
+                </FilterMenu> 
             <Rest>
                 {!Menu  && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>

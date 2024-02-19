@@ -19,16 +19,28 @@ const FilterSlice = createSlice ({
     initialState,
     reducers: {
         titleInput (state, action:PayloadAction<boolean>) {
-
+            state.title = action.payload
+            state.album = false
+            state.artist = false
+            state.genre = false
         },
         albumInput (state, action:PayloadAction<boolean>) {
-            
+            state.album = action.payload
+            state.title = false
+            state.artist = false
+            state.genre = false
         },
         artistInput (state, action:PayloadAction<boolean>) {
-            
+            state.artist = action.payload
+            state.album = false
+            state.title = false
+            state.genre = false
         },
         genreInput (state, action:PayloadAction<boolean>) {
-            
+            state.genre = action.payload
+            state.album = false
+            state.artist = false
+            state.title = false
         }
     }
 })
