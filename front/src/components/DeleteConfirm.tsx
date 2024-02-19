@@ -4,6 +4,7 @@ import { showDelete, showDetail } from "../Store/DisplaySlice";
 import { useDispatch,useSelector } from "react-redux";
 import { SelectType} from "../Store/Types";
 import { deleteLoading } from "../Store/SongSlice";
+import { Wrapper } from '../style/detail';
 
 const DeleteConfirm:React.FC = () => {
     const ID = useSelector((state:SelectType) => state.selected._id)
@@ -22,7 +23,7 @@ const confirmed = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
 
     return (
-        <>
+        <Wrapper>
         <Delete>
             <Question>Are you Sure? You Want to Delete?</Question>
             <Buttons>
@@ -30,7 +31,7 @@ const confirmed = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                 <Sure onClick={confirmed}> Delete</Sure>
             </Buttons>
         </Delete>
-        </>
+        </Wrapper>
     )
 }
 

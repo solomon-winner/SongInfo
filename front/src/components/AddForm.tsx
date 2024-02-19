@@ -3,6 +3,7 @@ import { AddSong, Button, Buttons, Cross, Form, Input, Label, Row, Title } from 
 import { useDispatch } from 'react-redux';
 import { showAdd } from '../Store/DisplaySlice';
 import { Song, addLoading, addSong } from '../Store/SongSlice';
+import { Wrapper } from '../style/detail';
 
 const AddForm:React.FC = () => {
     const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,7 +20,7 @@ const AddForm:React.FC = () => {
         console.log(New);
         dispatch(addLoading(New))
         dispatch(showAdd(false))
-        
+
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -28,7 +29,7 @@ const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 }
   
     return (
-        <>
+        <Wrapper>
         <AddSong>
         <Title> Add New Song</Title>
             <Form onSubmit={handleChange}>
@@ -44,7 +45,7 @@ const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             </Form>
             <Cross onClick={DontShowAdd}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
         </AddSong>
-        </>
+        </Wrapper>
     )
 }
 export default AddForm;

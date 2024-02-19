@@ -6,6 +6,7 @@ import { Edit } from '../style/Update';
 import { FetchType, SelectType } from '../Store/Types';
 import { Song } from '../Store/SongSlice';
 import { updateLoading } from '../Store/SongSlice';
+import { Wrapper } from '../style/detail';
 
 const UpdateForm:React.FC = () => {
     
@@ -36,7 +37,7 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 
   }
     return (
-        <>
+        <Wrapper>
         <AddSong>
         <Title> Add New Song</Title>
             <Form onSubmit={handleSubmit}>
@@ -52,7 +53,7 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             </Form>
             <Cross onClick={DontShowUpdate}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
         </AddSong>
-        </>
+        </Wrapper>
     )
 }
 export default UpdateForm;

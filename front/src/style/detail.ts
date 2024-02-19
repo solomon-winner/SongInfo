@@ -1,5 +1,18 @@
 import styled from "@emotion/styled";
 
+export const Wrapper = styled.div`
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(0, 0, 0, 0.253);
+position:fixed;
+top: 0;
+left: 0;
+z-index:10000;
+`
+
 export const Detail = styled.div`
     content: '';
     background:url('../assets/headphones-3085681_1280.jpg');

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, } from '../style/detail';
+import { Another, Buttons, Cross, Delete, Detail, Edit, Label, Row, SongDetail, Value, Wrapper} from '../style/detail';
 import { useDispatch, useSelector } from 'react-redux';
 import { showAnother, showDelete, showDetail, showUpdate } from '../Store/DisplaySlice';
 import { FetchType, SelectType, StatType } from '../Store/Types';
@@ -43,7 +43,7 @@ const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
    
 }
     return(
-       <>
+       <Wrapper>
        <Detail>
         <SongDetail> Song Detail</SongDetail>
        {detail && <>
@@ -68,7 +68,7 @@ const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         </Buttons>
         <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
        </Detail>
-       </>
+       </Wrapper>
     )
 }
 

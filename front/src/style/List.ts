@@ -76,6 +76,7 @@ export const Input =styled.input`
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(255, 115, 0);
     color: white;
+
     &:focus {
         outline:none;
         border: 1px solid white;
