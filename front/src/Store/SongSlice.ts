@@ -125,6 +125,7 @@ const initialState: InitialState = {
  export const {songLoading, songFetchError, setSongs,
                 addLoading,addSong, addError,
                 updateLoading,updateSong, updateError,
-                deleteLoading, deleteSong , deleteError, Filter} = SongSlice.actions
+                deleteLoading, deleteSong , deleteError, Filter,
+                searchByTitle, searchByArtist, searchByAlbum, searchByGenre} = SongSlice.actions
 
  export default SongSlice;
