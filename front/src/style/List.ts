@@ -80,21 +80,17 @@ export const Input =styled.input`
         outline:none;
         border: 1px solid white;
     }
-    &:placeholder {
-        font-size: medium;
-        font-weight: 700;
-        font- family: Georgia;
-    }
+
 `
-export const Decor = styled.div`
-width: 70px;
+export const Button = styled.button`
+width: 100px;
 background: rgb(255, 115, 0);
 color: white;
 font-family: Georgia;
 font-weight: bold;
 border: none;
 cursor: pointer;
-border-radius:  50% 0 0 50%;
+border-radius:  0 7px 7px 0;
 &:hover {
     background-color: black;
 }
@@ -106,7 +102,7 @@ export const Rest = styled.div`
     gap: 5%;
     flex-wrap: wrap;
     background-color: transparent;
-    min-height: 520px;
+    min-height: 600px;
 
 `
 export const Song = styled.div`

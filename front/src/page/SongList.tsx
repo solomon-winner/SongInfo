@@ -76,7 +76,7 @@ return (
    {ShwAnother && <AnotherSong/>}
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
-            <Search/>
+            {FetchSuccess && <Search/>}
                <FilterMenu>
                 {Menu &&  <Choose>
                     <Choice onClick={() => Show_Menu("title")}>Filter By song Title</Choice>
@@ -85,7 +85,9 @@ return (
                     <Choice onClick={() => Show_Menu("genre")}>Filter By Genre</Choice>
 
                 </Choose>}
-                </FilterMenu> 
+                </FilterMenu>
+           
+            
             <Rest>
                 
 

@@ -19,7 +19,7 @@ const AddForm:React.FC = () => {
         console.log(New);
         dispatch(addLoading(New))
         dispatch(showAdd(false))
-
+        
     }
 const dispatch = useDispatch()
 const DontShowAdd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
