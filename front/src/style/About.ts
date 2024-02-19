@@ -41,7 +41,9 @@ export const Contacts = styled.div`
 display: flex;
 justify-content: center;
 `
-export const Phone = styled.div``
-export const LinkedIn = styled.div``
-export const Github = styled.div``
+export const Contact = styled.div`
+cursor: pointer;
+margin: 10px;
+`
+
 export const Linker = styled(Link)``
