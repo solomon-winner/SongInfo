@@ -40,6 +40,9 @@ const SongClick = (id: string) => {
  dispatch(showDetail(true))
 
 }
+const ShowMenu = () {
+    
+}
 return (
     <>
     <Nav/>
@@ -54,14 +57,23 @@ return (
             <Search>
                 <Form>
                 
-                    <Input/>
+                    <Input onFocus={}/>
                     <Button>
                         Search
                     </Button>
                 </Form>
             </Search>
             <Rest>
-                {List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
+                {true && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
+                    <Img src='../assets/headphones-3085681_1280.jpg'/>
+                    <Desc>
+                        <Title>{song.tittle}</Title>
+                        <ArtistName>{song.artist}</ArtistName>
+                    </Desc>
+                </Song>)
+                }
+
+                {false && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>{song.tittle}</Title>

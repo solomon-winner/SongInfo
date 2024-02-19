@@ -7,6 +7,7 @@ export interface Display {
     Add: boolean;
     Delete: boolean;
     Another: boolean
+    Menu : boolean;
 }
 const initialState: Display = {
     navbar: false,
@@ -14,7 +15,8 @@ const initialState: Display = {
     Update: false,
     Add: false,
     Delete: false,
-    Another: false
+    Another: false,
+    Menu: false
 };
 
  const DisplaySlice = createSlice ({
@@ -53,6 +55,9 @@ const initialState: Display = {
             state.Update = false;
             state.Detail = false;
             state.Add = false;
+        },
+        showMenu(state, action:PayloadAction<boolean>) {
+            state.Menu = action.payload;
         }
     }
 })
