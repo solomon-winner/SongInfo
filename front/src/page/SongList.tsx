@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
 import { Wrapper, 
@@ -33,6 +33,16 @@ const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 const Menu = useSelector((state:DisplayType) => state.display.Menu);
 //const All = useSelector((state:DisplayType) => state.display.All);
+const REF = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+    const HandleClick = (e:MouseEvent) => {
+        if (REF.current && !REF.current.contains(e.target as Node)) {
+            dispatch(showMenu(false));
+        }
+    }
+})
+
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
