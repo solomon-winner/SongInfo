@@ -103,19 +103,19 @@ const initialState: InitialState = {
         searchByArtist (state, action:PayloadAction<string>) {
             const query = action.payload.toLowerCase();
             state.SearchedSongs = state.songs.filter(song => 
-               song.tittle.toLowerCase().includes(query) 
+               song.artist.toLowerCase().includes(query) 
                 ) 
         },
         searchByAlbum (state, action:PayloadAction<string>) {
             const query = action.payload.toLowerCase();
             state.SearchedSongs = state.songs.filter(song => 
-               song.tittle.toLowerCase().includes(query) 
+               song.album.toLowerCase().includes(query) 
                 )
         },
         searchByGenre (state, action:PayloadAction<string>) {
             const query = action.payload.toLowerCase();
             state.SearchedSongs = state.songs.filter(song => 
-               song.tittle.toLowerCase().includes(query) 
+               song.genre.toLowerCase().includes(query) 
                 )
         }
         

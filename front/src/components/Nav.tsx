@@ -7,12 +7,11 @@ import { setScrolled } from '../Store/DisplaySlice';
 const NavBar:React.FC = () => {
     
     const dispather = useDispatch();
-    const scrolled = useSelector((state: DisplayType) => state.display.navbar)
-    console.log(scrolled);
+    const scrolled = useSelector((state: DisplayType) => state.display.navbar);
+
     const scroll = () => {
         if (window.scrollY > 0) {
             dispather(setScrolled(true))
-            console.log(scrolled);
 
         } else {
             dispather(setScrolled(false))

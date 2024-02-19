@@ -39,7 +39,7 @@ const Search: React.FC = () => {
     return (
         <Form>
 
-                    {DefaultInput &&<Input onClick={Show_Menu} disabled/>}
+                    {DefaultInput &&<Input onClick={Show_Menu}/>}
                     {TittleInput && <Input onChange={handleTitleChange} autoFocus/>}
                     {AlbumInput && <Input  onChange={handleAlbumChange} autoFocus/>}
                     {ArtistInput && <Input onChange={handleArtistChange} autoFocus/>}

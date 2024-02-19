@@ -35,18 +35,23 @@ const Menu = useSelector((state:DisplayType) => state.display.Menu);
 //const All = useSelector((state:DisplayType) => state.display.All);
 const REF = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-    const HandleClick = (e:MouseEvent) => {
-        if (REF.current && !REF.current.contains(e.target as Node)) {
-            dispatch(showMenu(false));
-        }
-    }
+// useEffect(() => {
+//     const HandleClick = (e:MouseEvent) => {
+//         console.log('Clicked');
+//         console.log('Event target:', e.target);
+//         if (REF.current && !REF.current.contains(e.target as Node)) {
+//             console.log(
+//                 "mmmnkdfjvnkdsfhvb"
+//             )
+//             dispatch(showMenu(false));
+//         }
+//     }
 
-   document.addEventListener('mousedown', HandleClick);
-   return () => {
-    document.removeEventListener('mousedown', HandleClick)
-   }
-},[dispatch])
+//    document.addEventListener('mousedown', HandleClick);
+//    return () => {
+//     document.removeEventListener('mousedown', HandleClick)
+//    }
+// },[dispatch])
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
