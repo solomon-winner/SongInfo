@@ -1,11 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-export interface FilterBy {
-    title: boolean;
-    album: boolean;
-    artist: boolean;
-    genre: boolean;
-}
+
 export interface Display {
     navbar: boolean;
     Detail: boolean;
