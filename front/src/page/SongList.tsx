@@ -28,6 +28,8 @@ const ShwUpdate = useSelector((state: DisplayType) => state.display.Update);
 const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
+const Menu = useSelector((state:DisplayType) => state.display.Menu);
+//const All = useSelector((state:DisplayType) => state.display.All);
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -41,6 +43,7 @@ const SongClick = (id: string) => {
 }
 const Show_Menu = () => {
 dispatch(showMenu(true));
+
 }
 return (
     <>
@@ -63,7 +66,7 @@ return (
                 </Form>
             </Search>
             <Rest>
-                {true && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
+                {!Menu  && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>{song.tittle}</Title>
@@ -72,7 +75,7 @@ return (
                 </Song>)
                 }
 
-                {false && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
+                {Menu && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>{song.tittle}</Title>
