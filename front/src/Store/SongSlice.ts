@@ -95,6 +95,7 @@ const initialState: InitialState = {
         },
         searchByTitle (state, action:PayloadAction<string>) {
             const query = action.payload.toLowerCase();
+            console.log(query)
             state.SearchedSongs = state.songs.filter(song => 
                song.tittle.toLowerCase().includes(query) 
                 )

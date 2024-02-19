@@ -44,9 +44,9 @@ useEffect(() => {
 
    document.addEventListener('mousedown', HandleClick);
    return () => {
-    document.addEventListener('mousedown', HandleClick)
+    document.removeEventListener('mousedown', HandleClick)
    }
-},[])
+},[dispatch])
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -94,18 +94,18 @@ return (
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             <Search/>
                <FilterMenu>
-                 <Choose>
+                {Menu &&  <Choose>
                     <Choice onClick={() => Show_Menu("title")}>Filter By song Title</Choice>
                     <Choice onClick={() => Show_Menu("artist")}>Filter By Artist Name</Choice>
                     <Choice onClick={() => Show_Menu("album")}>Filter By Album</Choice>
                     <Choice onClick={() => Show_Menu("genre")}>Filter By Genre</Choice>
 
-                </Choose>
+                </Choose>}
                 </FilterMenu> 
             <Rest>
                 
 
-                {Menu && List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
+               { List.map(song => <Song key = {song._id} onClick={() => SongClick(song._id)}>
                     <Img src='../assets/headphones-3085681_1280.jpg'/>
                     <Desc>
                         <Title>{song.tittle}</Title>
