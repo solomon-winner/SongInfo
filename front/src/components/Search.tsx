@@ -6,7 +6,7 @@ import { showMenu } from '../Store/DisplaySlice';
 
 const Search: React.FC = () => {
     const [filterBy, SetFilterBy] = useState({
-        title: false,
+        title: true,
         album: false,
         artist: false,
         genre: false
@@ -21,10 +21,10 @@ const Search: React.FC = () => {
     return (
         <Form>
                 
-                    <Input onFocus={() => Show_Menu('title')}/>
-                    <Input onFocus={() => Show_Menu('album')}/>
-                    <Input onFocus={() => Show_Menu('artist')}/>
-                    <Input onFocus={() => Show_Menu('genre')}/>
+                    {filterBy.title && <Input onFocus={() => Show_Menu('title')}/>}
+                    {filterBy.album && <Input onFocus={() => Show_Menu('album')}/>}
+                    {filterBy.artist && <Input onFocus={() => Show_Menu('artist')}/>}
+                    {filterBy.genre && <Input onFocus={() => Show_Menu('genre')}/>}
 
                     <Button>
                         Search
