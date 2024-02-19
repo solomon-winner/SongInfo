@@ -28,6 +28,7 @@ try {
 export const getAll = async (req,res) => {
     try {
         const songs = await Song.find({});
+        console.log("this is the test from server ... <-=-=-=-=-=-=-=> ...."+songs)
         return res.status(200).json(songs)
     }catch(error){
         console.error('Error: ', error);
@@ -59,26 +60,26 @@ export const deleteSong = async (req,res) => {
     }
 }
 
-export const getStat = async(req, res) => {
-    try {
-        const totalSongs = await Song.countDocuments();
-        const artists = await Song.distinct('artist');
-        const albums = await Song.distinct('album');
-        const genres = await Song.distinct('genre');
-        const genreCounts = await Song.aggregate([{$group: {_id: '$genre', count: { $sum: 1}}}]);
-        const artistAlbumCounts = await Song.aggregate([{ $group: {_id: {artist:'$artist', album: '$album'}, count: {$sum: 1}}}]);
+// export const getStat = async(req, res) => {
+//     try {
+//         const totalSongs = await Song.countDocuments();
+//         const artists = await Song.distinct('artist');
+//         const albums = await Song.distinct('album');
+//         const genres = await Song.distinct('genre');
+//         const genreCounts = await Song.aggregate([{$group: {_id: '$genre', count: { $sum: 1}}}]);
+//         const artistAlbumCounts = await Song.aggregate([{ $group: {_id: {artist:'$artist', album: '$album'}, count: {$sum: 1}}}]);
 
 
-        res.json({
-            totalSongs,
-            artists: artists.length,
-            albums: albums.length,
-            genres: genres.length,
-            genreCounts,
-            artistAlbumCounts
-        });
-    } catch (error) {
-        console.error("Error: ", error);
-        res.status(500).json({error: 'Internal Server Error!'})
-    }
-}
+//       res.json({
+//             totalSongs,
+//             artists: artists.length,
+//             albums: albums.length,
+//             genres: genres.length,
+//             genreCounts,
+//             artistAlbumCounts
+//         });
+//     } catch (error) {
+//         console.error("Error: ", error);
+//         res.status(500).json({error: 'Internal Server Error!'})
+//     }
+// }
