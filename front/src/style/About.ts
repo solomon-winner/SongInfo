@@ -31,8 +31,16 @@ font-size: large;
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-weight: bold;
 `
-export const Name = styled.div``
-export const Contacts = styled.div``
+export const Name = styled.div`
+width: 100%;
+border-bottom: 2px solid rgb(255, 115, 0);
+display: flex;
+justify-content: center;
+`
+export const Contacts = styled.div`
+display: flex;
+justify-content: center;
+`
 export const Phone = styled.div``
 export const LinkedIn = styled.div``
 export const Github = styled.div``
