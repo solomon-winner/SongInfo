@@ -9,6 +9,10 @@ align-items: center;
 justify-content: center;
 background-color: rgb(0, 0, 0);
 `
+export const AboutDiv = styled.div`
+display: grid;
+gap: 5px;
+`
 export const H = styled.h1`
 color: white;
 display: flex;
