@@ -38,7 +38,11 @@ export const Detail = styled.div`
         left: 0;
         height: 49.5vh;
         overflow: hidden;
-    } `
+    } 
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }
+    `
 export const SongDetail = styled.div`
     font-size: 50px;
     font-family: 'Franklin';

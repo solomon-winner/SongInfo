@@ -26,7 +26,10 @@ position: relative;
 `
 export const Top = styled.div`
 display: flex;
-width: 100%;
+width: inherit
+position: fixed;
+top: 10;
+left: -85;
 `
 export const Cross = styled.div`
 padding: 5px;

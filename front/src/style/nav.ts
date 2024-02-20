@@ -18,6 +18,11 @@ export const Nav = styled.div<Props>`
     @media screen and (max-width: 768px) {
         padding: 12px 0;
     }
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        justify-content: space-between;
+    }
     `;
 
 export const NavLinks = styled.div`
@@ -31,7 +36,7 @@ export const NavLinks = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        display: none;
+
     }
 `;
 

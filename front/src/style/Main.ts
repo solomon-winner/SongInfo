@@ -76,8 +76,12 @@ font-family: Georgia;
 `
 export const Wrapper = styled.div`
     margin-top: 50px;
-    width: 70%;
+    max-width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @media screen and (max-width:480px) {
+        flex-direction: column;
+    }
 `;

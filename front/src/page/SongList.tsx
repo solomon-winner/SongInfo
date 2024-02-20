@@ -73,7 +73,7 @@ return (
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
-   {ShwAnother && <AnotherSong/>}
+    <AnotherSong/>
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             {FetchSuccess && <Search/>}

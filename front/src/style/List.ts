@@ -47,6 +47,7 @@ z-index: 900;
 `
 export const Container = styled.div`
 display: flex;
+flex-wrap:wrap;
 align-items: baseline;
 `
 export const Add = styled.div`
