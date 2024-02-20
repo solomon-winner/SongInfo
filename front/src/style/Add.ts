@@ -26,42 +26,80 @@ content: '';
         height: 49.5vh;
         overflow: hidden;
 
-        @media screen and (max-width: 1150px) {
-            width: 30%;
-            left:30%;
-        }
-        @media screen and (max-width: 990px) {
-            width: 45%;
-            left:30%;
-        }
-        @media screen and (max-width: 920px) {
-            width: 47%;
-            left:20%;
-        }
-        @media screen and (max-width: 960px) {
-            width: 40%;
-            left:25%;
-        }
-        @media screen and (max-width: 740px) {
-            width: 50%;
-            left:17%;
-        }
-        @media screen and (max-width: 720px) {
-            width: 60%;
-            left:17%;
-        }
-        @media screen and (max-width: 670px) {
-            width: 60%;
-            left:10%;
-        }
-        @media screen and (max-width: 490px) {
-            width: 80%;
-            left:5%;
-        }
-        @media screen and (max-width: 400px) {
-            width: 90%;
-            left:3%;
-        }
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        width: 450px;
+        left: 30%;
+        &:after {
+            content: '';
+            background: rgba(0, 0, 0, 0.692);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 60vh;
+            overflow: hidden;
+    }
+    @media screen and (max-width: 550px) {
+        width: 400px;
+        left: 7%;
+        &:after {
+            content: '';
+            background: rgba(0, 0, 0, 0.692);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 60vh;
+            overflow: hidden;
+    }
+
+    @media screen and (max-width: 1150px) {
+        width: 30%;
+        left:30%;
+    }
+    @media screen and (max-width: 990px) {
+        width: 45%;
+        left:30%;
+    }
+    @media screen and (max-width: 920px) {
+        width: 47%;
+        left:20%;
+    }
+    @media screen and (max-width: 960px) {
+        width: 40%;
+        left:25%;
+    }
+   
+    @media screen and (max-width: 740px) {
+        width: 50%;
+        left:17%;
+    }
+    @media screen and (max-width: 720px) {
+        width: 60%;
+        left:17%;
+    }
+    @media screen and (max-width: 670px) {
+        width: 60%;
+        left:10%;
+    }
+    @media screen and (max-width: 640px) {
+        width: 50%;
+        left:10%;
+    }
+    @media screen and (max-width: 490px) {
+        width: 80%;
+        left:5%;
+    }
+    @media screen and (max-width: 400px) {
+        width: 90%;
+        left:3%;
+    }
+    
 `
 export const Title = styled.div`
 font-size: 50px;
@@ -70,6 +108,12 @@ font-weight: bold;
 color: white;
 margin-left: 50px;
 z-index: 100;
+
+@media screen and (max-width: 1550px) {
+    padding-bottom: 20px;
+    font-size: 30px;
+    gap: 5%;
+    }
 `
 export const Form = styled.form`
 width: 100%;
@@ -83,6 +127,12 @@ export const Row =styled.div`
     align-items: center;
     z-index: 100;
     height: 8vh;
+
+    @media screen and (max-width: 1150px) {
+        flex-direction: column;
+        gap: 5%;
+        }
+
 
 `
 export const Label = styled.span`
@@ -99,6 +149,10 @@ export const Input = styled.input`
     background-color: black;
     border: 1px solid rgb(255, 115, 0);
     color: white;
+
+    @media screen and (max-width: 1150px) {
+        height: 500px;
+        }
 `
 export const Buttons = styled.div`
 margin-top: 20px;
@@ -125,7 +179,6 @@ color: white;
 `
 export const Cross = styled.div`
 padding: 5px;
-background-color: black;
 color:aliceblue;
 width: 50px;
 height: 50px;
@@ -137,9 +190,13 @@ position: absolute;
 z-index: 1000;
 top: 0;
 left: 89%;
-border: 1px solid red;
 cursor: pointer;
 &:hover {
     background: rgb(160, 80, 80);
 }
+
+@media screen and (max-width: 1150px) {
+    width:30px;
+    height: 30px;
+    }
 `

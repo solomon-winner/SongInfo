@@ -7,6 +7,7 @@ import { FetchType, SelectType } from '../Store/Types';
 import { Song } from '../Store/SongSlice';
 import { updateLoading } from '../Store/SongSlice';
 import { Wrapper } from '../style/detail';
+import { Top } from '../style/Another';
 
 const UpdateForm:React.FC = () => {
     
@@ -39,7 +40,11 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     return (
         <Wrapper>
         <AddSong>
-        <Title> Add New Song</Title>
+            <Top>
+                <Title> Add New Song</Title>
+                <Cross onClick={DontShowUpdate}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
+
+            </Top>
             <Form onSubmit={handleSubmit}>
                     <Row><Label>Artist: </Label><Input name = 'artist' onChange={handleChange} value={update.artist}/></Row>    
                     <Row><Label>Album: </Label><Input name = 'album' onChange={handleChange} value={update.album}/></Row>
@@ -51,7 +56,6 @@ const DontShowUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
                     </Buttons>
                 
             </Form>
-            <Cross onClick={DontShowUpdate}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
         </AddSong>
         </Wrapper>
     )
