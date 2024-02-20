@@ -6,6 +6,7 @@ import { FetchType, SelectType, StatType } from '../Store/Types';
 import {Song} from "../Store/SongSlice"
 import { Show_Another, removeSelected } from '../Store/SelectedSongSlice';
 import { Filter } from '../Store/SongSlice';
+import { Top } from '../style/Another';
 
 const SongDetails:React.FC = () => {
 const dispatch = useDispatch()
@@ -45,7 +46,11 @@ const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     return(
        <Wrapper>
        <Detail>
-        <SongDetail> Song Detail</SongDetail>
+        <Top>
+        <SongDetail> Song Detail</SongDetail>      
+        <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
+        </Top>
+        
        {detail && <>
         <Row> <Label>Artist: </Label> 
         <Value>{detail.artist}</Value>
@@ -66,7 +71,6 @@ const AnotherShow = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             <Another onClick={AnotherShow}>Songs By This Artist</Another>
             <Delete onClick={ShowDelete}>Delete</Delete>
         </Buttons>
-        <Cross onClick={DontShowDetail}><img src="../assets/xmark-solid.svg" alt="" /></Cross>
        </Detail>
        </Wrapper>
     )

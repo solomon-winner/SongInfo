@@ -27,7 +27,7 @@ export const Detail = styled.div`
     border: 3px solid rgb(255, 115, 0);
     position: absolute;
     top: 30%;
-    left: 40%;
+    left: 35%;
     &:after {
         content: '';
         background: rgba(0, 0, 0, 0.692);
@@ -39,16 +39,52 @@ export const Detail = styled.div`
         height: 49.5vh;
         overflow: hidden;
     } 
-    @media screen and (max-width: 480px) {
-        width: 100%;
+    @media screen and (max-width: 1150px) {
+        width: 30%;
+        left:30%;
     }
-    `
+    @media screen and (max-width: 990px) {
+        width: 45%;
+        left:30%;
+    }
+    @media screen and (max-width: 920px) {
+        width: 47%;
+        left:20%;
+    }
+    @media screen and (max-width: 960px) {
+        width: 40%;
+        left:25%;
+    }
+    @media screen and (max-width: 740px) {
+        width: 50%;
+        left:17%;
+    }
+    @media screen and (max-width: 720px) {
+        width: 60%;
+        left:17%;
+    }
+    @media screen and (max-width: 670px) {
+        width: 60%;
+        left:10%;
+    }
+    @media screen and (max-width: 490px) {
+        width: 80%;
+        left:5%;
+    }
+    @media screen and (max-width: 400px) {
+        width: 90%;
+        left:3%;
+    }
+    `   
 export const SongDetail = styled.div`
-    font-size: 50px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+color:white;
+ font-size: 50px;
     font-family: 'Franklin';
     font-weight: bold;
-    color: white;
-    margin-left: 50px;
     z-index: 100;  
 `
 export const Row = styled.div`
@@ -129,22 +165,19 @@ export const Delete = styled.button`
     }
 `
 export const Cross = styled.div`
-    padding: 5px;
-    background-color: black;
-    color:aliceblue;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    left: 89%;
-    border: 1px solid red;
-    cursor: pointer;
+padding: 5px;
+background-color: black;
+color:aliceblue;
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+z-index: 1000;
+top: 0;
+left: 89%;
     &:hover {
-        background: rgb(160, 80, 80);
+        border: 1px solid rgb(160, 80, 80);
     }
 `

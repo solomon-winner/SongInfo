@@ -25,6 +25,43 @@ content: '';
         left: 0;
         height: 49.5vh;
         overflow: hidden;
+
+        @media screen and (max-width: 1150px) {
+            width: 30%;
+            left:30%;
+        }
+        @media screen and (max-width: 990px) {
+            width: 45%;
+            left:30%;
+        }
+        @media screen and (max-width: 920px) {
+            width: 47%;
+            left:20%;
+        }
+        @media screen and (max-width: 960px) {
+            width: 40%;
+            left:25%;
+        }
+        @media screen and (max-width: 740px) {
+            width: 50%;
+            left:17%;
+        }
+        @media screen and (max-width: 720px) {
+            width: 60%;
+            left:17%;
+        }
+        @media screen and (max-width: 670px) {
+            width: 60%;
+            left:10%;
+        }
+        @media screen and (max-width: 490px) {
+            width: 80%;
+            left:5%;
+        }
+        @media screen and (max-width: 400px) {
+            width: 90%;
+            left:3%;
+        }
 `
 export const Title = styled.div`
 font-size: 50px;

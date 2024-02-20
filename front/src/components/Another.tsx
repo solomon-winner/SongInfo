@@ -31,7 +31,7 @@ const AnotherSong:React.FC = () => {
             <Another>
                 <Top>
                     <Name>
-                        <h1>Tesfaye Gabiso</h1>
+                        <h1>{Selected[0].artist}</h1>
                     </Name>
                     <Cross onClick={DontShowAnother}>
                         <img src="./assets/xmark-solid.svg" alt="" />

@@ -69,11 +69,11 @@ return (
     <>
     <Nav/>
     <Wrapper/>
-   {ShwDetail && <SongDetails/> }       
+  <SongDetails/>      
    {ShwAdd && <AddForm/>}
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
-    <AnotherSong/>
+   {ShwAnother && <AnotherSong/>}
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             {FetchSuccess && <Search/>}
