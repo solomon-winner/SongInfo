@@ -28,6 +28,24 @@ export const Moto = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    @media screen and (max-width: 740px) {
+        width: 50%;
+        left:10%;
+    }
+    @media screen and (max-width: 720px) {
+        width: 60%;
+        left:10%;
+    }
+    @media screen and (max-width: 670px) {
+        width: 60%;
+        left:10%;
+    }
+    @media screen and (max-width: 450px) {
+        width: 60%;
+        top:15%;
+        left:10%;
+    }
 `;
 export const Strong = styled.strong`
     color: rgb(255,115,0);`

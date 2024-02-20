@@ -85,7 +85,7 @@ export const Input =styled.input`
 
 `
 export const Button = styled.button`
-width: 100px;
+width: 10%;
 background: rgb(255, 115, 0);
 color: white;
 font-family: Georgia;

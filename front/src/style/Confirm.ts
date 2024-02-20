@@ -23,7 +23,61 @@ export const Delete = styled.div`
         top: 0;
         left: 0;
         height: 49.5vh;
-        overflow: hidden;
+        overflow: hidden;}
+
+        @media screen and (max-width: 1150px) {
+            width: 30%;
+            left:30%;
+            height: 55vh;
+            &:after {
+                height: 60vh;
+            }
+        }
+        @media screen and (max-width: 990px) {
+            width: 45%;
+            left:30%;
+            height: 57vh;
+            &:after {
+                height: 57vh;
+            }
+        }
+        @media screen and (max-width: 920px) {
+            width: 47%;
+            left:20%;
+            height: 60vh;
+            &:after {
+                height: 60vh;
+            }
+        }
+        @media screen and (max-width: 960px) {
+            width: 40%;
+            left:20%;
+        }
+       
+        @media screen and (max-width: 740px) {
+            width: 50%;
+            left:10%;
+        }
+        @media screen and (max-width: 720px) {
+            width: 60%;
+            left:10%;
+        }
+        @media screen and (max-width: 670px) {
+            width: 60%;
+            left:10%;
+        }
+        @media screen and (max-width: 640px) {
+            width: 70%;
+            left:10%;
+        }
+        @media screen and (max-width: 490px) {
+            width: 80%;
+            left:5%;
+        }
+        @media screen and (max-width: 400px) {
+            width: 90%;
+            left:3%;
+        }
 `
 
 export const Question = styled.div`
@@ -42,6 +96,10 @@ export const Buttons = styled.div`
     justify-content: center;
     z-index: 100;
     gap: 10px;
+
+    @media screen and (max-width: 670px) {
+        flex-direction: column;
+    }
 `
 export const Sure = styled.button`
     border: none;
