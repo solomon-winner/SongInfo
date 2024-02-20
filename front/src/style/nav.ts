@@ -14,13 +14,26 @@ export const Nav = styled.div<Props>`
     align-items: center;
     justify-content: space-between;
     background-color: ${props => props.scrolled ? 'black': 'transparent'};
-`;
+
+    @media screen and (max-width: 768px) {
+        padding: 12px 0;
+    }
+    `;
 
 export const NavLinks = styled.div`
     display: flex;
     width: 30%;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and (max-width: 768px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        justify-content: center;
+    }
 `;
 
 export const NavLink = styled(Link)`
@@ -28,8 +41,20 @@ export const NavLink = styled(Link)`
     color: rgb(255, 115, 0);
     font-size: medium;
     font-weight: bold;
+
+    @media screen and (max-width: 480px) {
+        font-size: small;
+    }
 `;
 
 export const Left = styled.div `
 margin-left:50px;
+
+@media screen and (max-width: 768px) {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    margin: 0;
+}
 ` 
