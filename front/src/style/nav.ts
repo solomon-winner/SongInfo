@@ -31,8 +31,7 @@ export const NavLinks = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        width: 100%;
-        justify-content: center;
+        display: none;
     }
 `;
 
@@ -46,7 +45,15 @@ export const NavLink = styled(Link)`
         font-size: small;
     }
 `;
+export const Bars = styled.div`
 
+display: none;
+
+@media screen (max-width:480px) {
+    display: block
+}
+
+` 
 export const Left = styled.div `
 margin-left:50px;
 
