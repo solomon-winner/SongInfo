@@ -70,7 +70,7 @@ return (
     <Nav/>
     <Wrapper/>
   {ShwDetail && <SongDetails/>  }    
-   <AddForm/>
+   {ShwAdd &&<AddForm/>}
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
    {ShwAnother && <AnotherSong/>}
