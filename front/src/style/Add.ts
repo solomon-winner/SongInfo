@@ -142,6 +142,7 @@ export const Row =styled.div`
 
     @media screen and (max-width: 1150px) {
         flex-direction: column;
+        height:50px;
         gap: 5%;
         }
 
