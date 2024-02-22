@@ -1,8 +1,7 @@
-import { takeLatest, call, put, take, takeEvery, takeLeading } from "redux-saga/effects";
-import {setSongs, addLoading,addSong, updateSong, deleteSong, addError, updateError, deleteError} from "../Store/SongSlice";
+import { takeLatest, call, put, takeLeading } from "redux-saga/effects";
+import {setSongs,addSong, updateSong, deleteSong, addError, updateError, deleteError} from "../Store/SongSlice";
 import * as Request from './axios';
 import { Song } from "../Store/SongSlice";
-import { FetchType } from "../Store/Types";
 import { songFetchError } from "../Store/SongSlice";
 //watcher for fetching the song list
 function* fetchSongs() {
