@@ -59,6 +59,7 @@ const initialState: InitialState = {
         },
         addSong(state, action: PayloadAction<Song>) {
             state.songs.push(action.payload);
+            state.SearchedSongs.push(action.payload);
             state.Add_loading = false;
             state.Add_Success = true;
         },
@@ -73,8 +74,15 @@ const initialState: InitialState = {
         },
         updateSong(state, action: PayloadAction<Song>) {
             const index = state.songs.findIndex(song => song._id ===action.payload._id);
-            if(index !== -1)
+            const Searchedindex = state.SearchedSongs.findIndex(song => song._id ===action.payload._id);
+
+            if(index !== -1) {
                 state.songs[index] = action.payload;
+            }
+                
+            if (Searchedindex !== -1) {
+                state.SearchedSongs[Searchedindex] = action.payload
+            }
 
             state.Update_loading = false;
             state.Update_Success = true;
@@ -84,6 +92,8 @@ const initialState: InitialState = {
         },
         deleteSong(state, action: PayloadAction<string>) {
             state.songs = state.songs.filter((song) => song._id !== action.payload);
+            state.SearchedSongs = state.SearchedSongs.filter((song) => song._id !== action.payload);
+
             state.Delete_loading = false;
             state.Delete_Success = true;
         },
