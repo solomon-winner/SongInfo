@@ -1,16 +1,17 @@
 import { takeLatest, call, put, take, takeEvery, takeLeading } from "redux-saga/effects";
-import {setSongs, addLoading,addSong, updateSong, deleteSong} from "../Store/SongSlice";
+import {setSongs, addLoading,addSong, updateSong, deleteSong, addError, updateError, deleteError} from "../Store/SongSlice";
 import * as Request from './axios';
 import { Song } from "../Store/SongSlice";
 import { FetchType } from "../Store/Types";
-
+import { songFetchError } from "../Store/SongSlice";
 //watcher for fetching the song list
 function* fetchSongs() {
     try {
         const songs: Song[] = yield call(Request.Fetch)
         yield put(setSongs(songs));
     } catch (error) {
-        console.log(error)
+        yield put(songFetchError("Failed to fetch the songs!"));
+
     }
 }
 export function* watchFetch() {
@@ -24,7 +25,7 @@ function* AddSong(action:any){
         const NewSong: Song =yield call(Request.Add,action.payload)
       yield put (addSong(NewSong));
     } catch(error) {
-console.log(error)
+    yield put(addError("Failed to Add the Song!"))    
     }
 }
  export function* watchAdd() {
@@ -38,7 +39,7 @@ console.log(error)
         const updatedSong: Song = yield call(Request.Update, action.payload._id,action.payload)
         yield put(updateSong(updatedSong))
     }catch(error){
-        console.log(error)
+        yield put(updateError("Failed to Update the Song!"))    
     }
  }
 
@@ -53,7 +54,7 @@ yield takeLatest('songs/updateLoading',UpdateSong)
          yield call(Request.Delete,action.payload);
          yield put (deleteSong(action.payload));
     }catch(error){
-        console.log(error)
+        yield put(deleteError("Failed to delete the Song!"))    
     }
  }
 

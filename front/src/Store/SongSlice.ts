@@ -118,6 +118,7 @@ const initialState: InitialState = {
                song.genre.toLowerCase().includes(query) 
                 )
         }
+
         
     }
 })

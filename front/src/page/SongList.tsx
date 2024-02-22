@@ -9,7 +9,7 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType , FetchType, SelectType} from '../Store/Types';
-import  { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
+import  { showAdd, showDetail, showErr, showMenu } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
@@ -33,6 +33,7 @@ const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 const Menu = useSelector((state:DisplayType) => state.display.Menu);
 const ShwErr = useSelector((state:DisplayType) => state.display.Err)
+const SongErr = useSelector ((state:FetchType) => state.songs.error)
 
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -42,6 +43,10 @@ const SongClick = (id: string) => {
  dispatch(setSelected(id))
  dispatch(showDetail(true))
 
+}
+
+if (SongErr !== '') {
+    dispatch(showErr())
 }
 
 const Show_Menu = (filterBy:string) => {
