@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { FetchType } from "../Store/Types";
 
-export const BaseURL = "http://localhost:8080"
+export const BaseURL = "https://songinformationserver.onrender.com"
 
 
 interface ErrorResponse {
