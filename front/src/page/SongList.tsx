@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Nav  from '../components/Nav';
 import StatDisplay from '../components/StatDisplay';
 import { Wrapper, 
@@ -9,7 +9,7 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType , FetchType, SelectType} from '../Store/Types';
-import DisplaySlice, { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
+import  { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'

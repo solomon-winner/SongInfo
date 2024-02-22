@@ -8,6 +8,29 @@ display: flex;
 justify-content: center;
 position: absolute;
 top:174px;
+
+@media screen and (max-width: 875px) {
+    top:220px;
+   
+}
+
+@media screen and (max-width: 735px) {
+    top:220px;
+   
+}
+@media screen and (max-width: 735px) {
+    top:220px;
+   
+}
+@media screen and (max-width: 734px) {
+    top:445px;
+   
+}
+
+@media screen and (max-width: 323px) {
+    top:655px;
+   
+}
 `
 export const Choose = styled.div`
 width: 50%;
