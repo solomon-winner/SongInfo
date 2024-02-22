@@ -83,7 +83,11 @@ return (
    {ShwAnother && <AnotherSong/>}
    {ShwErr && <Err/>}
     <Main>
-           <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
+           <Container>
+            {FetchSuccess && <StatDisplay/>}
+            {!FetchSuccess && <img src='./assets/Spinner.gif' alt= ''/>}    
+
+            <Add onClick={ShowAdd}> Add Song</Add> </Container> 
             {FetchSuccess && <Search/>}
                <FilterMenu>
                 {Menu &&  <Choose>

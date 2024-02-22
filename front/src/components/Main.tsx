@@ -4,6 +4,7 @@ import StatDisplay from './StatDisplay';
 import FooterSect from "../components/Footer";
 import { useSelector } from 'react-redux';
 import { FetchType } from '../Store/Types';
+import { Img } from '../style/List';
 const MainSect:React.FC = () => {
 
     const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
@@ -22,7 +23,8 @@ const MainSect:React.FC = () => {
 
         <Lower>
 
-                {FetchSuccess &&<StatDisplay/>}    
+                {FetchSuccess &&<StatDisplay/>}
+                {!FetchSuccess && <img src='./assets/Spinner.gif' alt= ''/>}    
             <Wrapper>
 
                 <Text>
