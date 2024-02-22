@@ -10,7 +10,6 @@ const StatDisplay: React.FC = () => {
     const [songsCount, setSongsCount] = useState(0);
     const [genresCount, setGenresCount] = useState(0);
 
-  console.log("*************************")
 
 const songs =useSelector((state:FetchType) => state.songs.songs)
 const totalSongs = songs.length;

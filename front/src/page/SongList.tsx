@@ -36,7 +36,6 @@ const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     dispatch(showAdd(true))
 }
 const SongClick = (id: string) => {
-    console.log( ".................")
  dispatch(setSelected(id))
  dispatch(showDetail(true))
 
