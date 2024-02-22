@@ -64,6 +64,12 @@ const initialState: Display = {
         }
         ,showErr (state) {
             state.Err = !state.Err
+            state.Detail =false
+            state.Update =false
+            state.Add = false
+            state.Delete = false
+            state.Another = false
+            state.Menu = false
         }
     }
 })
