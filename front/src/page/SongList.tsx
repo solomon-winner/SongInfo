@@ -9,7 +9,7 @@ import FooterSect from '../components/Footer';
 import SongDetails from '../components/SongDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { DisplayType , FetchType, SelectType} from '../Store/Types';
-import { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
+import DisplaySlice, { showAdd, showDetail, showMenu } from '../Store/DisplaySlice';
 import AddForm from '../components/AddForm';
 import UpdateForm from '../components/UpdateForm';
 import DeleteConfirm from '../components/DeleteConfirm'
@@ -18,6 +18,7 @@ import AnotherSong from '../components/Another';
 import Search from "../components/Search"
 import {FilterMenu, Choose, Choice} from '../style/Filter'
 import { titleInput, albumInput, artistInput, genreInput} from '../Store/FilterSlice';
+import Err from '../components/Error';
 
 const  SongList: React.FC = () => {
 
@@ -31,6 +32,8 @@ const ShwDelete = useSelector((state: DisplayType) => state.display.Delete);
 const ShwAnother = useSelector((state:SelectType) => state.selected.another)
 const FetchSuccess = useSelector((state:FetchType) => state.songs.Fetch_Success)
 const Menu = useSelector((state:DisplayType) => state.display.Menu);
+const ShwErr = useSelector((state:DisplayType) => state.display.Err)
+
 const ShowAdd  = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     dispatch(showAdd(true))
@@ -73,6 +76,7 @@ return (
    {ShwUpdate && <UpdateForm/>}
    {ShwDelete && <DeleteConfirm/>}
    {ShwAnother && <AnotherSong/>}
+   {ShwErr && <Err/>}
     <Main>
            <Container>{FetchSuccess && <StatDisplay/>}<Add onClick={ShowAdd}> Add Song</Add> </Container> 
             {FetchSuccess && <Search/>}

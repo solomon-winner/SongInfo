@@ -9,6 +9,7 @@ export interface Display {
     Delete: boolean;
     Another: boolean
     Menu : boolean;
+    Err : boolean
 }
 const initialState: Display = {
     navbar: false,
@@ -17,7 +18,8 @@ const initialState: Display = {
     Add: false,
     Delete: false,
     Another: false,
-    Menu: false
+    Menu: false,
+    Err: false
 };
 
  const DisplaySlice = createSlice ({
@@ -60,9 +62,12 @@ const initialState: Display = {
         showMenu(state) {
             state.Menu = !state.Menu;
         }
+        ,showErr (state) {
+            state.Err = !state.Err
+        }
     }
 })
 
-export const {setScrolled, showDetail, showAdd, showAnother, showDelete, showUpdate, showMenu} = DisplaySlice.actions;
+export const {setScrolled, showDetail, showAdd, showAnother, showDelete, showUpdate, showMenu, showErr} = DisplaySlice.actions;
 
 export default DisplaySlice;
