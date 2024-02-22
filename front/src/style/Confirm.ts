@@ -13,7 +13,7 @@ export const Delete = styled.div`
     border: 3px solid rgb(255, 115, 0);
     position: absolute;
     top: 30%;
-    left: 40%;
+    left: 35%;
     &:after {
         content: '';
         background: rgba(0, 0, 0, 0.692);

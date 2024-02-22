@@ -75,6 +75,13 @@ export const Detail = styled.div`
         width: 90%;
         left:3%;
     }
+
+    @media screen and (max-width: 340px) {
+       &:after {
+        height: 55vh;      
+       }
+
+    }
     `   
 export const SongDetail = styled.div`
 width: 100%;

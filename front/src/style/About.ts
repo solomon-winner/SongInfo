@@ -50,4 +50,11 @@ cursor: pointer;
 margin: 10px;
 `
 
-export const Linker = styled(Link)``
+export const Span = styled.span`
+font-size: large;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: bold;
+color: white;
+display: flex;
+justify-content:center;
+`

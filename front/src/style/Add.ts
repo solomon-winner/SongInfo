@@ -27,7 +27,13 @@ content: '';
         overflow: hidden;
 
     }
-
+    @media screen and (max-width: 1200px) {
+        width: 35%;
+        left:30%;
+        height: 55vh;
+        &:after {
+            height: 55vh;
+        }
     @media screen and (max-width: 1000px) {
 
         width: 450px;
@@ -43,6 +49,8 @@ content: '';
             height: 60vh;
             overflow: hidden;
     }
+
+ 
     @media screen and (max-width: 550px) {
         width: 400px;
         left: 7%;
@@ -58,20 +66,14 @@ content: '';
             overflow: hidden;
     }
 
-    @media screen and (max-width: 1150px) {
-        width: 30%;
-        left:30%;
-        height: 55vh;
-        &:after {
-            height: 60vh;
-        }
+
     }
     @media screen and (max-width: 990px) {
         width: 45%;
         left:30%;
         height: 57vh;
         &:after {
-            height: 57vh;
+            height: 65vh;
         }
     }
     @media screen and (max-width: 920px) {
@@ -142,7 +144,7 @@ export const Row =styled.div`
 
     @media screen and (max-width: 1150px) {
         flex-direction: column;
-        height:50px;
+        height:10vh;
         gap: 5%;
         }
 

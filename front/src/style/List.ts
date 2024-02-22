@@ -44,6 +44,8 @@ margin-top: 12px;
 width: 100%;
 height: 12vh;
 z-index: 900;
+
+
 `
 export const Container = styled.div`
 display: flex;
@@ -70,6 +72,13 @@ height: fit-content;
 export const Form  = styled.form`
     display: flex;
     width: 50%;
+
+    @media screen and (max-width : 950px) {
+        width: 75%;
+    }
+    @media screen and (max-width : 650px) {
+        width: 95%;
+    }
 `
 export const Input =styled.input`
     width: calc(100% - 100px);
@@ -83,9 +92,11 @@ export const Input =styled.input`
         border: 1px solid white;
     }
 
+
+
 `
 export const Button = styled.button`
-width: 10%;
+width: 100px;
 background: rgb(255, 115, 0);
 color: white;
 font-family: Georgia;
