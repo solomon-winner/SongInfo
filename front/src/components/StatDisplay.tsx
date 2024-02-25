@@ -26,6 +26,11 @@ const Genres = new Set (songs.map(song => song.genre)).size
     }, [Albums, Artists, totalSongs, Genres])
 
     const countUp = (target:number, setter: React.Dispatch<React.SetStateAction<number>>) => {
+
+         if (target === 0) {
+            return (setter(0))
+        }
+        
         let current = 0;
         const interval = setInterval(() => {
             current++;
