@@ -31,6 +31,10 @@ top:174px;
     top:655px;
    
 }
+@media screen and (max-width: 308px) {
+    top:868px;
+   
+}
 `
 export const Choose = styled.div`
 width: 50%;
